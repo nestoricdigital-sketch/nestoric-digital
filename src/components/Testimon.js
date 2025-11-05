@@ -7,7 +7,7 @@ import testNet from "./images/testi/bg_testSnow.jpg";
 import testbox from "./images/testi/testBox.jpg";
 // import testil3 from "./images/testi/testi3.png";
 import testbg from "./images/testi/testbg2.jpg";
-import testArrow from './images/icons/testarrow.png';
+// import testArrow from './images/icons/testarrow.png';
 import testimonArrow from './images/icons/testimoonArrow.png'
 // import Testimon from './Testimon';
 const testimonials = [
@@ -94,33 +94,7 @@ export default function Testimon() {
 
   return (
     <>
-      {/* <div className="text-1xl   text-slate-500 items-center flex justify-center">(Why clients love Nestoric Digital)</div> */}
-      {/* <div
-        ref={sectionRef}
-        className="relative w-full mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40 lg:py-48 overflow-hidden "
-      >
-      
-        <p
-          className="absolute bottom-[90%] sm:bottom-[90%]  left-1/2 -translate-x-1/2
-              
-              text-slate-900
-          wrap w-full text-center
-             z-0 
-            "
-        >
-          (Why clients love Nestoric Digital)
-        </p>
-        <h2
-          className=" absolute bottom-[84%] sm:bottom-[80%] lg:bottom-[69%] left-1/2 -translate-x-1/2
-             text-5xl sm:text-6xl md:text-7xl lg:text-9xl
-             font-extrabold text-transparent bg-clip-text
-             bg-gradient-to-b from-black via-gray-800 to-slate-400
-             z-0 select-none text-center pointer-events-none
-             opacity-20 sm:opacity-30"
-        >
-          Testimonials
-        </h2>
-</div> */}
+   
       <div ref={sectionRef}>
         {" "}
         <p className="text-center text-slate-400 my-40">
@@ -128,15 +102,7 @@ export default function Testimon() {
         </p>
       </div>
       <section className="relative mt-32 flex flex-col md:flex-row items-center justify-center w-full">
-        {/* Background text */}
-        {/* <h1 className="absolute  left-10 text-[6rem] md:text-[12rem] font-extrabold text-gray-500 opacity-30 select-none z-10">
-        Mission
-      </h1> */}
-        {/* <p
-    
-        >
-          (Why clients love Nestoric Digital)
-        </p> */}
+       
         <h2
           className=" absolute bottom-[80%] sm:bottom-[80%] lg:bottom-[80%] left-1/2 -translate-x-1/2
              text-5xl sm:text-6xl md:text-7xl lg:text-9xl
@@ -149,7 +115,7 @@ export default function Testimon() {
         </h2>
       </section>
       {/* Foreground Content */}
-      <div className=" font-inter relative z-10 flex flex-col lg:flex-row gap-4 ">
+      <div className=" font-inter mx-2 md:mx-4 relative z-10 flex flex-col lg:flex-row gap-4 ">
         {/* Left Column (Stats) */}
         <div
           className="w-full overflow-hidden h-96 lg:w-1/4 flex flex-col gap-6 text-center lg:text-left object-cover  text-slate-100 p-6 rounded-[15px]  bg-cover bg-center bg-no-repeat shadow-md"

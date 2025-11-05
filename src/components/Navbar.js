@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import webLogo from './images/NdMainLogo.png'
 import { NavLink } from "react-router-dom";
 
@@ -8,6 +8,12 @@ const Navbar = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
     const links = ["Work", "Services",  "Blog","About"];
+  const navigate = useNavigate();
+
+  const moveToForm = () => {
+    console.log('clicked')
+    navigate("/about#form");
+  };
 
 
   return (
@@ -51,7 +57,9 @@ const Navbar = () => {
 
 
         {/* Get Started Button (Desktop only) */}
-        <button className="hidden md:block  bg-[#353535] text-white px-5 py-2 rounded-full shadow-lg shadow-slate-500/40">
+        <button className="hidden md:block  bg-[#353535] text-white px-5 py-2 rounded-full shadow-lg shadow-slate-500/40"
+        onClick={moveToForm}
+        >
           Contact
         </button>
 

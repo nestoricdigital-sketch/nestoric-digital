@@ -13,7 +13,7 @@ import brandLogo from './images/providingLogos/branding.png'
 export default function Providing() {
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center md:min-h-96 min-h-28 w-full overflow-hidden bg-white">
+      <div className="relative flex flex-col items-center justify-center md:min-h-[36rem] min-h-96 w-full overflow-hidden bg-white">
     
          <div className="absolute top-1/3 left-0 w-full rotate-[-12deg]">
   <Lottie animationData={scrollingText} loop autoplay />
@@ -62,9 +62,9 @@ export default function Providing() {
       {/* <h1 className="text-gray-600   md:text-lg">
             Hello
           </h1> */}
-      <h1 className="md:mt-15  text-1xl md:text-3xl lg:text-4xl  font-semibold text-center max-w-4xl leading-tight text-gray-900 mb-10">
-        We partner with ambitious digital startups to build sharper brands and websites — with clarity, speed, and zero hassle.
-      </h1>
+      <h1 className="font-inter md:mt-15   text-1xl md:text-3xl lg:text-4xl font-semibold text-center max-w-4xl p-1 text-gray-900 mb-10" style={{lineHeight:'3.5rem'}}>
+  We partner with ambitious digital startups to build sharper brands and websites — with clarity, speed, and zero hassle.
+</h1>
 
       {/* Buttons */}
        {/* Buttons */}

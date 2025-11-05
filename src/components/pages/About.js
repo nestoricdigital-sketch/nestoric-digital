@@ -1,15 +1,24 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import ContactForm from "./ContactForm";
 import designBlog from "../images/designBlog.jpeg";
 import sideAr from "../images/sideArrow.png";
 import h_1 from "../images/heroSectionLogo/h 1.png";
 import h_2 from "../images/heroSectionLogo/h2.png";
+import { useLocation } from "react-router-dom";
 const About = () => {
-
+    const location = useLocation();
+// handleScrollToForm
   const handleScrollToForm = () => {
   const section = document.getElementById("form");
   section?.scrollIntoView({ behavior: "smooth" });
+
+
 };
+  useEffect(() => {
+    if (location.pathname === "/form" || location.hash === "#form") {
+      handleScrollToForm();
+    }
+  }, [location]); // runs each time route/hash changes
   return (
     <div>
       <section className="w-full text-gray-800">

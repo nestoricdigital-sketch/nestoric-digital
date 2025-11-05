@@ -69,11 +69,12 @@ export default function ProjectForm() {
       </section>
     
     
-    <section className=" flex  rounded-[20px]  p-2 w-full flex-col items-center  justify-center" id='form'
+    <section className=" flex  rounded-[30px]  p-2  mx-2 md:mx-4  flex-col items-center  justify-center " id='form'
      style={{
         backgroundImage: `url(${bgConnect})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
       }}>
       
       {/* Main 2-column Section */}
@@ -211,7 +212,7 @@ export default function ProjectForm() {
 
   {/* Scrolling text */}
   <div className="absolute whitespace-nowrap text-slate-100 font-medium animate-scroll text-2xl">
-     info<span className="text-blue-400">@</span>nestoricdigital.com    <span className="mx-4"> </span>      info<span className="text-blue-400">@</span>nestoricdigital.com   <span className="mx-4"> </span> info<span className="text-blue-400">@</span>nestoricdigital.com   <span className="mx-4"></span> info<span className="text-blue-400">@</span>nestoricdigital.com
+     info<span className="text-purple-500">@</span>nestoricdigital.com    <span className="mx-4"> </span>      info<span className="text-purple-500">@</span>nestoricdigital.com   <span className="mx-4"> </span> info<span className="text-purple-500">@</span>nestoricdigital.com   <span className="mx-4"></span> info<span className="text-purple-500">@</span>nestoricdigital.com
   </div>
 
   {/* Inline CSS for scrolling animation */}

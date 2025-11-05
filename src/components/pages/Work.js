@@ -228,8 +228,8 @@ export default function Work() {
 
     
 <Link to='/services' className="block sm:text-base text-slate-600 text-right m-4 text-lg font-semibold underline underline-offset-4">Know more</Link>
-<div className="m-1 mb-9">
-  <h2 className="text-4xl font-bold text-gray-800 text-left mb-4 mt-9">What We Do1</h2>
+<div className="m-1 mb-9 md:m-6">
+  <h2 className="text-4xl font-bold text-gray-800 text-left mb-4 mt-9">What We Do</h2>
   <p className="text-base  leading-8">we craft impactful digital experiences through strategy, design, and technology. Our services cover everything from brand identity and website design to seamless development and performance optimization — all tailored to elevate your online presence. We focus on clarity, creativity, and functionality, ensuring every project runs smoothly from concept to completion. With a commitment to innovation and detail, we transform ideas into bold, user-centric digital solutions that drive results and leave a lasting impression. </p>
 </div>
 {/* 

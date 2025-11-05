@@ -1,7 +1,8 @@
 .App {
-  max-width: 1260px; /* or whatever you prefer */
+  max-width: 1920px; /* or whatever you prefer */
   margin: auto auto;    /* centers it horizontally */
-  padding: 0rem;     /* optional, for spacing inside */
+  padding: 0rem;  
+   overflow-x: hidden;   /* optional, for spacing inside */
 
 }
 /* .App {

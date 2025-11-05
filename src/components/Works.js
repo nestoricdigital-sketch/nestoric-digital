@@ -26,15 +26,18 @@ export default function Works() {
           Recent Works
         </h2>
       </section>
-      <section  className="relative w-full min-h-screen flex flex-col items-center justify-between text-white overflow-hidden rounded-[15px] mb-12">
+      <section  className="relative md:mx-4 mx-2  min-h-screen flex flex-col items-center justify-between text-white overflow-hidden rounded-[15px] mb-12">
         {/* Blurred Background */}
         <div
-          className="absolute inset-0 bg-center bg-cover blur-md scale-105"
-          style={{ backgroundImage: `url(${bgw1})` }}
+          className="absolute  top-4 left-4 right-4 bottom-4 bg-center bg-cover blur-md scale-105"
+          style={{ backgroundImage: `url(${bgw1})`,
+            backgroundSize: "cover",
+        backgroundPosition: "center", 
+       }}
         ></div>
 
         {/* Dark Overlay for readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40 "></div>
 
         {/* Top Title */}
         <div className="relative z-10 pt-12 flex justify-between items-center w-full px-8 md:px-16">
@@ -72,7 +75,7 @@ export default function Works() {
           </ul>
         </div>
       </section>
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-between text-white overflow-hidden rounded-[15px] mb-12">
+      <section className="relative   md:mx-4 mx-2  min-h-screen flex flex-col items-center justify-between text-white overflow-hidden rounded-[15px] mb-12">
         {/* Blurred Background */}
         <div
           className="absolute inset-0 bg-center bg-cover blur-md scale-105"
@@ -118,7 +121,7 @@ export default function Works() {
           </ul>
         </div>
       </section>
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-between text-white overflow-hidden rounded-[15px]">
+      <section className="relative   md:mx-4 mx-2   min-h-screen flex flex-col items-center justify-between text-white overflow-hidden rounded-[15px]">
         {/* Blurred Background */}
         <div
           className="absolute inset-0 bg-center bg-cover blur-md scale-105 "

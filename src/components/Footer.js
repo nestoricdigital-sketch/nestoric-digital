@@ -12,12 +12,13 @@ import deskfooter from './images/footerDesktop.png'
 export default function Footer() {
   return (
 <footer
-  className="mt-20 m-1 md:m-2 relative w-full min-h-[800px] text-gray-300 
-  bg-slate-800  md:bg-footer-bg md:bg-cover md:bg-center md:bg-no-repeat"
+  className="mt-40 mx-2 md:mx-4  relative  min-h-[800px] text-gray-300 
+   md:bg-footer-bg md:bg-cover md:bg-start
+    md:bg-no-repeat rounded-[16px]"
   style={{
     backgroundImage: `url(${deskfooter})`,
     // backgroundSize: "cover",
-    // backgroundPosition: "center",
+   backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   }}
 >
@@ -26,11 +27,11 @@ export default function Footer() {
 
   {/* === MAIN CONTENT === */}
    
-  <div className="relative flex flex-col items-center justify-between px-6 md:px-2 py-12 md:pt-28 text-white">
+  <div className="relative flex flex-col items-center justify-between px-6 md:px-2 py-12 md:pt-28 text-slate-600 md:text-white">
     {/* ==== Top Section ==== */}
     <div className="w-full max-w-4xl flex flex-col md:flex-row md:flex-wrap justify-between gap-8 md:gap-2 text-center z-10">
       {/* Company */}
-      <div className="flex-1 text-xs max-w-[150px] justify-center text-start ml-1 lg:ml-6">
+      <div className="flex-1 text-xs max-w-[200px] justify-center text-start ml-1 lg:ml-6">
         <h3 className="text-lg font-semibold mb-2">Company</h3>
         <ul className="space-y-2 ">
           <li><Link to="/work" className="hover:text-white">Work</Link></li>
@@ -41,7 +42,7 @@ export default function Footer() {
       </div>
 
       {/* Legals */}
-      <div className="flex-1 text-xs max-w-[150px] text-start ml-1 lg:ml-6">
+      <div className="flex-1 text-xs max-w-[200px] text-start ml-1 lg:ml-6">
         <h3 className="text-lg font-semibold mb-2">Legals</h3>
         <ul className="space-y-2">
           <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
@@ -50,14 +51,14 @@ export default function Footer() {
       </div>
 
       {/* Contact */}
-      <div className="flex-1 text-xs max-w-[150px] text-start ml-1 lg:ml-6">
+      <div className="flex-1 text-xs max-w-[200px] text-start ml-1 lg:ml-6">
         <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
         <ul className="space-y-2">
           <li><p>91 + 97575478909</p></li>
           <li>
             <p>
               786, 9th A Main Rd, Stage 2, Hoysala Nagar, Indiranagar,
-              Bengaluru, Karnataka
+              Bengaluru, Karnataka - 566038
             </p>
           </li>
         </ul>
@@ -147,7 +148,7 @@ export default function Footer() {
       </div> 
 
     {/* ==== Bottom Section ==== */}
-  <div className="flex m-2 flex-col md:flex-row w-full mt-16 text-slate-800  gap-3 md:gap-0 
+  <div className="flex  flex-col md:flex-row w-full mt-16  md:text-slate-800  gap-3 md:gap-0 
   items-start md:items-center justify-start md:justify-around">
   
   {/* Left text */}
