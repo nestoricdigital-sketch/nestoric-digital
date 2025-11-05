@@ -69,7 +69,7 @@ export default function ProjectForm() {
       </section>
     
     
-    <section className=" flex  rounded-[30px]  p-2  mx-2 md:mx-4  flex-col items-center  justify-center " id='form'
+    <section className=" flex  rounded-[30px]  p-2  mx-2 md:mx-4  lg:mx-1 flex-col items-center  justify-center " id='form'
      style={{
         backgroundImage: `url(${bgConnect})`,
         backgroundSize: "cover",

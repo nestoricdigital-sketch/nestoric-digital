@@ -124,7 +124,7 @@ export default function Work() {
 
   return (
     <>
-      <section className="relative mt-48 flex flex-col md:flex-row items-center justify-center w-full">
+      <section className="relative  mt-48 flex flex-col md:flex-row items-center justify-center w-full">
         {/* Background text */}
         {/* <h1 className="absolute  left-10 text-[6rem] md:text-[12rem] font-extrabold text-gray-500 opacity-30 select-none z-10">
         Mission
@@ -150,7 +150,7 @@ export default function Work() {
       </div> */}
 
 {/* Embla Carousel */}
-<div className="m-1 w-full overflow-hidden" ref={sectionRef}>
+<div className="mx-1 md:mx-2  lg:mx-1 overflow-hidden" ref={sectionRef}>
   <section
     className={`relative w-full flex flex-col items-center justify-center transition-all duration-700 ${
       inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -228,7 +228,7 @@ export default function Work() {
 
     
 <Link to='/services' className="block sm:text-base text-slate-600 text-right m-4 text-lg font-semibold underline underline-offset-4">Know more</Link>
-<div className="m-1 mb-9 md:m-6">
+<div className="mx-2 md:mx-4  mb-9 ">
   <h2 className="text-4xl font-bold text-gray-800 text-left mb-4 mt-9">What We Do</h2>
   <p className="text-base  leading-8">we craft impactful digital experiences through strategy, design, and technology. Our services cover everything from brand identity and website design to seamless development and performance optimization — all tailored to elevate your online presence. We focus on clarity, creativity, and functionality, ensuring every project runs smoothly from concept to completion. With a commitment to innovation and detail, we transform ideas into bold, user-centric digital solutions that drive results and leave a lasting impression. </p>
 </div>
