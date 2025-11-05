@@ -1,3 +1,9 @@
+.App {
+  max-width: 1260px; /* or whatever you prefer */
+  margin: auto auto;    /* centers it horizontally */
+  padding: 0rem;     /* optional, for spacing inside */
+
+}
 /* .App {
   text-align: center;
 }

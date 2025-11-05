@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Base nav link styling */
+  .nav-link {
+    @apply relative cursor-pointer transition duration-300 text-gray-800;
+  }
+
+  /* Hover underline effect */
+  .nav-link .underline {
+    @apply absolute left-0 -bottom-1 h-[2px] w-0 bg-purple-500 transition-all duration-300;
+  }
+
+  .nav-link:hover .underline {
+    @apply w-full;
+  }
+
+  /* Active link (React Router applies .active) */
+  .nav-link.active {
+    @apply text-purple-500;
+  }
+
+  .nav-link.active .underline {
+    @apply w-full;
+  }
+}
