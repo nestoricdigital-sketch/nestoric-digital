@@ -227,7 +227,7 @@ const Services = () => {
                   {service.buttons.map((btn, i) => (
                     <button
                       key={i}
-                      className="px-6 py-2 m-2 bg-slate-600 hover:bg-slate-700 text-white rounded-full text-sm font-medium transition"
+                      className="px-6 py-2 m-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition"
                     >
                       {btn}
                     </button>

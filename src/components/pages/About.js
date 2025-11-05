@@ -132,7 +132,7 @@ const About = () => {
         </h2> */}
 
         {/* Left: Image */}
-        <div className="w-full md:w-1/2 flex justify-center items-center z-10">
+        <div className=" mx-2 md:mx-4  md:w-1/2 flex justify-center items-center z-10">
           <div className="w-full max-w-[580px] aspect-[580/500] mx-auto">
             <img
               src={designBlog}
@@ -143,7 +143,7 @@ const About = () => {
         </div>
 
         {/* Right: Content */}
-        <div className="w-full md:w-1/2 p-10 z-10 flex flex-col justify-center text-gray-800">
+        <div className="w-full md:w-1/2 md:p-10 p-2 z-10 flex flex-col justify-center text-gray-800">
           <h2 className="text-4xl md:text-2xl font-bold mb-4">
             Creating Change That Matters
           </h2>
@@ -171,12 +171,12 @@ const About = () => {
           Vission
         </h2>
       </section>
-      <section className="relative  flex flex-col md:flex-row items-center justify-center w-full">
+<section className="relative flex flex-col-reverse md:flex-row items-center justify-center w-full">
         {/* Background text */}
        
         
         {/* Right: Content */}
-        <div className="w-full md:w-1/2 p-10 z-10 flex flex-col justify-center text-gray-800">
+        <div className="w-full md:w-1/2 md:p-10 p-2 z-10 flex flex-col justify-center text-gray-800">
           <h2 className="text-4xl md:text-2xl font-bold mb-4">
             {" "}
             Turning Ideas into Impact
@@ -189,7 +189,7 @@ const About = () => {
         </div>
 
         {/* Left: Image */}
-        <div className="w-full md:w-1/2 flex justify-center items-center z-10">
+        <div className="mx-2 md:mx-4  md:w-1/2 flex justify-center items-center z-10">
           <div className="w-full max-w-[580px] aspect-[580/500] mx-auto">
             <img
               src={designBlog}

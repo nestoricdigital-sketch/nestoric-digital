@@ -95,7 +95,7 @@ const Blog = () => {
         </h2>
       </section>
 
-      <section className="w-full  m-1 pb-9">
+      <section className="  mx-2 md:mx-4  pb-9">
         {/* === BLOG HERO IMAGE === */}
         <div
           className="relative w-full "
@@ -129,18 +129,21 @@ const Blog = () => {
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 mb-8 flex flex-col sm:flex-row items-center justify-start gap-4">
-              <button className="px-6 py-2 m-2 bg-slate-600 hover:bg-slate-700 text-white rounded-full text-sm font-medium transition">
-                Website Design
-              </button>
-              <button className="px-6 py-2 m-2 bg-slate-600 hover:bg-slate-700 text-white rounded-full text-sm font-medium transition">
-                Development
-              </button>
-            </div>
+ <div className="mt-8 mb-8 flex flex-row items-center justify-center lg:justify-start flex-wrap gap-4">
+  <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
+    Website Design
+  </button>
+  <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
+    Development
+  </button>
+</div>
+
+
+
           </div>
         </div>
       </section>
-      <section className="w-full m-1 pb-9 ">
+      <section className="mx-2 md:mx-4 pb-9 ">
         {/* === BLOG HERO IMAGE === */}
         <div
           className="relative w-full "
@@ -174,14 +177,14 @@ const Blog = () => {
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 mb-8 flex flex-col sm:flex-row items-center justify-start gap-4">
-              <button className="px-6 py-2 m-2 bg-slate-600 hover:bg-slate-700 text-white rounded-full text-sm font-medium transition">
-                Website Design
-              </button>
-              <button className="px-6 py-2 m-2 bg-slate-600 hover:bg-slate-700 text-white rounded-full text-sm font-medium transition">
-                Development
-              </button>
-            </div>
+        <div className="mt-8 mb-8 flex flex-row items-center justify-center lg:justify-start flex-wrap gap-4">
+  <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
+    Website Design
+  </button>
+  <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
+    Development
+  </button>
+</div>
           </div>
         </div>
       </section>

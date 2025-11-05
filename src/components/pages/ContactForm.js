@@ -102,54 +102,54 @@ export default function ProjectForm() {
         <form onSubmit={handleSubmit} className="flex flex-col space-y-6 text-white">
           {/* Name */}
           <div>
-            <label className="block text-sm font-medium mb-1">Your Name</label>
+            <label className="block text-xl font-medium mb-1">Your Name</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none"
+              className="w-full bg-transparent text-sm border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none"
               required
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium mb-1">Your Email</label>
+            <label className="block text-xl font-medium mb-1">Your Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
+              className="w-full bg-transparent text-sm border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
               required
             />
           </div>
 
           {/* Mobile */}
-          <div>
-            <label className="block text-sm font-medium mb-1">Mobile Number</label>
+          <div className="">
+            <label className="block text-xl font-medium mb-1">Mobile Number</label>
             <input
               type="tel"
               name="mobile"
               value={formData.mobile}
               onChange={handleChange}
               placeholder="Enter your mobile number"
-              className="w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
+              className="w-full bg-transparent text-sm border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
               required
             />
           </div>
 
           {/* Service */}
           <div>
-            <label className="block text-sm font-medium mb-1">Select Your Service</label>
+            <label className="block text-xl font-medium mb-1">Select Your Service</label>
             <select
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="appearance-none w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white  focus:outline-none"
+              className="appearance-none text-sm  w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white  focus:outline-none"
               required
             >
               <option value="" className="bg-gray-900 text-white">
@@ -178,14 +178,14 @@ export default function ProjectForm() {
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium mb-1">Project Description</label>
+            <label className="block text-xl font-medium mb-1">Project Description</label>
             <textarea
               name="description"
               rows="4"
               value={formData.description}
               onChange={handleChange}
               placeholder="Describe your project..."
-              className="w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none resize-none"
+              className="w-full bg-transparent border-b text-sm border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none resize-none"
               required
             />
           </div>

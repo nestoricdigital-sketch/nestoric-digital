@@ -119,9 +119,9 @@ const Navbar = () => {
     ))}
 
     <button
-      className={`bg-slate-700 text-white px-5 py-2 rounded-full hover:bg-slate-700 transition-colors duration-300
+      className={` bg-[#353535] shadow-lg shadow-slate-500/40 text-white px-5 py-2 rounded-full transition-colors duration-300
         ${menuOpen ? 'opacity-100  translate-y-0' : 'opacity-0 translate-y-2'}`}
-    >
+      onClick={moveToForm}>
       Contact
     </button>
   </ul>

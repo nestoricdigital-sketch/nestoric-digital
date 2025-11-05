@@ -17,7 +17,7 @@ import HeroSection from "./components/HeroSection";
 import Testimon from "./components/Testimon";
 import FaqSection from "./components/FaqSection";
 import Providing from "./components/Providing";
-import LetsConnect from "./components/LetsConnect";
+// import LetsConnect from "./components/LetsConnect";
 import ContactForm from './components/pages/ContactForm'
 import ScrollToTop from "./components/ScrollToTop";
 // import Services from "./components/pages/Services";

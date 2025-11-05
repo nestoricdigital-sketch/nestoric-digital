@@ -10,7 +10,7 @@ import bgw3 from "./images/works/workBgWebDev.jpg";
 export default function Works() {
   return (
     <>
-      <section  className=" m-2 relative mt-48 flex flex-col md:flex-row items-center justify-center w-full" id='recentworks'>
+      <section  className=" relative mt-48 flex flex-col md:flex-row items-center justify-center w-full" id='recentworks'>
         {/* Background text */}
         {/* <h1 className="absolute  left-10 text-[6rem] md:text-[12rem] font-extrabold text-gray-500 opacity-30 select-none z-10">
         Mission
