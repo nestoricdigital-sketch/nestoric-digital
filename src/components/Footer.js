@@ -32,8 +32,8 @@ export default function Footer() {
     <div className="w-full max-w-4xl flex flex-col md:flex-row md:flex-wrap justify-between gap-8 md:gap-2 text-center z-10">
       {/* Company */}
       <div className="flex-1 text-xs max-w-[200px] justify-center text-start ml-1 lg:ml-6">
-        <h3 className="text-lg font-semibold mb-2">Company</h3>
-        <ul className="space-y-2 ">
+        <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+        <ul className="space-y-2 text-sm ">
           <li><Link to="/work" className="hover:text-white">Work</Link></li>
           <li><Link to="/about" className="hover:text-white">About</Link></li>
           <li><Link to="/services" className="hover:text-white">Services</Link></li>
@@ -44,7 +44,7 @@ export default function Footer() {
       {/* Legals */}
       <div className="flex-1 text-xs max-w-[200px] text-start ml-1 lg:ml-6">
         <h3 className="text-lg font-semibold mb-2">Legals</h3>
-        <ul className="space-y-2">
+        <ul className="space-y-2 text-sm">
           <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
           <li><Link to="#" className="hover:text-white">Terms of Service</Link></li>
         </ul>
@@ -53,8 +53,8 @@ export default function Footer() {
       {/* Contact */}
       <div className="flex-1 text-xs max-w-[200px] text-start ml-1 lg:ml-6">
         <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-        <ul className="space-y-2">
-          <li><p>91 + 97575478909</p></li>
+        <ul className="space-y-2 text-sm">
+          <li><p>+91 6361985560</p></li>
           <li>
             <p>
               786, 9th A Main Rd, Stage 2, Hoysala Nagar, Indiranagar,
