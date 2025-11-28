@@ -90,12 +90,12 @@
 //   );
 // }
 
-
 import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const faqs = [
   {
-    q: "WWhat services does Nestoric Digital offer ?",
+    q: "What services does Nestoric Digital offer ?",
     a: "We provide a full spectrum of digital marketing and web solutions including SEO optimisation, social-media management, website design & development, and performance-driven lead generation.",
   },
   {
@@ -110,15 +110,14 @@ const faqs = [
     q: "What are your pricing/payment models ?",
     a: "We offer flexible pricing depending on scope and goals — typically monthly retainers for ongoing services, one-time fees for projects (e.g., website build), and pay-per-lead or performance models where applicable. We accept standard digital payments as discussed during onboarding.",
   },
-   {
-      q: "How can I get started or get a quote ?",
-       a:
-         "You can reach out to us via our contact page on the website or call/WhatsApp us directly. We’ll arrange a free consultation to assess your needs and provide a tailored quote. (nestoricdigital.com)",
-      },
-        {
-       q: "Do you manage social-media content ?",
-       a:
-         "Yes — social media is one of our core services. We create content strategies, manage posts, monitor engagement and run ad campaigns that align with your lead generation or brand-building objectives. (nestoricdigital.com)",}
+  {
+    q: "How can I get started or get a quote ?",
+    a: "You can reach out to us via our contact page on the website or call/WhatsApp us directly. We’ll arrange a free consultation to assess your needs and provide a tailored quote. (nestoricdigital.com)",
+  },
+  {
+    q: "Do you manage social-media content ?",
+    a: "Yes — social media is one of our core services. We create content strategies, manage posts, monitor engagement and run ad campaigns that align with your lead generation or brand-building objectives. (nestoricdigital.com)",
+  },
 ];
 
 export default function FaqSection() {
@@ -129,61 +128,59 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="font-inter max-w-5xl mx-auto px-4 py-24">
-         <p className="text-gray-600  text-center my-4">
-       (FAQ's)
-         </p>
-      <h2 className="text-4xl m-2  text-center sm:text-1xl md:text-7xl font-extrabold leading-tight  text-slate-800">
-       Your Questions, Answered
-      </h2>
-        <p className="text-gray-600  text-center my-4">
-          Helping you understand our process and offerings at Ndigital.
-         </p>
+    <Fade delay={1e2} cascade damping={1e-1}>
+      <section className="font-inter  mx-auto   w-full text-center md:mx-0 mt-24 md:pt-28">
+        {/* <p className="text-gray-600  text-center my-4">(FAQ's)</p> */}
+        <h2 className="text-2xl m-2  text-center  md:text-5xl font-extrabold leading-tight  text-slate-800">
+          Your Questions, Answered
+        </h2>
+        <p className="text-[14px] md:text-[20px] text-gray-600  text-center my-4 md:my-6">
+          Helping you understand our process and offerings at Nestoric digital
+        </p>
 
-      {/* Independent columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start py-6">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
-          >
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center p-5 text-left text-slate-800 font-medium text-lg"
+        {/* Independent columns */}
+        <div className="grid grid-cols-1 mx-2 md:grid-cols-2 gap-6 items-start py-6 md:pt-16">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
             >
-              <span>{faq.q}</span>
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-5 text-left text-slate-800 font-medium "
+              >
+                <span>{faq.q}</span>
 
-              {/* + / - icon */}
-              <span
-                className={`text-2xl font-bold transition-transform duration-500 ${
+                {/* + / - icon */}
+                <span
+                  className={`text-2xl font-bold transition-transform duration-500 ${
+                    openIndex === index
+                      ? "text-purple-600 rotate-180"
+                      : "text-slate-500 rotate-0"
+                  }`}
+                >
+                  {openIndex === index ? "−" : "+"}
+                </span>
+              </button>
+
+              {/* Smooth expand area */}
+              <div
+                className={`grid transition-all duration-500 ease-in-out ${
                   openIndex === index
-                    ? "text-purple-600 rotate-180"
-                    : "text-slate-500 rotate-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                {openIndex === index ? "−" : "+"}
-              </span>
-            </button>
-
-            {/* Smooth expand area */}
-            <div
-              className={`grid transition-all duration-500 ease-in-out ${
-                openIndex === index
-                  ? "grid-rows-[1fr] opacity-100"
-                  : "grid-rows-[0fr] opacity-0"
-              }`}
-            >
-              <div className="overflow-hidden">
-                <p className="px-5 pb-4 text-slate-600 leading-relaxed">
-                  {faq.a}
-                </p>
+                <div className="overflow-hidden">
+                  <p className="px-5 pb-4 text-[14px] md:text-[20px] text-slate-600 leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </Fade>
   );
 }
-
-

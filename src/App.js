@@ -11,15 +11,16 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 // import NotFound from "./components/pages/NotFound";
 // import PrivacyPolicy from "./components/pages/PrivacyPolicy";
-import Works from "./components/Works";
+// import Works from "./components/Works";
 import Work from "./components/pages/Work";
 import HeroSection from "./components/HeroSection";
 import Testimon from "./components/Testimon";
 import FaqSection from "./components/FaqSection";
 import Providing from "./components/Providing";
 // import LetsConnect from "./components/LetsConnect";
-import ContactForm from './components/pages/ContactForm'
+import ContactForm from "./components/pages/ContactForm";
 import ScrollToTop from "./components/ScrollToTop";
+import WorksMini from "./components/WorksMini";
 // import Services from "./components/pages/Services";
 // import About from "./components/pages/About";
 // import Blog from "./components/pages/Blog";
@@ -35,7 +36,7 @@ const NotFound = lazy(() => import("./components/pages/NotFound"));
 
 function App() {
   return (
-    <div className="App">
+    <div className="App md:px-20 ">
       <div className="flex justify-center items-center bg-white">
         {/* Badge container */}
         <div className="relative w-[90%] max-w-sm">
@@ -53,14 +54,14 @@ function App() {
           </svg>
 
           {/* Text with green dot */}
-          <span className="absolute  inset-0 flex items-center justify-center text-white font-semibold text-base sm:text-lg md:text-xl gap-2">
+          <span className="absolute  inset-0 flex items-center justify-center text-white font-light text-base  md:text-[18px] gap-3 ">
             {/* Green dot */}
-            <span className="w-3 h-3  rounded-full bg-green-500 inline-block"></span>
+            <span className="animate-blink  w-3 h-3  rounded-full bg-green-500 inline-block"></span>
             24/7 Available
           </span>
         </div>
       </div>
-      <ScrollToTop /> 
+      <ScrollToTop />
 
       <Navbar />
       {/* <HeroSection />
@@ -82,12 +83,13 @@ function App() {
             element={
               <>
                 <HeroSection />
+                <WorksMini />
                 <Providing />
-                <Work />
-                <Works />
+                <Work /> {/* services */}
+                {/* <Works />  */}
                 <Testimon />
                 <FaqSection />
-                 <ContactForm/>
+                <ContactForm />
               </>
             }
           />

@@ -2,9 +2,15 @@
   max-width: 1920px; /* or whatever you prefer */
   margin: auto auto;    /* centers it horizontally */
   padding: 0rem;  
-   overflow-x: hidden;   /* optional, for spacing inside */
+   overflow-x: hidden;  
+    /* optional, for spacing inside */
 
 }
+/* .provide{
+  overflow-x: hidden;
+  /* margin: -150px 150px; */
+  /* padding:-150px -150px; */
+
 /* .App {
   text-align: center;
 }

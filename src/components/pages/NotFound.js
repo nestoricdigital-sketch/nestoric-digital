@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <section className="flex flex-col items-center justify-center h-[80vh] bg-gray-100 text-center px-4">
-      <h1 className="text-6xl font-extrabold text-blue-600 mb-4">404</h1>
+      <h1 className="text-6xl font-extrabold text-[#7A4DBE] mb-4">404</h1>
       <h2 className="text-2xl font-semibold text-gray-800 mb-2">
         Oops! Page Not Found
       </h2>
@@ -13,7 +13,7 @@ export default function NotFound() {
 
       <Link
         to="/"
-        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+        className="bg-[#7A4DBE] text-white px-6 py-3 rounded-lg transition font-semibold"
       >
         Back to Home
       </Link>

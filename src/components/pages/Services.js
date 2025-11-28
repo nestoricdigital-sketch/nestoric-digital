@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 // import imge from "../images/designBlog.jpeg";
 import sideAr from "../images/sideArrow.png";
 import h_1 from "../images/heroSectionLogo/h 1.png";
@@ -9,6 +9,7 @@ import soMedia from "../images/services/S_socialMedia.png";
 import perM from "../images/services/S_performanceMark.png";
 import cont from "../images/services/S_content.png";
 import onlineR from "../images/services/S_onlineRep.png";
+import { Fade } from "react-awesome-reveal";
 
 const Services = () => {
   const services = [
@@ -96,144 +97,151 @@ const Services = () => {
       ],
     },
   ];
-     const handleScrollToServices = () => {
-  const section = document.getElementById("services");
-  section?.scrollIntoView({ behavior: "smooth" });
-};
+  const handleScrollToServices = () => {
+    const section = document.getElementById("services");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className=" ">
-      <section className="  w-full text-gray-800">
-        {/* === HERO SECTION === */}
-        <div
-          className="h-screen relative flex flex-col items-center justify-center text-center py-32 px-6 md:px-12 bg-cover bg-center bg-no-repeat"
-          // style={{
-          //   backgroundImage: `url(${heroBg})`,
-          // }}
-        >
-          {/* Overlay for readability */}
-          <div className="absolute inset-0 pointer-events-none"></div>
+      <Fade delay={1e2} cascade damping={1e-1}>
+        <section className="  w-full text-gray-800">
+          {/* === HERO SECTION === */}
+          <div
+            className=" min-h-[600px] md:min-h-[712px] relative flex flex-col items-center justify-center text-center py-32 px-6 md:px-12 bg-cover bg-center bg-no-repeat"
+            // style={{
+            //   backgroundImage: `url(${heroBg})`,
+            // }}
+          >
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 pointer-events-none"></div>
 
-          <div className="font-inter text-center relative z-10 max-w-5xl mx-auto px-4">
-            {/* LINE 1 */}
-            <div className="flex flex-wrap md:flex-nowrap justify-center items-center text-4xl md:text-7xl font-extrabold leading-tight text-slate-800 mb-4">
-              <span>Our Creative</span>
-              <div className="flex justify-center mx-2">
-                <img
-                  src={h_1}
-                  alt="decorative circle"
-                  loading="lazy"
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
-                />
+            <div className="font-inter text-center relative z-10 max-w-5xl mx-auto px-4">
+              {/* LINE 1 */}
+              <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-4xl md:text-5xl font-semibold leading-tight text-slate-800 mb-4">
+                <span>Our Creative</span>
+                <div className="flex justify-center mx-2 md:mx-4">
+                  <img
+                    src={h_1}
+                    alt="decorative circle"
+                    loading="lazy"
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                  />
+                </div>
+                <span className="text-purple-600 italic">Services</span>
               </div>
-              <span className="text-purple-600 italic">Services</span>
-            </div>
 
-            {/* LINE 2 */}
-            <div className="flex flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-7xl font-extrabold leading-tight text-slate-800 mb-6">
-              <span>Excellence</span>
-              <div className="flex justify-center mx-2">
-                <img
-                  src={h_2}
-                  alt="decorative circle"
-                  loading="lazy"
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
-                />
+              {/* LINE 2 */}
+              <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-4xl md:text-5xl font-semibold leading-tight text-slate-800 mb-6">
+                <span className="text-[#666666]">Excellence</span>
+                <div className="flex justify-center mx-2 md:mx-4">
+                  <img
+                    src={h_2}
+                    alt="decorative circle"
+                    loading="lazy"
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                  />
+                </div>
+                <span className="text-slate-800">Delivered</span>
               </div>
-              <span className="text-slate-800">Delivered</span>
-            </div>
 
-            {/* DESCRIPTION */}
-            {/* <div className="mt-6 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl ">
+              {/* DESCRIPTION */}
+              {/* <div className="mt-6 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl ">
             </div> */}
-              <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-              Insights, inspiration, and strategies from the creative frontier—exploring design development, and the tools that power exceptional digital experiences
-            </p>
-          </div>
+              <p className="mt-6 md:mt-20 text-[#666666] text-base md:text-lg max-w-2xl mx-auto">
+                Insights, inspiration, and strategies from the creative
+                frontier—exploring design development, and the tools that power
+                exceptional digital experiences
+              </p>
+            </div>
 
-          {/* BUTTON */}
-          {/* <div className="mt-6 flex justify-center text-center">
+            {/* BUTTON */}
+            {/* <div className="mt-6 flex justify-center text-center">
             <button className=" flex bg-slate-800 text-slate-100 px-6 mt-9 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-600 transition  duration-300">
               View Services
               <img src={sideAr} className="w-7 h-7 p-1" alt=" side arrow" />
             </button>
           </div> */}
- <div className="mt-6 flex justify-center text-center">
-  <button onClick={handleScrollToServices}
-    className="group flex items-center bg-[#353535] text-white px-6 py-3 rounded-full 
+            <div className="mt-6  md:mt-20 flex justify-center text-center h-[48px]">
+              <button
+                onClick={handleScrollToServices}
+                className="group flex items-center bg-[#353535] text-white px-6 py-3 rounded-full 
                transition-all duration-300 shadow-lg shadow-slate-500/40
                cursor-pointer"
-  >
-    {/* Text slides left on hover */}
-    <span className="transform transition-transform duration-300 group-hover:-translate-x-2">
-      View Services
-    </span>
+              >
+                {/* Text slides left on hover */}
+                <span className="transform transition-transform duration-300 group-hover:-translate-x-2">
+                  View Services
+                </span>
 
-    {/* Arrow slides right on hover */}
-    <img
-      src={sideAr}
-      className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
-      alt="side arrow"
-    />
-  </button>
-</div>
-
-
-        </div>
-      </section>
-      <section className="relative mt-32 flex flex-col md:flex-row items-center justify-center w-full">
-        <h2
-          className=" absolute bottom-[80%] sm:bottom-[80%] lg:bottom-[80%] left-1/2 -translate-x-1/2
+                {/* Arrow slides right on hover */}
+                <img
+                  src={sideAr}
+                  className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                  alt="side arrow"
+                />
+              </button>
+            </div>
+          </div>
+        </section>
+      </Fade>
+      {/*----------- service title----------- */}
+      <Fade direction="up" triggerOnce ascade damping={0.2}>
+        <section className="relative mt-10 md:mt-28 flex flex-col md:flex-row items-center justify-center w-full">
+          <h2
+            className=" absolute bottom-[80%] sm:bottom-[80%] lg:bottom-[80%] left-1/2 -translate-x-1/2
              text-5xl sm:text-6xl md:text-7xl lg:text-9xl
              font-extrabold text-transparent bg-clip-text
              bg-gradient-to-b from-black via-gray-800 to-slate-100
              z-0 select-none text-center pointer-events-none
              opacity-20 sm:opacity-10 text-nowrap"
-        >
-          Services
-        </h2>
-      </section>
-
+          >
+            Services
+          </h2>
+        </section>
+      </Fade>
       <section className=" px-4 md:px-8">
- 
-
         <div className="grid grid-cols-1 gap-16" id="services">
           {services.map((service, index) => (
             <div
               key={index}
               className="flex flex-col items-center md:items-start text-center md:text-left mb-5"
             >
-              {/* Title on the right (align right on desktop) */}
+              <Fade direction="up" triggerOnce ascade damping={0.2}>
+                {/* Title on the right (align right on desktop) */}
 
-              {/* Image */}
-              <div className="w-full mb-4">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover rounded-2xl shadow-lg"
-                />
-              </div>
-              <h3 className="font-inter text-2xl font-semibold mb-4 self-start text-gray-900">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 mb-6 mt-4 w-full">
-                {service.description}
-              </p>
-
-              {/* Buttons */}
-              <div className="flex justify-center w-full mt-2">
-                <div className="flex flex-wrap justify-center gap-4 min-w-48 mx-36">
-                  {service.buttons.map((btn, i) => (
-                    <button
-                      key={i}
-                      className="px-6 py-2 m-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition"
-                    >
-                      {btn}
-                    </button>
-                  ))}
+                {/* Image */}
+                <div className="w-full mb-4 md:mb-[32px]">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover rounded-2xl shadow-lg "
+                  />
                 </div>
-              </div>
+                <h3 className="font-inter text-[20px] md:text-[24px] font-semibold  self-start text-gray-900">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className=" md:mt-[48px] text-[14px] md:text-[20px] text-gray-600  w-full">
+                  {service.description}
+                </p>
+
+                {/* Buttons */}
+                <div className="flex justify-center w-full mt-2 md:mt-[86px] md:mb-[86px]">
+                  <div className="flex flex-wrap md:h-[23px] justify-center text-center gap-4 min-w-48 mx-36 ">
+                    {service.buttons.map((btn, i) => (
+                      <button
+                        key={i}
+                        className="px-6 py-2 m-2  bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition"
+                      >
+                        {btn}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* <hr /> */}
+              </Fade>
             </div>
           ))}
         </div>

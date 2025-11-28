@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .2;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite ease-in-out;
+}
+
+/* gmail scroll */
+/* @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+} */
+
+
 @layer components {
   /* Base nav link styling */
   .nav-link {
