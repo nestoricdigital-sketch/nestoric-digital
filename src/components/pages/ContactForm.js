@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bgConnect from "../images/bgConnect.jpg";
+import bgConnect from "../images/contactbg.jpg";
 import { supabase } from "../superbase/SuperClient";
 import { Fade } from "react-awesome-reveal";
 
@@ -12,6 +12,8 @@ export default function ProjectForm() {
     service: "",
     description: "",
   });
+  const [phoneError, setPhoneError] = useState("");
+
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) =>
@@ -22,6 +24,18 @@ export default function ProjectForm() {
     setLoading(true);
 
     const { name, email, mobile, service, description } = formData;
+    // 🔥 Phone validation
+    const phoneRegex = /^[6-9]\d{9}$/;
+
+    if (!phoneRegex.test(mobile)) {
+      setPhoneError(
+        "Please enter a valid 10-digit mobile number starting with 6–9."
+      );
+      setLoading(false);
+      return;
+    } else {
+      setPhoneError("");
+    }
 
     try {
       const { error } = await supabase
@@ -51,7 +65,8 @@ export default function ProjectForm() {
     !formData.email ||
     !formData.mobile ||
     !formData.service ||
-    !formData.description;
+    !formData.description ||
+    phoneError;
 
   return (
     <>
@@ -70,7 +85,7 @@ export default function ProjectForm() {
           </h2>
         </section>
         <section
-          className=" flex  rounded-[30px]  p-2  mx-2 md:mx-4  flex-col items-center  justify-center "
+          className=" flex  rounded-[15px]  p-2  mx-2 md:mx-4  flex-col items-center  justify-center "
           id="form"
           style={{
             backgroundImage: `url(${bgConnect})`,
@@ -103,7 +118,7 @@ export default function ProjectForm() {
             <div className="flex-1">
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col space-y-1 text-white md:gap-[28px]"
+                className="flex flex-col space-y-1 gap-3 text-white md:gap-[28px]"
               >
                 {/* Name */}
                 <div>
@@ -113,6 +128,7 @@ export default function ProjectForm() {
                   <input
                     type="text"
                     name="name"
+                    maxLength={35}
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your name"
@@ -146,11 +162,31 @@ export default function ProjectForm() {
                     type="tel"
                     name="mobile"
                     value={formData.mobile}
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    maxLength={10}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/\D/g, "");
+                      setFormData((prev) => ({ ...prev, mobile: value }));
+
+                      // live validation (optional)
+                      if (value.length === 10 && !/^[6-9]\d{9}$/.test(value)) {
+                        setPhoneError("Invalid phone number.");
+                      } else {
+                        setPhoneError("");
+                      }
+                    }}
+                    className={`w-full bg-transparent border-b outline-none py-2 text-sm 
+      ${
+        phoneError ? "border-red-500" : "border-gray-400 focus:border-teal-400"
+      }`}
+                    disabled={loading}
                     placeholder="Enter your mobile number"
-                    className="w-full bg-transparent text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
+                    // className="w-full bg-transparent text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
                     required
                   />
+                  {phoneError && (
+                    <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                  )}
                 </div>
 
                 {/* Service */}

@@ -82,52 +82,14 @@ export default function Providing() {
         >
           <Lottie animationData={scroll} loop autoplay />
         </div>
-
-        {/* <div className="absolute top-1/4 left-0 w-full rotate-[-5deg] overflow-hidden">
-        <div className="inline-block whitespace-nowrap animate-left text-white text-center bg-purple-600 py-2 font-medium text-lg">
-          <span className="mx-8">Performance Marketing *</span>
-          <span className="mx-8">Brand Design *</span>
-          <span className="mx-8">Web Development *</span>
-          <span className="mx-8">Lead Generation *</span>
-          <span className="mx-8">Logo Designing *</span>
-          <span className="mx-8">Website Designing *</span>
-          <span className="mx-8">Social Marketing *</span>
-        
-          <span className="mx-8">Performance Marketing *</span>
-          <span className="mx-8">Brand Design *</span>
-          <span className="mx-8">Web Development *</span>
-        </div>
-      </div> */}
-
-        {/* <div className="absolute top-1/4 left-0 w-full rotate-[5deg] overflow-hidden">
-        <div className="inline-block whitespace-nowrap animate-right text-white bg-black py-2 font-medium text-lg">
-          <span className="mx-8">Over 100 Customers *</span>
-          <span className="mx-8">Senior Designer *</span>
-          <span className="mx-8">15 years of Experience *</span>
-          <span className="mx-8">UI/UX Design *</span>
-          <span className="mx-8">Creative Direction *</span>
-      
-          <span className="mx-8">Over 100 Customers *</span>
-          <span className="mx-8">Senior Designer *</span>
-        </div>
-      </div> */}
-
-        {/* <h1 className="relative   text-purple-600 text-3xl font-semibold">
-        (Hello)
-      </h1> */}
       </div>
       <section
         ref={sectionRef}
-        className=" md:min-h-[70vh]  lg:min-h-[30vh]  font-inter  text-center  bg-white px-6 "
+        className=" md:min-h-[70vh]  lg:min-h-[10vh]  font-inter  text-center  bg-white px-6 "
       >
-        {/* Headline */}
-        {/* <h1 className="text-gray-600   md:text-lg">
-            Hello
-          </h1> */}
-
         <h1
           className="text-2xl md:text-5xl font-semibold  leading-relaxed  md:leading-[3.9rem] max-w-5xl md:px-6 mx-auto"
-          style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}
+          style={{ whiteSpace: "normal", wordBreak: "break-word" }}
         >
           {text.split("").map((char, i) => {
             // decide if this character is revealed
@@ -143,10 +105,11 @@ export default function Providing() {
                 style={{
                   color,
                   transition: "color 300ms linear", // short smooth transition on each letter
-                  whiteSpace: "pre", // preserve spaces exactly
+                  whiteSpace: "normal", // preserve spaces exactly
                 }}
               >
-                {char}
+                {/* {char} */}
+                {char === " " ? "\u00A0" : char}
               </span>
             );
           })}

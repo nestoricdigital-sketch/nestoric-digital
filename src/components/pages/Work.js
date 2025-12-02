@@ -146,7 +146,7 @@ export default function Work() {
       </div> */}
 
         {/* Embla Carousel */}
-        <div className="mx-1 md:mx-2  lg:mx-1 overflow-hidden" ref={sectionRef}>
+        <div className="mx-0 md:mx-1   overflow-hidden" ref={sectionRef}>
           <section
             className={`relative w-full flex flex-col items-center justify-center transition-all duration-700 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -170,7 +170,7 @@ export default function Work() {
               </button>
 
               {/* 💠 Slides */}
-              <div className="flex flex-wrap justify-center gap-6 w-full transition-transform duration-500 ease-in-out">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-6 w-full transition-transform duration-500 ease-in-out">
                 {visibleSlides.map((service, index) => (
                   <div
                     key={index}

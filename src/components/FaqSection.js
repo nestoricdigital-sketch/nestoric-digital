@@ -134,7 +134,7 @@ export default function FaqSection() {
         <h2 className="text-2xl m-2  text-center  md:text-5xl font-extrabold leading-tight  text-slate-800">
           Your Questions, Answered
         </h2>
-        <p className="text-[14px] md:text-[20px] text-gray-600  text-center my-4 md:my-6">
+        <p className="text-[14px] m-2 md:text-[20px] text-gray-600  text-center my-4 md:my-6">
           Helping you understand our process and offerings at Nestoric digital
         </p>
 

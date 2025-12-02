@@ -107,7 +107,7 @@ const Services = () => {
         <section className="  w-full text-gray-800">
           {/* === HERO SECTION === */}
           <div
-            className=" min-h-[600px] md:min-h-[712px] relative flex flex-col items-center justify-center text-center py-32 px-6 md:px-12 bg-cover bg-center bg-no-repeat"
+            className=" min-h-[600px] md:min-h-[712px] relative flex flex-col items-center justify-center text-center py-32 px-4 md:px-12 bg-cover bg-center bg-no-repeat"
             // style={{
             //   backgroundImage: `url(${heroBg})`,
             // }}
@@ -199,7 +199,7 @@ const Services = () => {
           </h2>
         </section>
       </Fade>
-      <section className=" px-4 md:px-8">
+      <section className=" px-2 md:px-8">
         <div className="grid grid-cols-1 gap-16" id="services">
           {services.map((service, index) => (
             <div
