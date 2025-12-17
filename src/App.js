@@ -85,7 +85,7 @@ function App() {
                 <HeroSection />
                 <WorksMini />
                 <Providing />
-                <Work /> {/* services */}
+                <Work /> {/* services section */}
                 {/* <Works />  */}
                 <Testimon />
                 <FaqSection />

@@ -36,7 +36,6 @@ export default function Footer() {
       <div className="relative flex flex-col items-center justify-between px-6 md:px-2 py-12 md:pt-28 text-slate-600 md:text-white">
         {/* ==== Top Section ==== */}
         <div className="w-full max-w-7xl flex flex-col md:flex-row md:flex-wrap justify-between gap-8 md:gap-2 text-center z-10">
-         
           <div className="flex-1  max-w-[300px] justify-start text-start ">
             <h3 className="text-[18px] font-semibold mb-2 md:mb-6">Company</h3>
             <ul className="space-y-2 md:space-y-4 text-[16px]  font-light">
@@ -86,15 +85,15 @@ export default function Footer() {
               Contact Us
             </h3>
             <ul className="space-y-2 md:space-y-4  text-[16px] font-light ">
-              <li className="flex gap-1  md:gap-0">
+              <li className="flex gap-2  md:gap-6">
                 <img src={phoLogo} className="h-5 w-5" alt="phone" />
                 <p>+91 6361985560</p>
               </li>
-              <li className="flex gap-1  md:gap-2">
+              <li className="flex gap-2  md:gap-6">
                 <img src={emailLogo} className="h-5 w-5" alt="location" />
                 <p>info@nestoricdigital.com</p>
               </li>
-              <li className="flex gap-1  md:gap-2">
+              <li className="flex gap-2  md:gap-6">
                 <img src={locLogo} className="h-5 w-5" alt="location" />
                 <p>
                   786, 9th A Main Rd, Stage 2, Hoysala Nagar, Indiranagar,

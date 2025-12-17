@@ -1,56 +1,239 @@
-import React from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 //import bgImg from "/images/lead-gen-bg.jpg"; // background image
 // import w1 from "./images/works/work 1.png";
 // import w2 from "./images/works/work 2.png";
-import w3 from "./images/works/work 3.png";
+// import w3 from "./images/works/work 3.png";
 // import bgw1 from "./images/works/workBgLeadGen.jpg";
-import bgw2 from "./images/works/workBgSocial.jpg";
+// import bgw2 from "./images/works/workBgSocial.jpg";
 // import bgw3 from "./images/works/workBgWebDev.jpg";
-import carbr from "./images/works/carbr.png";
-import car from "./images/works/car.png";
-import vasurabg from "./images/works/vasurabg.png";
-import vasura from "./images/works/vasura.png";
+// import carbr from "./images/works/carbr.png";
+// import car from "./images/works/car.png";
+// import vasurabg from "./images/works/vasurabg.png";
+// import vasura from "./images/works/vasura.png";
 import { Fade } from "react-awesome-reveal";
+import testimonArrow from "./images/icons/testimoonArrow.png";
+// new images
+import vasura from "./images/worksRecent/vasura.jpg";
+import carzen from "./images/worksRecent/cazen_web.jpg";
+import vhTech from "./images/worksRecent/vhTech.jpg";
+import wawa from "./images/worksRecent/wawa_web.jpg";
+
+import surya from "./images/worksRecent/surya.jpg";
+import magnum from "./images/worksRecent/magnum.jpg";
+import nandi from "./images/worksRecent/nandi.jpg";
+
+import bg1 from "./images/worksRecent/bg1.jpg";
+import bg2 from "./images/worksRecent/bg2.jpg";
+
+const serviceCategories = [
+  {
+    category: "Website Development",
+    bg: bg1,
+
+    projects: [
+      {
+        image: vasura,
+        name: "Vasura Virtual Experience",
+        alt: "Website Dev 1",
+        web: "https://www.vasuravirtual.com/",
+        services: ["Branding", "Designing", "Development"],
+        description:
+          "A 360° virtual experience platform designed to showcase spaces and projects through immersive, interactive digital tours.",
+      },
+      {
+        image: carzen,
+        name: "Carzen Logistics",
+        web: "",
+        services: ["Branding", "Designing", "Development"],
+        alt: "Website Dev 2",
+        description:
+          "We’ve helped businesses across industries achieve their goals. Here are some of our selected works.",
+      },
+      {
+        image: wawa,
+        name: "WAWA ",
+        web: "",
+        services: ["Branding", "Designing", "Development"],
+        alt: "Website Dev 3",
+        description:
+          "A seamless digital platform for car bookings, family tours, and one-day or multi-day travel packages.",
+      },
+      {
+        image: vhTech,
+        name: "VHTech Sphere",
+        alt: "Website Dev 3",
+        web: "",
+        services: ["Branding", "Designing", "Development"],
+        description:
+          "An IT services platform providing laptops, desktops, and server solutions for mid-level enterprises.",
+      },
+    ],
+  },
+  {
+    category: "Lead Generation",
+    bg: bg2,
+
+    // services: ["Designing", "Development", "Advertising"],
+    projects: [
+      {
+        image: surya,
+        name: "Surya City",
+        web: "",
+        services: ["Lead Generation"],
+        alt: "Lead Gen 1",
+        description:
+          "Targeted lead generation campaigns delivering high-intent enquiries through Google and Meta ads.",
+      },
+      {
+        image: nandi,
+        name: "Nandi Urban City",
+        web: "",
+        services: ["Lead Generation"],
+        alt: "Lead Gen 3",
+
+        description:
+          "A structured lead funnel delivering qualified prospects and steady enquiries for real estate sales teams.",
+      },
+      {
+        image: magnum,
+        name: "Magnum Opus",
+        web: "",
+        services: ["Lead Generation"],
+        alt: "Lead Gen 2",
+        description:
+          "ROI-driven performance campaigns delivering cost-efficient, high-quality enquiries.",
+      },
+
+      // {
+      //   image: w3,
+      //    name: "Magnum Op",
+      //   alt: "Lead Gen 4",
+      //   description: "Scalable growth funnels.",
+      // },
+    ],
+  },
+];
 
 export default function WorksMini() {
-  const serviceSections = [
-    {
-      title: "Website Development",
-      //   bg: carbr,
-      //   image: car,
-      bg: vasurabg,
-      image: vasura,
-      alt: "Lead Generation",
-      description:
-        "We’ve collaborated with companies from diverse sectors to turn their visions into reality. Here’s a look at some of our featured work.",
-      services: ["Branding", "Designing", "Development", "Advertising"],
-    },
-    {
-      title: "Website Development",
-      bg: carbr,
-      image: car,
-      //   bg: bgw3,
-      //   image: w2,
-      alt: "Website Development",
-      description:
-        "We’ve helped businesses across industries achieve their goals. Here are some of our selected works.",
-      services: ["Designing", "Development", "Advertising"],
-    },
-    {
-      title: "Social Media Marketing",
-      bg: bgw2,
-      image: w3,
-      alt: "Social Media Marketing",
-      description:
-        "We’ve helped businesses across industries achieve their goals. Here are some of our selected works.",
-      services: ["Designing", "Development", "Advertising"],
-    },
-  ];
+  // const scrollRef = useRef(null);
+  // const indexRef = useRef(0);
+
+  // -----------
+  const [categoryIndex, setCategoryIndex] = useState(0);
+  const projectIndexRef = useRef(0);
+  const projectScrollRef = useRef(null);
+  const scrollProject = (index, instant = false) => {
+    if (!projectScrollRef.current) return;
+
+    const width = projectScrollRef.current.clientWidth;
+
+    projectScrollRef.current.scrollTo({
+      left: width * index,
+      behavior: instant ? "auto" : "smooth",
+    });
+  };
+
+  // const scrollRef = useRef(null);
+  // const scrollToProject = (index, instant = false) => {
+  //   const width = scrollRef.current.clientWidth;
+
+  //   scrollRef.current.scrollTo({
+  //     left: width * index,
+  //     behavior: instant ? "auto" : "smooth",
+  //   });
+  // };
+  // const slides = serviceCategories.flatMap((category, cIdx) =>
+  //   category.projects.map((project, pIdx) => ({
+  //     category: category.category,
+  //     services: category.services,
+  //     ...project,
+  //     cIdx,
+  //     pIdx,
+  //   }))
+  // );
+
+  // const scrollToIndex = (index, instant = false) => {
+  //   const width = scrollRef.current.clientWidth;
+
+  //   scrollRef.current.scrollTo({
+  //     left: width * index,
+  //     behavior: instant ? "auto" : "smooth",
+  //   });
+  // };
+
+  // ------------
+
+  // const scrollToIndex = (index, instant = false) => {
+  //   const width = scrollRef.current.clientWidth;
+
+  //   scrollRef.current.scrollTo({
+  //     left: width * index,
+  //     behavior: instant ? "auto" : "smooth",
+  //   });
+  // };
+
+  // Auto scroll
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     indexRef.current = (indexRef.current + 1) % serviceSections.length;
+  //     scrollToIndex(indexRef.current);
+  //   }, 6000); // auto scroll delay
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  const next = useCallback(() => {
+    const category = serviceCategories[categoryIndex];
+
+    if (projectIndexRef.current < category.projects.length - 1) {
+      projectIndexRef.current += 1;
+    } else {
+      setCategoryIndex((prev) => (prev + 1) % serviceCategories.length);
+      projectIndexRef.current = 0;
+    }
+
+    scrollProject(projectIndexRef.current);
+  }, [categoryIndex]);
+
+  const prev = () => {
+    if (projectIndexRef.current > 0) {
+      projectIndexRef.current -= 1;
+    } else {
+      setCategoryIndex((prev) => {
+        const newIndex =
+          (prev - 1 + serviceCategories.length) % serviceCategories.length;
+
+        projectIndexRef.current =
+          serviceCategories[newIndex].projects.length - 1;
+
+        return newIndex;
+      });
+    }
+
+    scrollProject(projectIndexRef.current);
+  };
+
+  useEffect(() => {
+    scrollProject(0, true);
+  }, [categoryIndex]);
+
+  // useEffect(() => {
+  //   const interval = setInterval(next, 6000);
+  //   return () => clearInterval(interval);
+  // }, []);
+  // eslint-disable-next-line
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [next]);
 
   return (
     <>
       <Fade direction="up" triggerOnce ascade damping={0.2}>
-        <div className=" mt-28  md:mt-28"></div>
+        <div className=" mt-10  md:mt-28"></div>
 
         <section
           className=" relative  flex flex-col md:flex-row items-center justify-center w-full"
@@ -71,68 +254,153 @@ export default function WorksMini() {
             Recent Works
           </h2>
         </section>
-        {serviceSections.map(
-          ({ title, bg, image, alt, description, services }, i) => (
-            <section
-              key={i}
-              className="relative mx-2 md:mx-4 
-    min-h-[600px] md:min-h-[966px] 
-    flex flex-col items-center justify-between 
-    text-white overflow-hidden rounded-[15px] mb-12"
-            >
-              {/* Blurred Background */}
+
+        <div className="relative w-full">
+          {/* Left Arrow */}
+          <button
+            onClick={prev}
+            className="absolute  md:left-6 left-0 top-[550px] md:top-[400px] -translate-y-1/2
+  z-50 
+   p-2 rounded-full
+  flex  items-center justify-center"
+          >
+            <img
+              src={testimonArrow}
+              className="w-6 h-6 sm:w-7 sm:h-7 rotate-180 "
+              alt="arrow button"
+            />
+          </button>
+
+          {/* Scroll Container */}
+          <section className="relative mx-2 md:mx-0 min-h-[600px] lg:min-h-[794px] text-white overflow-hidden">
+            {/* Sticky Background */}
+            <div
+              className="absolute inset-0 bg-center rounded-2xl bg-cover "
+              style={{
+                backgroundImage: `url(${serviceCategories[categoryIndex].bg})`,
+              }}
+            />
+
+            {/* Content Wrapper */}
+            <div className="relative z-10 flex flex-col h-full px-6 md:px-20   py-20 pb-12">
+              {/* Category Title (kept minimal like image) */}
+              <h2 className="sr-only">
+                {serviceCategories[categoryIndex].category}
+              </h2>
+
+              {/* Project Slider */}
               <div
-                className="absolute inset-0 bg-center bg-cover blur-md scale-105"
-                style={{ backgroundImage: `url(${bg})` }}
-              ></div>
-
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/40"></div>
-
-              {/* Top Title */}
-              <div className="relative z-10 pt-12 flex justify-between items-center w-full px-6 md:px-16">
-                <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg">
-                  {title}
-                </h2>
-              </div>
-
-              {/* Center Image */}
-              <div className="relative z-10 flex justify-center items-center w-full py-6 md:py-0">
-                <img
-                  loading="lazy"
-                  src={image}
-                  alt={alt}
-                  className="w-[260px] sm:w-[340px] md:w-[500px] lg:w-[850px] xl:w-[900px] 
-        object-contain rounded"
-                />
-              </div>
-
-              {/* Bottom Content */}
-              <div className="relative z-10 flex flex-col md:flex-row justify-between items-end w-full px-6 md:px-16 gap-8 mb-12">
-                {/* Paragraph */}
-                <p className="text-[14px] md:text-[20px] w-full md:w-[30%] leading-relaxed">
-                  {description}
-                </p>
-
-                {/* Services */}
-                <ul className="list-inside space-y-3 md:space-y-6 text-left text-sm ">
-                  <li className="text-xl md:text-[24px] underline underline-offset-2">
-                    Services
-                  </li>
-                  {services.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="text-[14px] md:text-[20px] font-light "
+                ref={projectScrollRef}
+                className="flex overflow-hidden snap-x snap-mandatory h-full"
+              >
+                {serviceCategories[categoryIndex].projects.map(
+                  ({ image, name, web, services, alt, description }, i) => (
+                    <div
+                      key={i}
+                      className="min-w-full snap-start flex flex-col lg:flex-row
+             gap-10 h-full"
                     >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                      {/* LEFT — TEXT BLOCK */}
+                      <div className="w-full  md:mb-4 lg:min-h-[760px]  lg:w-[30%] flex flex-col justify-between h-full gap-2  md:gap-10">
+                        {/* Top description */}
+                        <p className="text-sm md:text-lg leading-relaxed opacity-90">
+                          {description}
+                        </p>
+
+                        {/* Bottom title block */}
+                        <div className="mt-10 h-28">
+                          <div className="text-sm  text-white flex h-[22px]">
+                            {String(i + 1).padStart(2, "0")} / {"  "}
+                            <div className=" mx-1 opacity-30">
+                              {String(
+                                serviceCategories[categoryIndex].projects.length
+                              ).padStart(2, "0")}
+                            </div>
+                          </div>
+
+                          <p className="text-3xl md:text-5xl font-bold mb-4">
+                            {name}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* CENTER — IMAGE */}
+                      <div className="flex-1 flex justify-center items-center">
+                        {web ? (
+                          <a
+                            href={web}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src={image}
+                              alt={alt}
+                              className="object-contain w-[260px] sm:w-[380px] md:w-[500px]
+      lg:w-[700px] xl:w-[850px] cursor-pointer"
+                            />
+                          </a>
+                        ) : (
+                          <img
+                            src={image}
+                            alt={alt}
+                            className="object-contain w-[260px] sm:w-[380px] md:w-[500px]
+    lg:w-[700px] xl:w-[850px]"
+                          />
+                        )}
+                      </div>
+
+                      {/* RIGHT — SERVICES */}
+                      <div className="w-full md:mb-2 lg:min-h-[760px] lg:w-[30%] flex flex-col items-start lg:items-end justify-end h-full">
+                        {/* Year */}
+                        {/* <p className="text-sm md:text-base opacity-80 hidden ">
+                          2025
+                        </p> */}
+
+                        {/* Services */}
+                        <ul className="space-y-3 text-left lg:text-right mt-10 mb-4">
+                          <li className="text-xl underline">Services</li>
+                          {services.map((s, idx) => (
+                            <li
+                              key={idx}
+                              className="text-sm md:text-lg font-light"
+                            >
+                              {s}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
-            </section>
-          )
-        )}
+            </div>
+          </section>
+
+          {/* Right Arrow */}
+          {/* <button
+            onClick={next}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 
+        bg-white shadow-md p-2 rounded-full hidden md:flex"
+          >
+            <div>Right side</div>
+          </button> */}
+          <button
+            onClick={next}
+            className="absolute md:right-6 right-0 top-[550px] md:top-[400px] -translate-y-1/2
+  z-50 
+  p-2 rounded-full
+ flex items-center justify-center"
+          >
+            <img
+              src={testimonArrow}
+              className="w-6 h-6 sm:w-7 sm:h-7 "
+              alt="arrow button"
+            />
+          </button>
+        </div>
       </Fade>
     </>
   );
 }
+
+//

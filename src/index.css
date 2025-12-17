@@ -14,7 +14,12 @@
 .animate-blink {
   animation: blink 1s infinite ease-in-out;
 }
-
+@media (max-width: 640px) {
+  /* your styles here */
+    .logo-scale {
+    transform: scale(2);
+  }
+}
 /* gmail scroll */
 /* @keyframes scroll {
   0% {

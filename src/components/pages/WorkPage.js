@@ -1,9 +1,10 @@
 import React from "react";
-import Works from "../Works";
+// import Works from "../Works";
 import sideAr from "../images/sideArrow.png";
 import h_1 from "../images/heroSectionLogo/h 1.png";
 import h_2 from "../images/heroSectionLogo/h2.png";
 import { Fade } from "react-awesome-reveal";
+import WorksMini from "../WorksMini";
 
 const WorkPage = () => {
   const handleScrollToProjects = () => {
@@ -100,7 +101,8 @@ const WorkPage = () => {
           </div>
         </Fade>
       </section>
-      <Works />
+      {/* <Works /> */}
+      <WorksMini />
     </>
   );
 };
