@@ -68,7 +68,7 @@ const Blog = () => {
                   {/* Arrow slides right on hover */}
                   <img
                     src={sideAr}
-                    className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                    className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
                     alt="side arrow"
                   />
                 </button>
@@ -118,10 +118,10 @@ const Blog = () => {
 
             {/* Hero Content */}
             <div className="relative z-10 text-center   my-6">
-              <h1 className="text-slate-800 text-2xl md:text-5xl text-start font-semibold">
+              <h1 className="text-slate-800 text-[20px] md:text-5xl text-start font-semibold">
                 Design & Development
               </h1>
-              <p className="text-[14px] md:text-[20px] text-slate-700 text-left mt-4 ">
+              <p className="text-justify text-[14px] md:text-[18px] text-slate-700  mt-4 ">
                 Designs and developments aren’t separate silos — they’re two
                 sides of the same creative process. When these teams collaborate
                 from the start, magic happens: visuals that are not just
@@ -169,10 +169,10 @@ const Blog = () => {
 
             {/* Hero Content */}
             <div className="relative z-10 text-center my-6 ">
-              <h1 className="text-slate-800 text-2xl md:text-5xl text-start font-semibold m-1">
+              <h1 className="text-slate-800 text-[20px] md:text-5xl text-start font-semibold m-1">
                 Social Media Marketing
               </h1>
-              <p className="text-slate-700 text-[14px] md:text-[20px] text-left mt-4">
+              <p className="text-justify text-slate-700 text-[14px] md:text-[18px]  mt-4">
                 Designs and developments aren’t separate silos — they’re two
                 sides of the same creative process. When these teams collaborate
                 from the start, magic happens: visuals that are not just

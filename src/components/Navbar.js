@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import webLogo from './images/NdMainLogo.png'
 import webLogo from "./images/mainNDlogo.png";
 
@@ -11,10 +11,20 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const links = ["Work", "Services", "Blog", "About"];
   const navigate = useNavigate();
+  const location = useLocation();
 
   const moveToForm = () => {
-    // console.log("clicked");
-    navigate("/about#form");
+    if (location.pathname === "/about") {
+      const form = document.getElementById("form");
+      if (!form) return;
+
+      const y = form.getBoundingClientRect().top + window.scrollY;
+      window.__smoothScrollTo?.(y);
+    } else {
+      navigate("/about", {
+        state: { scrollTo: "form" }, // 👈 intent flag
+      });
+    }
   };
 
   return (

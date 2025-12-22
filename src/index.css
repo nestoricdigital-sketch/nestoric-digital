@@ -10,6 +10,13 @@
     opacity: .2;
   }
 }
+@layer base {
+  body {
+    @apply overflow-y-scroll;
+  }
+}
+
+
 
 .animate-blink {
   animation: blink 1s infinite ease-in-out;
@@ -18,6 +25,13 @@
   /* your styles here */
     .logo-scale {
     transform: scale(2);
+  }
+}
+@media (max-width: 640px) {
+  /* your styles here */
+    #text-scale {
+    transform: scale(2.9);
+    height:'40px'
   }
 }
 /* gmail scroll */

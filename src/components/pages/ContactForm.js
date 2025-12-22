@@ -191,7 +191,7 @@ export default function ProjectForm() {
 
                 {/* Service */}
                 <div>
-                  <label className="block text-[16px] md:text-[20px] text-xl font-medium mb-1 md:mb-[14px]">
+                  <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px]">
                     Select Your Service
                   </label>
                   <select

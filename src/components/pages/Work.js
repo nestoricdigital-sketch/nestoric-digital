@@ -229,7 +229,7 @@ export default function Work() {
           <h2 className=" text-[14px] md:text-[24px] font-bold text-gray-800 text-left mb-4 md:mb-6 ">
             What We Do
           </h2>
-          <p className=" text-[14px] md:text-[20px]  leading-8">
+          <p className="text-justify text-[14px] md:text-[20px]  leading-8">
             we craft impactful digital experiences through strategy, design, and
             technology. Our services cover everything from brand identity and
             website design to seamless development and performance optimization

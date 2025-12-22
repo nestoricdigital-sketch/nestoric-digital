@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import sideAr from "./images/sideArrow.png";
 import h1 from "./images/heroSectionLogo/h 1.png";
 import h2 from "./images/heroSectionLogo/h2.png";
 import h3 from "./images/heroSectionLogo/h3_3_11zon.jpg";
 import { Fade } from "react-awesome-reveal";
 import Lottie from "lottie-react";
-import logoScroll from "./assets/logoScroll.json";
+import logoScroll from "./assets/logosScroll.json";
 const HeroSection = () => {
   const handleScrollToRecentWorks = () => {
     const section = document.getElementById("recentworks");
-    section?.scrollIntoView({ behavior: "smooth" });
+    // section?.scrollIntoView({ behavior: "smooth" });
+
+    // const section = document.getElementById("services-section");
+    if (!section) return;
+
+    const y = section.getBoundingClientRect().top + window.scrollY;
+
+    window.__smoothScrollTo?.(y);
   };
+
+  const lottieRef = useRef();
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      // Slow down animation
+      lottieRef.current.setSpeed(0.4); // try 0.2 / 0.15 / 0.1
+    }
+  }, []);
   return (
     <>
       <section className="bg-white text-slate-800   min-h-[600px] md:min-h-[712px]  flex items-center justify-center ">
@@ -98,7 +114,7 @@ const HeroSection = () => {
                   {/* Arrow slides right on hover */}
                   <img
                     src={sideAr}
-                    className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                    className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
                     alt="side arrow"
                   />
                 </button>
@@ -106,7 +122,7 @@ const HeroSection = () => {
               {/* logos scrolling */}
               <div
                 className="logo-scale provide md:-mx-20 relative flex flex-col items-center justify-start
-               content-center  md:min-h-[118px] min-h-10 md:mt-[80px] mt-9  bg-white"
+               content-center  md:min-h-[118px] min-h-10 md:mt-[80px] mt-[40px]  bg-white"
               >
                 <div
                   className="mt-2 md:mt-0 absolute  md:scale-100 text-center  left-1/2 -translate-x-1/2 
@@ -117,6 +133,7 @@ const HeroSection = () => {
                 >
                   <Lottie
                     animationData={logoScroll}
+                    lottieRef={lottieRef}
                     loop
                     autoplay
                     speed={0.1}

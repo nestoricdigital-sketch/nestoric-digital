@@ -59,33 +59,51 @@ export default function Providing() {
   const unrevealed = { r: 102, g: 102, b: 102 };
   const revealedColor = { r: 0, g: 0, b: 0 };
 
+  // scroll-down
+  const lottieRef = useRef();
+  const lottieRef2 = useRef();
+
+  useEffect(() => {
+    if (lottieRef.current || lottieRef2.current) {
+      // Slow down animation
+      lottieRef.current.setSpeed(0.4); // try 0.2 / 0.15 / 0.1
+      lottieRef2.current.setSpeed(0.4);
+    }
+  }, []);
+
   return (
     <>
       <div
-        className="provide md:mt-8 md:-mx-20 relative flex flex-col items-center content-center  md:min-h-[25rem] min-h-40  bg-white"
+        id="text-scale"
+        className=" provide md:mt-8 md:-mx-20 relative flex flex-col items-center content-center  md:min-h-[25rem] my-28  bg-white"
         // style={{ 'overflow-x': 'hidden'}}
       >
         {/* First Scrolling Text black */}
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 
       
         w-[101vw]
           rotate-[-8deg]"
         >
-          <Lottie animationData={scrollingText} loop autoplay />
+          <Lottie
+            animationData={scrollingText}
+            lottieRef={lottieRef}
+            loop
+            autoplay
+          />
         </div>
 
         {/* Second Scrolling Text pink */}
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 
         w-[101vw] rotate-[8deg]"
         >
-          <Lottie animationData={scroll} loop autoplay />
+          <Lottie animationData={scroll} lottieRef={lottieRef2} loop autoplay />
         </div>
       </div>
       <section
         ref={sectionRef}
-        className=" md:min-h-[70vh]  lg:min-h-[10vh]  font-inter  text-center  bg-white px-6 "
+        className=" md:min-h-[70vh] my-16  lg:min-h-[10vh]  font-inter  text-center  bg-white px-2 md:px-0 "
       >
         <h1
           className="text-2xl md:text-5xl font-semibold  leading-relaxed  md:leading-[3.9rem] max-w-5xl md:px-6 mx-auto"

@@ -99,7 +99,14 @@ const Services = () => {
   ];
   const handleScrollToServices = () => {
     const section = document.getElementById("services");
-    section?.scrollIntoView({ behavior: "smooth" });
+    // section?.scrollIntoView({ behavior: "smooth" });
+
+    // const section = document.getElementById("services-section");
+    if (!section) return;
+
+    const y = section.getBoundingClientRect().top + window.scrollY;
+
+    window.__smoothScrollTo?.(y);
   };
   return (
     <div className=" ">
@@ -176,7 +183,7 @@ const Services = () => {
                 {/* Arrow slides right on hover */}
                 <img
                   src={sideAr}
-                  className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                  className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
                   alt="side arrow"
                 />
               </button>
@@ -204,7 +211,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col items-center md:items-start text-center md:text-left mb-5"
+              className="flex flex-col  md:items-start  text-start mb-5"
             >
               <Fade direction="up" triggerOnce ascade damping={0.2}>
                 {/* Title on the right (align right on desktop) */}
@@ -217,12 +224,12 @@ const Services = () => {
                     className="w-full h-full object-cover rounded-2xl shadow-lg "
                   />
                 </div>
-                <h3 className="font-inter text-[20px] md:text-[24px] font-semibold  self-start text-gray-900">
+                <h3 className="font-inter text-xl md:text-[24px] font-semibold  text-start text-gray-900">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className=" md:mt-[48px] text-[14px] md:text-[20px] text-gray-600  w-full">
+                <p className="text-justify md:mt-[48px] text-[14px] md:text-[18px] text-gray-600  w-full">
                   {service.description}
                 </p>
 

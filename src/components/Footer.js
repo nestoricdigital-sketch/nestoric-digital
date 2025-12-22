@@ -18,7 +18,7 @@ import upArrow from "./images/icons/upArrow.png";
 export default function Footer() {
   return (
     <footer
-      className="mt-40 -mx-2 md:-mx-20   relative  min-h-[830px] text-gray-300 
+      className="bottom-0 mt-40 -mx-2 md:-mx-20   relative  min-h-[830px] text-gray-300 
    md:bg-footer-bg md:bg-cover md:bg-start
     md:bg-no-repeat "
       style={{
@@ -37,8 +37,8 @@ export default function Footer() {
         {/* ==== Top Section ==== */}
         <div className="w-full max-w-7xl flex flex-col md:flex-row md:flex-wrap justify-between gap-8 md:gap-2 text-center z-10">
           <div className="flex-1  max-w-[300px] justify-start text-start ">
-            <h3 className="text-[18px] font-semibold mb-2 md:mb-6">Company</h3>
-            <ul className="space-y-2 md:space-y-4 text-[16px]  font-light">
+            <h3 className="text-[18px] font-light mb-2 md:mb-6">Company</h3>
+            <ul className="space-y-2 md:space-y-4 text-[16px]  font-bold">
               <li className="">
                 <Link to="/work" className="hover:text-white ">
                   Work
@@ -64,8 +64,8 @@ export default function Footer() {
 
           {/* Legals */}
           <div className="flex-1  max-w-[300px] text-start ">
-            <h3 className=" font-semibold mb-2 md:mb-6 text-[18px]">Legals</h3>
-            <ul className="space-y-2 md:space-y-4  text-[16px] font-light">
+            <h3 className=" font-light mb-2 md:mb-6 text-[18px]">Legals</h3>
+            <ul className="space-y-2 md:space-y-4  text-[16px] font-bold">
               <li>
                 <Link to="/privacy-policy" className="hover:text-white">
                   Privacy Policy
@@ -81,10 +81,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="flex-1  max-w-[300px]  justify-start text-start ">
-            <h3 className="text-[18px] font-semibold mb-2 md:mb-6">
-              Contact Us
-            </h3>
-            <ul className="space-y-2 md:space-y-4  text-[16px] font-light ">
+            <h3 className="text-[18px] font-light mb-2 md:mb-6">Contact Us</h3>
+            <ul className="space-y-2 md:space-y-4  text-[16px] font-bold ">
               <li className="flex gap-2  md:gap-6">
                 <img src={phoLogo} className="h-5 w-5" alt="phone" />
                 <p>+91 6361985560</p>
@@ -236,12 +234,7 @@ export default function Footer() {
           {/* Right text */}
           <div
             className="flex gap-3 justify-center items-center"
-            onClick={() =>
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              })
-            }
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <p className="text-start text-[14px] md:text-[16px] opacity-80 md:text-center cursor-pointer">
               Back to top

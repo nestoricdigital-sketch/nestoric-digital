@@ -13,13 +13,17 @@ const About = () => {
   // handleScrollToForm
   const handleScrollToForm = () => {
     const section = document.getElementById("form");
-    section?.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
+
+    const y = section.getBoundingClientRect().top + window.scrollY;
+
+    window.__smoothScrollTo?.(y);
   };
-  useEffect(() => {
-    if (location.pathname === "/form" || location.hash === "#form") {
-      handleScrollToForm();
-    }
-  }, [location]); // runs each time route/hash changes
+  // useEffect(() => {
+  //   if (location.pathname === "/form" || location.hash === "#form") {
+  //     handleScrollToForm();
+  //   }
+  // }, [location]); // runs each time route/hash changes
   return (
     <div>
       <Fade delay={1e2} cascade damping={1e-1}>
@@ -96,7 +100,7 @@ const About = () => {
                 {/* Arrow slides right on hover */}
                 <img
                   src={sideAr}
-                  className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                  className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
                   alt="side arrow"
                 />
               </button>
@@ -123,21 +127,6 @@ const About = () => {
           </h2>
         </section>
         <section className="relative  mb-9 flex flex-col md:flex-row items-center justify-center w-full">
-          {/* Background text */}
-          {/* <h1 className="absolute  left-10 text-[6rem] md:text-[12rem] font-extrabold text-gray-500 opacity-30 select-none z-10">
-        Mission
-      </h1> */}
-          {/* <h2
-          className=" absolute bottom-[84%] sm:bottom-[80%] lg:bottom-[90%] left-1/2 -translate-x-1/2
-             text-5xl sm:text-6xl md:text-7xl lg:text-9xl
-             font-extrabold text-transparent bg-clip-text
-             bg-gradient-to-b from-black via-gray-800 to-slate-0
-             z-0 select-none text-center pointer-events-none
-             opacity-20 sm:opacity-10"
-        >
-          Mission
-        </h2> */}
-
           {/* Left: Image */}
           <div className="   md:w-1/2 flex justify-center items-center z-10">
             <div className="w-full mx-2 max-w-[650px] aspect-[650/500]">
@@ -150,11 +139,11 @@ const About = () => {
           </div>
 
           {/* Right: Content */}
-          <div className="w-full md:w-1/2 md:p-10 p-2 z-10 flex flex-col justify-center text-gray-800">
-            <h2 className="text-xl md:text-3xl font-bold mb-4">
+          <div className="w-full md:w-1/2 md:pt-10 md:pb-10 md:pl-10 md:pr-0 p-2 z-10 flex flex-col justify-center text-gray-800">
+            <h2 className="text-xl lg:text-5xl font-bold mb-4">
               Creating Change That Matters
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed">
+            <p className="text-[14px] text-justify md:text-[18px] leading-relaxed">
               To be a globally recognized digital marketing and branding leader,
               known for blending creativity, technology, and data-driven
               strategies to inspire meaningful engagement with people.
@@ -182,12 +171,11 @@ const About = () => {
           {/* Background text */}
 
           {/* Right: Content */}
-          <div className="w-full md:w-1/2 md:p-10 p-2 z-10 flex flex-col justify-center text-gray-800">
-            <h2 className="text-xl md:text-3xl font-bold mb-4">
-              {" "}
+          <div className="w-full md:w-1/2 md:pt-10 md:pb-10 md:pr-10 md:pl-0 p-2 z-10 flex flex-col justify-center text-gray-800">
+            <h2 className="text-xl md:text-5xl font-bold mb-4">
               Turning Ideas into Impact
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed">
+            <p className="text-[14px] text-justify md:text-[18px] leading-relaxed">
               To be a globally recognized digital marketing and branding leader,
               known for blending creativity, technology, and data-driven
               strategies to inspire meaningful engagement with people.

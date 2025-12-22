@@ -233,7 +233,7 @@ export default function WorksMini() {
   return (
     <>
       <Fade direction="up" triggerOnce ascade damping={0.2}>
-        <div className=" mt-10  md:mt-28"></div>
+        <div className=" mt-16  md:mt-32"></div>
 
         <section
           className=" relative  flex flex-col md:flex-row items-center justify-center w-full"
@@ -350,7 +350,7 @@ export default function WorksMini() {
                       </div>
 
                       {/* RIGHT — SERVICES */}
-                      <div className="w-full md:mb-2 lg:min-h-[760px] lg:w-[30%] flex flex-col items-start lg:items-end justify-end h-full">
+                      <div className="w-full md:mb-4 lg:min-h-[760px] lg:w-[30%] flex flex-col items-start lg:items-end justify-end h-full">
                         {/* Year */}
                         {/* <p className="text-sm md:text-base opacity-80 hidden ">
                           2025

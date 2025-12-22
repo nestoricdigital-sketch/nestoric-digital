@@ -4,12 +4,17 @@ import sideAr from "../images/sideArrow.png";
 import h_1 from "../images/heroSectionLogo/h 1.png";
 import h_2 from "../images/heroSectionLogo/h2.png";
 import { Fade } from "react-awesome-reveal";
-import WorksMini from "../WorksMini";
+// import WorksMini from "../WorksMini";
+import WorksBlogs from "../WorksBlogs";
 
 const WorkPage = () => {
   const handleScrollToProjects = () => {
     const section = document.getElementById("recentworks");
-    section?.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
+
+    const y = section.getBoundingClientRect().top + window.scrollY;
+
+    window.__smoothScrollTo?.(y);
   };
   return (
     <>
@@ -93,7 +98,7 @@ const WorkPage = () => {
                 {/* Arrow slides right on hover */}
                 <img
                   src={sideAr}
-                  className="w-7 h-7 p-1 mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                  className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
                   alt="side arrow"
                 />
               </button>
@@ -102,7 +107,8 @@ const WorkPage = () => {
         </Fade>
       </section>
       {/* <Works /> */}
-      <WorksMini />
+      {/* <WorksMini /> */}
+      <WorksBlogs />
     </>
   );
 };
