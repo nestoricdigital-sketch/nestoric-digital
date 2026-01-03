@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import webLogo from './images/NdMainLogo.png'
 import webLogo from "./images/mainNDlogo.png";
@@ -13,17 +13,38 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const moveToForm = () => {
-    if (location.pathname === "/about") {
-      const form = document.getElementById("form");
-      if (!form) return;
+  // const moveToForm = () => {
+  //   if (location.pathname === "/about") {
+  //     const form = document.getElementById("form");
+  //     if (!form) return;
 
-      const y = form.getBoundingClientRect().top + window.scrollY;
-      window.__smoothScrollTo?.(y);
-    } else {
-      navigate("/about", {
-        state: { scrollTo: "form" }, // 👈 intent flag
-      });
+  //     const y = form.getBoundingClientRect().top + window.scrollY;
+  //     window.__smoothScrollTo?.(y);
+  //   } else {
+  //     navigate("/about", {
+  //       state: { scrollTo: "form" },
+  //     });
+  //   }
+  // };
+  const moveToForm = (id) => {
+    if (id === "footer") {
+      if (location.pathname === "/about") {
+        // Same route → scroll directly
+        // document
+        //   .getElementById("downform")
+        //   ?.scrollIntoView({ behavior: "smooth" });
+
+        //
+        const section = document.getElementById("footer");
+        if (!section) return;
+
+        const y = section.getBoundingClientRect().top + window.scrollY;
+
+        window.__smoothScrollTo?.(y);
+      } else {
+        // Different route → navigate with state
+        navigate("/about", { state: { scrollTo: "footer" } });
+      }
     }
   };
 
@@ -63,7 +84,7 @@ const Navbar = () => {
         <div className="flex-1 flex justify-end">
           <button
             className="hidden md:block bg-[#353535] text-white px-5 py-2 rounded-full shadow-lg shadow-slate-500/40"
-            onClick={moveToForm}
+            onClick={() => moveToForm("footer")}
           >
             Contact
           </button>
@@ -146,7 +167,7 @@ const Navbar = () => {
           <button
             className={` bg-[#353535] shadow-lg shadow-slate-500/40 text-white px-5 py-2 rounded-full transition-colors duration-300
         ${menuOpen ? "opacity-100  translate-y-0" : "opacity-0 translate-y-2"}`}
-            onClick={moveToForm}
+            onClick={() => moveToForm("footer")}
           >
             Contact
           </button>

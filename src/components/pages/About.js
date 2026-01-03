@@ -10,15 +10,38 @@ import { useLocation } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 const About = () => {
   const location = useLocation();
-  // handleScrollToForm
+
   const handleScrollToForm = () => {
-    const section = document.getElementById("form");
+    const section = document.getElementById("downform");
     if (!section) return;
 
     const y = section.getBoundingClientRect().top + window.scrollY;
 
     window.__smoothScrollTo?.(y);
   };
+
+  useEffect(() => {
+    const id = location.state?.scrollTo;
+
+    if (!id) return;
+
+    let rafId;
+
+    const scrollToSection = () => {
+      const section = document.getElementById("footer");
+      if (!section) {
+        rafId = requestAnimationFrame(scrollToSection);
+        return;
+      }
+
+      window.__smoothScrollTo?.(section.offsetTop);
+    };
+
+    scrollToSection();
+
+    return () => cancelAnimationFrame(rafId);
+  }, [location]);
+
   // useEffect(() => {
   //   if (location.pathname === "/form" || location.hash === "#form") {
   //     handleScrollToForm();

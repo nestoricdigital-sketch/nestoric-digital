@@ -124,6 +124,17 @@ const HeroSection = () => {
                 className="logo-scale provide md:-mx-20 relative flex flex-col items-center justify-start
                content-center  md:min-h-[118px] min-h-10 md:mt-[80px] mt-[40px]  bg-white"
               >
+                {/* LEFT EDGE BLUR (touches screen) */}
+                <div
+                  className="pointer-events-none fixed top-auto left-0 h-[118px] w-20 md:w-40 z-20
+    bg-gradient-to-r from-white via-white/100   opacity-100 "
+                />
+
+                {/* RIGHT EDGE BLUR (touches screen) */}
+                <div
+                  className="pointer-events-none fixed top-auto right-0 h-[118px] w-20 md:w-40 z-20
+    bg-gradient-to-l from-white via-white/100 opacity-100 "
+                />
                 <div
                   className="mt-2 md:mt-0 absolute  md:scale-100 text-center  left-1/2 -translate-x-1/2 
       

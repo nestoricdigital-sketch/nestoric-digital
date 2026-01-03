@@ -8,7 +8,7 @@ import emailLogo from "./images/icons/email.png";
 import youtubeLogo from "./images/icons/youtubeLogo.png";
 import liLogo from "./images/icons/lnkdLogo.png";
 
-import deskfooter from "./images/footerDesktop.png";
+import deskfooter from "./images/footerDesktop.webp";
 import locLogo from "./images/icons/locationN.png";
 import phoLogo from "./images/icons/phone.png";
 import upArrow from "./images/icons/upArrow.png";
@@ -27,6 +27,7 @@ export default function Footer() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
+      id="footer"
     >
       {/* Overlay for contrast */}
       <div className="absolute inset-0"></div>
@@ -38,7 +39,7 @@ export default function Footer() {
         <div className="w-full max-w-7xl flex flex-col md:flex-row md:flex-wrap justify-between gap-8 md:gap-2 text-center z-10">
           <div className="flex-1  max-w-[300px] justify-start text-start ">
             <h3 className="text-[18px] font-light mb-2 md:mb-6">Company</h3>
-            <ul className="space-y-2 md:space-y-4 text-[16px]  font-bold">
+            <ul className="space-y-2 md:space-y-4 text-[16px]  font-semi-bold">
               <li className="">
                 <Link to="/work" className="hover:text-white ">
                   Work
@@ -65,7 +66,7 @@ export default function Footer() {
           {/* Legals */}
           <div className="flex-1  max-w-[300px] text-start ">
             <h3 className=" font-light mb-2 md:mb-6 text-[18px]">Legals</h3>
-            <ul className="space-y-2 md:space-y-4  text-[16px] font-bold">
+            <ul className="space-y-2 md:space-y-4  text-[16px] font-semi-bold">
               <li>
                 <Link to="/privacy-policy" className="hover:text-white">
                   Privacy Policy
@@ -82,7 +83,7 @@ export default function Footer() {
           {/* Contact */}
           <div className="flex-1  max-w-[300px]  justify-start text-start ">
             <h3 className="text-[18px] font-light mb-2 md:mb-6">Contact Us</h3>
-            <ul className="space-y-2 md:space-y-4  text-[16px] font-bold ">
+            <ul className="space-y-2 md:space-y-4  text-[16px] font-semi-bold ">
               <li className="flex gap-2  md:gap-6">
                 <img src={phoLogo} className="h-5 w-5" alt="phone" />
                 <p>+91 6361985560</p>

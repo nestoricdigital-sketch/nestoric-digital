@@ -7,6 +7,23 @@ import blog2 from "../images/blog2.jpg";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 const Blog = () => {
+  const blogPosts = [
+    {
+      image: blogDesign,
+      title: "Design & Development",
+      description:
+        "Designs and developments aren’t separate silos they’re two sides of the same creative process. When these teams collaborate from the start, magic happens: visuals that are not just beautiful but built to perform. This blogs dives into how we approach projects with shared in language, mutual respect, and early alignment. We talk systems, spacing, dev-ready Figma files, and the power of thinking in components. We’ll also touch on how structured workflows reduce revisions, eliminate disconnect, and speed up the delivery. Because when design and dev constraints  and dev understands design intent  everyone wins.",
+      tags: ["UI/UX", "Branding", "Development"],
+    },
+    {
+      image: blog2,
+      title: "Social Media Marketing",
+      description:
+        "Designs and developments aren’t separate silos  they’re two sides of the same creative process. When these teams collaborate from the start, magic happens: visuals that are not just beautiful but built to perform. This blogs dives into how we approach projects with shared in language, mutual respect, and early alignment. We talk systems, spacing, dev-ready Figma files, and the power of thinking in components. We’ll also touch on how structured workflows reduce revisions, eliminate disconnect, and speed up the delivery. Because when design and dev constraints  and dev understands design intent  everyone wins.",
+      tags: ["Campaign", "Advertising", "Reach"],
+    },
+  ];
+
   return (
     <>
       <Fade delay={1e2} cascade damping={1e-1}>
@@ -100,108 +117,51 @@ const Blog = () => {
             Blog Insights
           </h2>
         </section>
+        {blogPosts.map((blog, index) => (
+          <section key={index} className="mx-2 md:mx-4 pb-9">
+            <div className="relative w-full">
+              <img
+                src={blog.image}
+                className="w-full h-auto object-cover rounded-[15px]"
+                alt="this is blog post"
+              />
 
-        <section className="  mx-2 md:mx-4  pb-9">
-          {/* === BLOG HERO IMAGE === */}
-          <div
-            className="relative w-full "
-            // style={{
-            //   backgroundImage: `url(${blogHero})`,
-            // }}
-          >
-            {/* Overlay */}
-            <img
-              src={blogDesign}
-              className="w-full  h-auto object-cover rounded-[15px] "
-              alt="this is blog about design & developement"
-            />
+              <div className="relative z-10 text-center my-6">
+                <h1 className="text-slate-800 text-[20px] md:text-5xl text-start font-semibold">
+                  {blog.title}
+                </h1>
 
-            {/* Hero Content */}
-            <div className="relative z-10 text-center   my-6">
-              <h1 className="text-slate-800 text-[20px] md:text-5xl text-start font-semibold">
-                Design & Development
-              </h1>
-              <p className="text-justify text-[14px] md:text-[18px] text-slate-700  mt-4 ">
-                Designs and developments aren’t separate silos — they’re two
-                sides of the same creative process. When these teams collaborate
-                from the start, magic happens: visuals that are not just
-                beautiful but built to perform. This blogs dives into how we
-                approach projects with shared in language, mutual respect, and
-                early alignment. We talk systems, spacing, dev-ready Figma
-                files, and the power of thinking in components. We’ll also touch
-                on how structured workflows reduce revisions, eliminate
-                disconnect, and speed up the delivery. Because when design and
-                dev constraints — and dev understands design intent — everyone
-                wins.
-              </p>
+                <p className="text-justify text-slate-700 text-[14px] md:text-[18px] mt-4">
+                  {blog.description}
+                </p>
 
-              {/* Buttons */}
-              <div className="mt-8 mb-8 flex flex-row items-center justify-center lg:justify-start flex-wrap gap-4 md:gap-[48px]">
-                <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
-                  UI/UX
-                </button>
-
-                <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
-                  Branding
-                </button>
-
-                <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
-                  Development
-                </button>
+                {/* Buttons */}
+                {/* <div className="mt-8 mb-8 flex flex-row items-center justify-center lg:justify-start flex-wrap gap-4 md:gap-[48px]">
+                  {blog.tags.map((tag, i) => (
+                    <button
+                      key={i}
+                      className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition"
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div> */}
+                <div className="flex justify-center   content-center mt-4 md:mt-[86px] md:mb-[86px] px-4 md:px-0">
+                  <div className="flex flex-wrap md:w-[60%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
+                    {blog.tags.map((btn, i) => (
+                      <button
+                        key={i}
+                        className="px-4 sm:px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
+                      >
+                        {btn}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="mx-2 md:mx-4 pb-9 ">
-          {/* === BLOG HERO IMAGE === */}
-          <div
-            className="relative w-full "
-            // style={{
-            //   backgroundImage: `url(${blogHero})`,
-            // }}
-          >
-            {/* Overlay */}
-            <img
-              src={blog2}
-              className="w-full  h-auto object-cover rounded-[15px]"
-              alt="this is blog post "
-            />
-
-            {/* Hero Content */}
-            <div className="relative z-10 text-center my-6 ">
-              <h1 className="text-slate-800 text-[20px] md:text-5xl text-start font-semibold m-1">
-                Social Media Marketing
-              </h1>
-              <p className="text-justify text-slate-700 text-[14px] md:text-[18px]  mt-4">
-                Designs and developments aren’t separate silos — they’re two
-                sides of the same creative process. When these teams collaborate
-                from the start, magic happens: visuals that are not just
-                beautiful but built to perform. This blogs dives into how we
-                approach projects with shared in language, mutual respect, and
-                early alignment. We talk systems, spacing, dev-ready Figma
-                files, and the power of thinking in components. We’ll also touch
-                on how structured workflows reduce revisions, eliminate
-                disconnect, and speed up the delivery. Because when design and
-                dev constraints — and dev understands design intent — everyone
-                wins.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-8 mb-8 flex flex-row items-center justify-center lg:justify-start flex-wrap gap-4">
-                <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
-                  Campaign
-                </button>
-
-                <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
-                  Advertising
-                </button>
-                <button className="px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition">
-                  Reach
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        ))}
       </Fade>
     </>
   );

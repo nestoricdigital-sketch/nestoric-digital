@@ -234,12 +234,26 @@ const Services = () => {
                 </p>
 
                 {/* Buttons */}
-                <div className="flex justify-center w-full mt-2 md:mt-[86px] md:mb-[86px]">
+                {/* <div className="flex justify-center w-full mt-2 md:mt-[86px] md:mb-[86px]">
                   <div className="flex flex-wrap md:h-[23px] justify-center text-center gap-4 min-w-48 mx-36 ">
                     {service.buttons.map((btn, i) => (
                       <button
                         key={i}
                         className="px-6 py-2 m-2  bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition"
+                      >
+                        {btn}
+                      </button>
+                    ))}
+                  </div>
+                </div> */}
+
+                {/* updated */}
+                <div className="flex justify-center   content-center mt-4 md:mt-[86px] md:mb-[86px] px-4 md:px-0">
+                  <div className="flex flex-wrap md:w-[70%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
+                    {service.buttons.map((btn, i) => (
+                      <button
+                        key={i}
+                        className="px-4 sm:px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
                       >
                         {btn}
                       </button>

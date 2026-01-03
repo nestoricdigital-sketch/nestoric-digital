@@ -9,12 +9,16 @@ import surya from "./images/works/surya.jpg";
 import nandi from "./images/works/nandi.jpg";
 import magnum from "./images/works/magnum.jpg";
 import { Fade } from "react-awesome-reveal";
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 // import surya from "./images/worksRecent/surya.jpg";
 // import nandi from "./images/worksRecent/nandi.jpg";
 const WorksBlogs = () => {
+  const location = useLocation();
+
   const works = [
     {
+      id: "carzen",
       title: "Carzen Logistics",
       image: carzen,
       description:
@@ -28,6 +32,7 @@ const WorksBlogs = () => {
       ],
     },
     {
+      id: "vasura",
       title: "Vasura Virtual Experience",
       image: vasura,
       description:
@@ -42,6 +47,7 @@ const WorksBlogs = () => {
       ],
     },
     {
+      id: "vhTech",
       title: "VH’s Techsphere",
       image: vhTech,
       description:
@@ -56,6 +62,7 @@ const WorksBlogs = () => {
       ],
     },
     {
+      id: "magnum",
       title: "Magnum Opus",
       image: magnum,
       description:
@@ -70,6 +77,7 @@ const WorksBlogs = () => {
       ],
     },
     {
+      id: "surya",
       title: "Surya City",
       image: surya,
       description:
@@ -84,6 +92,7 @@ const WorksBlogs = () => {
       ],
     },
     {
+      id: "nandi",
       title: "Nandi Urban City",
       image: nandi,
       description:
@@ -98,6 +107,28 @@ const WorksBlogs = () => {
       ],
     },
   ];
+
+  useEffect(() => {
+    const id = location.state?.scrollTo;
+    if (!id) return;
+
+    let rafId;
+
+    const scrollToSection = () => {
+      const section = document.getElementById(id);
+      if (!section) {
+        rafId = requestAnimationFrame(scrollToSection);
+        return;
+      }
+
+      window.__smoothScrollTo?.(section.offsetTop);
+    };
+
+    scrollToSection();
+
+    return () => cancelAnimationFrame(rafId);
+  }, [location]);
+
   return (
     <div>
       <div className=" mt-16  md:mt-32"></div>
@@ -116,14 +147,15 @@ const WorksBlogs = () => {
           Recent Works
         </h2>
       </section>
-      <section className=" px-2 md:px-4">
+      <section className="w-full px-2 md:px-4">
         <div className="grid grid-cols-1 gap-16" id="services">
           {works.map((service, index) => (
             <div
               key={index}
+              id={service.id}
               className="flex flex-col  md:items-start text-center md:text-left mb-5"
             >
-              <Fade direction="up" triggerOnce ascade damping={0.2}>
+              <Fade>
                 {/* Title on the right (align right on desktop) */}
 
                 {/* Image */}
@@ -131,7 +163,7 @@ const WorksBlogs = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-auto md:h-[580px] object-cover rounded-2xl shadow-lg "
+                    className="w-full h-auto md:h-[580px] object-cover rounded-2xl "
                   />
                 </div>
                 <h3 className="font-inter text-[20px] md:text-[24px] lg:text-5xl font-semibold text-start text-gray-900">
@@ -147,12 +179,13 @@ const WorksBlogs = () => {
                 </p>
 
                 {/* Buttons */}
-                <div className="flex justify-center w-full mt-2 md:mt-[86px] md:mb-[86px]">
-                  <div className="flex flex-wrap md:h-[23px] justify-center text-center gap-4 min-w-48 mx-36 ">
+                {/* Buttons */}
+                <div className="flex justify-center   content-center mt-4 md:mt-[86px] md:mb-[86px] px-4 md:px-0">
+                  <div className="flex flex-wrap md:w-[60%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
                     {service.buttons.map((btn, i) => (
                       <button
                         key={i}
-                        className="px-6 py-2 m-2  bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-sm font-medium transition"
+                        className="px-4 sm:px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
                       >
                         {btn}
                       </button>

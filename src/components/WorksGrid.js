@@ -11,7 +11,7 @@ import vasura from "./images/worksgrid/vasura.png";
 import carzen from "./images/worksgrid/carzen.jpg";
 import sideAr from "./images/sideArrow.png";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
 // const works = {
@@ -48,6 +48,11 @@ import { Fade } from "react-awesome-reveal";
 // };
 
 export default function WorksGrid() {
+  const navigate = useNavigate();
+
+  const moveToWork = (id) => {
+    navigate("/work", { state: { scrollTo: id } });
+  };
   return (
     <div className="mx-2">
       <Fade direction="up" triggerOnce ascade damping={0.2}>
@@ -74,7 +79,7 @@ export default function WorksGrid() {
         <section
           className="
     w-full px-2 md:px-4 py-6
-    border border-slate-300 rounded-2xl
+     rounded-2xl
     lg:max-h-[1390px] lg:overflow-hidden
   "
         >
@@ -91,7 +96,10 @@ export default function WorksGrid() {
               <div className="flex flex-col gap-6 md:gap-16 lg:h-full">
                 <Fade direction="left" triggerOnce ascade damping={0.2}>
                   {/* Carzen – FULL HEIGHT ON MOBILE */}
-                  <div className="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[24/14] overflow-hidden flex-shrink-0">
+                  <div
+                    className="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[24/14] overflow-hidden flex-shrink-0 cursor-pointer"
+                    onClick={() => moveToWork("carzen")}
+                  >
                     <img
                       src={carzen}
                       alt="Carzen Logistics"
@@ -102,7 +110,10 @@ export default function WorksGrid() {
                 </Fade>
                 {/* <Fade direction="up" triggerOnce damping={0.3}> */}
                 {/* Magnum – BIG ON MOBILE */}
-                <div className="w-full aspect-[3/4] md:aspect-[4/3] lg:flex-1 lg:min-h-[280px] lg:max-h-[750px] overflow-hidden">
+                <div
+                  className="w-full aspect-[3/4] md:aspect-[4/3] lg:flex-1 lg:min-h-[280px] lg:max-h-[750px] overflow-hidden cursor-pointer"
+                  onClick={() => moveToWork("magnum")}
+                >
                   <Fade direction="left" triggerOnce ascade damping={0.3}>
                     <img
                       src={magnum}
@@ -119,7 +130,10 @@ export default function WorksGrid() {
               <div className="flex flex-col gap-6 lg:justify-between lg:h-full">
                 <Fade direction="right" triggerOnce ascade damping={0.2}>
                   {/* Vasura – TALL ON MOBILE */}
-                  <div className="w-full aspect-[3/4] md:aspect-[4/3] lg:aspect-[24/29] overflow-hidden bg-gray-100 flex-shrink-0">
+                  <div
+                    className="w-full aspect-[3/4] md:aspect-[4/3] lg:aspect-[24/29] overflow-hidden bg-gray-100 flex-shrink-0 cursor-pointer"
+                    onClick={() => moveToWork("vasura")}
+                  >
                     <img
                       src={vasura}
                       alt="Vasura"
@@ -129,7 +143,7 @@ export default function WorksGrid() {
                   </div>
                 </Fade>
                 {/* CTA Button */}
-                <div className="flex items-center justify-center py-4 lg:py-8 flex-shrink-0">
+                {/* <div className="flex items-center justify-center py-4 lg:py-8 flex-shrink-0">
                   <Link
                     to="/work"
                     className="
@@ -149,10 +163,34 @@ export default function WorksGrid() {
                       alt="arrow"
                     />
                   </Link>
-                </div>
+                </div> */}
+                <Link to="/work">
+                  <button
+                    className="mx-auto flex items-center justify-center w-[187px]
+             bg-[#353535] text-white px-0 py-3 rounded-full
+             transition-all duration-300 shadow-lg shadow-slate-500/40
+             cursor-pointer group"
+                  >
+                    {/* Text */}
+                    <span className="transform transition-transform duration-300 group-hover:-translate-x-2">
+                      View Projects
+                    </span>
+
+                    {/* Arrow */}
+                    <img
+                      src={sideAr}
+                      className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                      alt="side arrow"
+                    />
+                  </button>
+                </Link>
+
                 <Fade direction="right" triggerOnce ascade damping={0.3}>
                   {/* Surya – FULL IMAGE ON MOBILE */}
-                  <div className="w-full aspect-[3/4] md:aspect-[4/3] lg:aspect-[24/25] overflow-hidden bg-gray-100 flex-shrink-0">
+                  <div
+                    className="w-full aspect-[3/4] md:aspect-[4/3] lg:aspect-[24/25] overflow-hidden bg-gray-100 flex-shrink-0 cursor-pointer"
+                    onClick={() => moveToWork("surya")}
+                  >
                     <img
                       src={surya}
                       alt="Surya City"
