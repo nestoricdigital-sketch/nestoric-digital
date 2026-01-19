@@ -171,7 +171,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-2 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -191,7 +191,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-2 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -246,7 +246,7 @@ const Form = ({ onClose, showClose = false }) => {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-2 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 focus:outline-none"
@@ -294,7 +294,7 @@ const Form = ({ onClose, showClose = false }) => {
             <button
               type="submit"
               disabled={isDisabled || loading}
-              className={`py-3  lg:mt-10 rounded-[25px] font-semibold transition
+              className={`py-3  lg:mt-0 rounded-[25px] font-semibold transition
       ${
         isDisabled || loading
           ? "bg-gray-200 cursor-not-allowed text-gray-500"
