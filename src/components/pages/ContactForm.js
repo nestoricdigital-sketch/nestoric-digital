@@ -29,7 +29,7 @@ export default function ProjectForm() {
 
     if (!phoneRegex.test(mobile)) {
       setPhoneError(
-        "Please enter a valid 10-digit mobile number starting with 6–9."
+        "Please enter a valid 10-digit mobile number starting with 6–9.",
       );
       setLoading(false);
       return;
@@ -70,7 +70,13 @@ export default function ProjectForm() {
 
   return (
     <>
-      <Fade direction="up" triggerOnce ascade damping={0.2}>
+      <Fade
+        direction="up"
+        triggerOnce
+        ascade
+        damping={0.2}
+        className="mx-0 md:-mx-20"
+      >
         <div className=" mt-28  md:mt-60"></div>
         <section className="relative   flex flex-col md:flex-row items-center justify-center w-full">
           <h2
@@ -97,7 +103,7 @@ export default function ProjectForm() {
           {/* Main 2-column Section */}
 
           <div
-            className="flex flex-col md:flex-row max-w-6xl w-full text-white rounded-2xl  md:p-10 gap-16"
+            className="flex flex-col md:flex-row max-w-7xl w-full text-white rounded-2xl  md:p-10 gap-16"
             // style={{
             //   backgroundImage: `url(${bgConnect})`,
             //   backgroundSize: "cover",
@@ -132,7 +138,7 @@ export default function ProjectForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your name"
-                    className="w-full bg-transparent text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none"
+                    className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none"
                     required
                   />
                 </div>
@@ -148,7 +154,7 @@ export default function ProjectForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email"
-                    className="w-full bg-transparent text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
+                    className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
                     required
                   />
                 </div>
@@ -175,9 +181,11 @@ export default function ProjectForm() {
                         setPhoneError("");
                       }
                     }}
-                    className={`w-full bg-transparent border-b outline-none py-2 text-sm 
+                    className={`w-full bg-transparent border-b placeholder-white/70 outline-none py-2 text-sm 
       ${
-        phoneError ? "border-red-500" : "border-gray-400 focus:border-teal-400"
+        phoneError
+          ? "border-red-500"
+          : "border-gray-400 focus:border-indigo-500"
       }`}
                     disabled={loading}
                     placeholder="Enter your mobile number"
@@ -198,7 +206,7 @@ export default function ProjectForm() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="text-[14px] md:text-[16px] w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white  focus:outline-none"
+                    className="text-[14px] py-2 md:text-[16px] w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white  focus:outline-none"
                     required
                   >
                     <option value="" className="bg-gray-900 text-white">

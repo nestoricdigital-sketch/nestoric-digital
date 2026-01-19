@@ -92,6 +92,8 @@
 
 import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import plus from "../components/images/icons/N_plus.png";
+import minus from "../components/images/icons/N_minus.png";
 
 const faqs = [
   {
@@ -129,9 +131,9 @@ export default function FaqSection() {
 
   return (
     <Fade delay={1e2} cascade damping={1e-1}>
-      <section className="font-inter  mx-auto   w-full text-center md:mx-0 mt-24 md:pt-28">
-        {/* <p className="text-gray-600  text-center my-4">(FAQ's)</p> */}
-        <h2 className="text-2xl m-2  text-center  md:text-5xl font-extrabold leading-tight  text-slate-800">
+      <section className="font-josefin  mx-auto   w-full text-center md:mx-0 mt-24 md:pt-28">
+        <p className="text-gray-600  text-center my-4">(FAQ's)</p>
+        <h2 className="text-2xl m-2  text-center  md:text-6xl font-regular leading-tight  text-slate-800">
           Your Questions, Answered
         </h2>
         <p className="text-[14px] m-2 md:text-[20px] text-gray-600  text-center my-4 md:my-6">
@@ -143,11 +145,11 @@ export default function FaqSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
+              className="border border-slate-200 rounded-2xl bg-[#f0f0f0] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-5 text-left text-slate-800 font-medium "
+                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-5 text-left  rounded-2xl text-slate-800 font-medium "
               >
                 <span>{faq.q}</span>
 
@@ -159,20 +161,24 @@ export default function FaqSection() {
                       : "text-slate-500 rotate-0"
                   }`}
                 >
-                  {openIndex === index ? "−" : "+"}
+                  {openIndex === index ? (
+                    <img src={minus} className="h-5 w-5" alt="minus icon" />
+                  ) : (
+                    <img src={plus} className="h-5 w-5" alt="plus icon" />
+                  )}
                 </span>
               </button>
 
               {/* Smooth expand area */}
               <div
-                className={`grid transition-all duration-500 ease-in-out ${
+                className={`bg-[#f0f0f0] grid transition-all duration-500 ease-in-out ${
                   openIndex === index
                     ? "grid-rows-[1fr] opacity-100"
                     : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="px-5 pb-4 text-[14px] md:text-[20px] text-slate-600 leading-relaxed">
+                  <p className="px-5 text-justify pb-4 text-[14px] md:text-[20px]  text-slate-600 leading-relaxed">
                     {faq.a}
                   </p>
                 </div>

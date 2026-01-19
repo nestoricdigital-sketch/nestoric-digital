@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav className=" font-inter w-full bg-white text-black  z-50">
-      <div className="flex justify-between items-center px-4 md:px-2 py-4 gap-4">
+      <div className="flex justify-between items-center px-2  py-4 gap-4">
         {/* Logo */}
         <div className="flex-1">
           <Link to="/">

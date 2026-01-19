@@ -34,6 +34,61 @@
     height:'40px'
   }
 }
+
+/* nestoric title at footer */
+/* Mobile */
+@media (max-width: 426px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 427px) and (max-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* Small laptop */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: 9rem;
+  }
+}
+
+/* Default (Laptop / Desktop) */
+.footer-bg {
+  background-image: var(--footer-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Mobile image (605x1600) */
+@media (max-width: 768px) {
+  .footer-bg {
+    background-image: var(--footer-mobile);
+    background-position: center top;
+  }
+}
+
+
+
 /* gmail scroll */
 /* @keyframes scroll {
   0% {

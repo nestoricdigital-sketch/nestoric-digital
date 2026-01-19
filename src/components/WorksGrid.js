@@ -54,7 +54,7 @@ export default function WorksGrid() {
     navigate("/work", { state: { scrollTo: id } });
   };
   return (
-    <div className="mx-2">
+    <div className="mx-0">
       <Fade direction="up" triggerOnce ascade damping={0.2}>
         <div className=" mt-16  md:mt-32"></div>
         <section

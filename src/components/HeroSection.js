@@ -32,7 +32,7 @@ const HeroSection = () => {
       <section className="bg-white text-slate-800   min-h-[600px] md:min-h-[712px]  flex items-center justify-center ">
         {" "}
         {/* pt accounts for the fixed navbar height */}
-        <div className="max-w-4xl px-4 sm:px-6 text-center justify-center w-full">
+        <div className="max-w-4xl  px-2  text-center justify-center w-full">
           <div className=" font-inter ">
             <Fade delay={1e2} cascade damping={1e-1}>
               {/* LINE 1 */}
