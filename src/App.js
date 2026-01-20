@@ -57,8 +57,14 @@ function App() {
 
   useEffect(() => {
     const seen = localStorage.getItem("first_visit_popup");
+
     if (!seen) {
-      setShowPopup(true);
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 10000); // 10 seconds
+
+      // cleanup to avoid memory leaks
+      return () => clearTimeout(timer);
     }
   }, []);
 

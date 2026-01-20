@@ -98,12 +98,11 @@ const Form = ({ onClose, showClose = false }) => {
           <div className="relative w-full h-full overflow-hidden rounded-lg">
             <iframe
               width="100%"
-              height="640"
+              height="540"
               src="https://www.youtube.com/embed/R_Cu4-Td6Yw?autoplay=1&mute=1&loop=1&playlist=R_Cu4-Td6Yw"
               title="YouTube Short"
-              frameborder="0"
               allow="autoplay; encrypted-media"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
 
             {/* {marketingImages.map((item, index) => (
@@ -154,14 +153,14 @@ const Form = ({ onClose, showClose = false }) => {
             <li className="flex items-center gap-2">⚡ Faster conversions</li>
           </ul> */}
         {/* right side */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 h-[540px]">
           <form
             onSubmit={handleSubmit}
             className="m-2 flex flex-col gap-3 md:gap-[28px] text-gray-800"
           >
             {/* Name */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px] text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
                 Your Name
               </label>
               <input
@@ -171,7 +170,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full py-2 bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-1 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -182,7 +181,7 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Email */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px] text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
                 Your Email
               </label>
               <input
@@ -191,7 +190,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full py-2 bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-1 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -202,7 +201,7 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Mobile */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px] text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
                 Mobile Number
               </label>
               <input
@@ -222,7 +221,7 @@ const Form = ({ onClose, showClose = false }) => {
                 }}
                 placeholder="Enter your mobile number"
                 className={`w-full bg-transparent text-[14px] md:text-[16px]
-        border-b py-2 outline-none
+        border-b py-1 outline-none
         ${
           phoneError
             ? "border-red-500"
@@ -239,14 +238,14 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Service */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px] text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-1 text-gray-700">
                 Select Your Service
               </label>
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full py-2 bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-1 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 focus:outline-none"
@@ -272,12 +271,12 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Description */}
             <div>
-              <label className="block text-[16px] font-medium mb-1 md:mb-[14px] text-gray-700">
+              <label className="block text-[16px] font-medium mb-1  text-gray-700">
                 Project Description
               </label>
               <textarea
                 name="description"
-                rows="4"
+                rows="3"
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Describe your project..."

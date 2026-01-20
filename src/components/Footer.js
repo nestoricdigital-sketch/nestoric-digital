@@ -32,7 +32,7 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <footer
+    <footer id='footer'
       className="
        footer-bg
     mt-2 mx-2 md:-mx-16 text-white rounded-2xl

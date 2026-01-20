@@ -84,7 +84,7 @@ export default function Work() {
     setCurrentIndex((prev) =>
       prev - slidesToShow < 0
         ? services.length - slidesToShow
-        : prev - slidesToShow
+        : prev - slidesToShow,
     );
   };
 
@@ -97,7 +97,7 @@ export default function Work() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -106,13 +106,13 @@ export default function Work() {
   // ✅ Determine visible slides
   const visibleSlides = services.slice(
     currentIndex,
-    currentIndex + slidesToShow
+    currentIndex + slidesToShow,
   );
 
   // ✅ Handle wrapping (when reaching end of array)
   if (visibleSlides.length < slidesToShow) {
     visibleSlides.push(
-      ...services.slice(0, slidesToShow - visibleSlides.length)
+      ...services.slice(0, slidesToShow - visibleSlides.length),
     );
   }
 
@@ -221,7 +221,7 @@ export default function Work() {
 
         <Link
           to="/services"
-          className="block sm:text-base text-slate-600 text-right m-4 md:text-[18px] font-semibold underline underline-offset-4"
+          className="block sm:text-base text-[#4D4D4D] text-right m-4 md:text-[18px] font-semibold underline underline-offset-4"
         >
           Know more
         </Link>
@@ -229,7 +229,7 @@ export default function Work() {
           <h2 className=" text-[14px] md:text-[24px] font-bold text-gray-800 text-left mb-4 md:mb-6 ">
             What We Do
           </h2>
-          <p className="text-justify text-[14px] md:text-[20px]  leading-8">
+          <p className="text-justify text-[#515151] text-[14px] md:text-[20px]  leading-8">
             we craft impactful digital experiences through strategy, design, and
             technology. Our services cover everything from brand identity and
             website design to seamless development and performance optimization

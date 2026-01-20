@@ -131,12 +131,12 @@ export default function FaqSection() {
 
   return (
     <Fade delay={1e2} cascade damping={1e-1}>
-      <section className="font-josefin  mx-auto   w-full text-center md:mx-0 mt-24 md:pt-28">
-        <p className="text-gray-600  text-center my-4">(FAQ's)</p>
-        <h2 className="text-2xl m-2  text-center  md:text-6xl font-regular leading-tight  text-slate-800">
+      <section className="font-inter  mx-auto   w-full text-center md:mx-0 mt-24 md:pt-28">
+        <p className="text-[#5C5C5C] text-center my-4">(FAQ's)</p>
+        <h2 className="text-2xl m-2  text-center  md:text-7xl font-bold leading-tight  text-[#131313]">
           Your Questions, Answered
         </h2>
-        <p className="text-[14px] m-2 md:text-[20px] text-gray-600  text-center my-4 md:my-6">
+        <p className="text-[14px] m-2 md:text-[20px] text-[#5C5C5C]  text-center my-4 md:my-6">
           Helping you understand our process and offerings at Nestoric digital
         </p>
 
@@ -149,7 +149,7 @@ export default function FaqSection() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-5 text-left  rounded-2xl text-slate-800 font-medium "
+                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-5 text-left  rounded-2xl text-[#131313] font-medium "
               >
                 <span>{faq.q}</span>
 
@@ -178,7 +178,7 @@ export default function FaqSection() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="px-5 text-justify pb-4 text-[14px] md:text-[20px]  text-slate-600 leading-relaxed">
+                  <p className="px-5 text-justify pb-4 text-[14px] md:text-[20px]  text-[#5C5C5C] leading-relaxed">
                     {faq.a}
                   </p>
                 </div>
