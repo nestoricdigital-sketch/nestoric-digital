@@ -103,7 +103,7 @@ export default function ProjectForm() {
           {/* Main 2-column Section */}
 
           <div
-            className="flex flex-col md:flex-row max-w-7xl w-full text-white rounded-2xl  md:p-10 gap-16"
+            className="flex flex-col px-2 md:flex-row max-w-7xl w-full text-white rounded-2xl  md:p-10 gap-16"
             // style={{
             //   backgroundImage: `url(${bgConnect})`,
             //   backgroundSize: "cover",

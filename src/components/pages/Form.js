@@ -98,7 +98,7 @@ const Form = ({ onClose, showClose = false }) => {
           <div className="relative w-full h-full overflow-hidden rounded-lg">
             <iframe
               width="100%"
-              height="540"
+              height="540px"
               src="https://www.youtube.com/embed/R_Cu4-Td6Yw?autoplay=1&mute=1&loop=1&playlist=R_Cu4-Td6Yw"
               title="YouTube Short"
               allow="autoplay; encrypted-media"
@@ -153,7 +153,7 @@ const Form = ({ onClose, showClose = false }) => {
             <li className="flex items-center gap-2">⚡ Faster conversions</li>
           </ul> */}
         {/* right side */}
-        <div className="flex flex-col gap-4 h-[540px]">
+        <div className="flex flex-col gap-4 h-full md:h-[540px]">
           <form
             onSubmit={handleSubmit}
             className="m-2 flex flex-col gap-3 md:gap-[28px] text-gray-800"
@@ -245,13 +245,13 @@ const Form = ({ onClose, showClose = false }) => {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full py-1 bg-transparent text-[14px] md:text-[16px]
-        border-b border-gray-300
-        focus:border-indigo-500
-        text-gray-800 focus:outline-none"
+                className={`w-full py-1 bg-transparent text-[14px] md:text-[16px]
+        border-b  border-gray-300 
+        focus:border-indigo-500 
+        text-gray-800 focus:outline-none box-border ${formData.service === "" ? "text-slate-500 opacity-45 font-[500] " : "text-gray-800"}`}
                 required
               >
-                <option value="" className="text-gray-400">
+                <option value="" className="text-gray-200 disabled hidden">
                   Select your service
                 </option>
                 <option value="digital marketing">Digital Marketing</option>
@@ -271,7 +271,7 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Description */}
             <div>
-              <label className="block text-[16px] font-medium mb-1  text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
                 Project Description
               </label>
               <textarea
@@ -280,7 +280,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Describe your project..."
-                className="w-full bg-transparent text-[14px] md:text-[16px]
+                className="w-full bg-transparent py-1 text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400

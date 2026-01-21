@@ -14,7 +14,7 @@ import { Fade } from "react-awesome-reveal";
 // import Testimon from './Testimon';
 const testimonials = [
   {
-    text: "Adithya turned our idea into a sharp, easy-to-use product.",
+    text: "They transformed our vision into an immersive digital experience.",
     author: "Naveen",
     role: "Founder, Vasura",
     img1: testbg,
@@ -47,7 +47,7 @@ export default function Testimon() {
   };
   const prevTestimonial = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1,
     );
   };
 
@@ -60,7 +60,7 @@ export default function Testimon() {
           observer.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -163,11 +163,27 @@ export default function Testimon() {
             <div className="absolute inset-0 rounded-[15px] z-0"></div>
 
             {/* Testimonial Text */}
-            <div className="relative z-10 flex-1 flex items-start justify-between text-center px-4">
-              <p className="text-[14px] md:text-[20px] leading-relaxed font-medium text-gray-300 drop-shadow-md opacity-3">
+            {/* Testimonial Text */}
+            <div
+              className="relative z-10  flex flex-col md:flex-row w-full
+  items-start  
+  justify-start md:justify-between 
+  text-center px-0 gap-36 "
+            >
+              {/* Count */}
+              <p
+                className="text-[14px] md:text-[20px] 
+    leading-relaxed font-medium text-gray-300 drop-shadow-md opacity-50"
+              >
                 {testimonials[currentIndex].count}/3
               </p>
-              <p className=" text-[16px] md:text-[20px] leading-relaxed font-medium drop-shadow-md">
+
+              {/* Text */}
+              <p
+                className="text-[16px] md:text-[20px] 
+    leading-relaxed font-medium drop-shadow-md
+    text-center md:text-left"
+              >
                 {testimonials[currentIndex].text}
               </p>
             </div>

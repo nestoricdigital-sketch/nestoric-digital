@@ -149,7 +149,7 @@ export default function FaqSection() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-5 text-left  rounded-2xl text-[#131313] font-medium "
+                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-4 text-left  rounded-2xl text-[#131313] font-medium "
               >
                 <span>{faq.q}</span>
 
