@@ -28,7 +28,7 @@ const testimonials = [
     count: "2",
   },
   {
-    text: "Amazing experience, would highly recommend them!",
+    text: "Amazing experience with great communication and timely delivery. Highly recommended!",
     author: "Sanjay",
     role: "Founder, FlowPipe",
     img1: testNet,
@@ -119,7 +119,7 @@ export default function Testimon() {
         <div className=" font-inter mx-2 md:mx-4 relative z-10 flex flex-col lg:flex-row gap-4 ">
           {/* Left Column (Stats) */}
           <div
-            className="w-full overflow-hidden h-96 md:h-[493px] lg:w-1/4 flex flex-col justify-center gap-6 text-center lg:text-left object-cover  text-slate-100 p-6 rounded-[15px]  bg-cover bg-center bg-no-repeat shadow-md"
+            className="w-full overflow-hidden h-96 md:h-[460px] lg:w-1/4 flex flex-col justify-center gap-14 text-left lg:text-left object-cover  text-slate-100 p-6  rounded-[15px]  bg-cover bg-center bg-no-repeat shadow-md"
             style={{
               backgroundImage: `url(${testbox})`,
               backgroundSize: "cover",
@@ -128,24 +128,18 @@ export default function Testimon() {
               // backgroundColor: "red", // test visibility
             }}
           >
-            <div className="md:mt-6">
-              <h3 className="text-5xl font-bold">{counts.projects}+</h3>
-              <p className="text-gray-300 md:mt-6  text-[14px] md:text-[20px]">
-                Finalized Projects
-              </p>
+            <div className="md:mt-2">
+              <h3 className="text-6xl font-bold">{counts.projects}+</h3>
+              <p className=" md:mt-2  text-[14px] ">Finalized Projects</p>
             </div>
             {/* <img src={testi1} className="w-full " /> */}
-            <div className="md:mt-6">
-              <h3 className="text-5xl font-bold">{counts.clients}%</h3>
-              <p className="text-gray-300 text-[14px] md:text-[20px]  md:mt-6">
-                Happy Clients
-              </p>
+            <div className="md:mt-2">
+              <h3 className="text-6xl font-bold">{counts.clients}%</h3>
+              <p className=" text-[14px]  md:mt-2">Happy Clients</p>
             </div>
-            <div className="md:mt-6">
-              <h3 className="text-5xl font-bold">{counts.success}%</h3>
-              <p className="text-gray-300 text-[14px] md:text-[20px] md:mt-6">
-                Success Rate
-              </p>
+            <div className="md:mt-2">
+              <h3 className="text-6xl font-bold">{counts.success}%</h3>
+              <p className=" text-[14px]  md:mt-2">Success Rate</p>
             </div>
           </div>
 
@@ -165,24 +159,27 @@ export default function Testimon() {
             {/* Testimonial Text */}
             {/* Testimonial Text */}
             <div
-              className="relative z-10  flex flex-col md:flex-row w-full
+              className="relative z-10  flex flex-col w-full
   items-start  
-  justify-start md:justify-between 
-  text-center px-0 gap-36 "
+   justify-between gap-y-48
+  text-center px-0  "
             >
               {/* Count */}
-              <p
-                className="text-[14px] md:text-[20px] 
-    leading-relaxed font-medium text-gray-300 drop-shadow-md opacity-50"
-              >
-                {testimonials[currentIndex].count}/3
-              </p>
+              <div className="text-white">
+                <p
+                  className="text-[14px] md:text-[20px] leading-relaxed font-medium drop-shadow-md
+  underline underline-offset-[10px] decoration-gray-300 decoration-opacity-100 decoration-[1px]"
+                >
+                  0{testimonials[currentIndex].count}
+                  <span className="text-white/40"> / 03</span>
+                </p>
+              </div>
 
               {/* Text */}
               <p
-                className="text-[16px] md:text-[20px] 
-    leading-relaxed font-medium drop-shadow-md
-    text-center md:text-left"
+                className="text-[16px] text-white md:text-[24px] 
+    leading-relaxed font-bold drop-shadow-md text-justify
+     md:text-left"
               >
                 {testimonials[currentIndex].text}
               </p>
@@ -193,7 +190,7 @@ export default function Testimon() {
               <p className="font-semibold text-[16px] md:text-[24px]">
                 {testimonials[currentIndex].author}
               </p>
-              <p className="text-gray-200 text-[14px] md:text-[20px]">
+              <p className="text-white/40 text-[14px] md:text-[20px]">
                 {testimonials[currentIndex].role}
               </p>
             </div>

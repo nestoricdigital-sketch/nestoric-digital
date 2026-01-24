@@ -141,7 +141,7 @@ export default function FaqSection() {
         </p>
 
         {/* Independent columns */}
-        <div className="grid grid-cols-1 mx-2 md:grid-cols-2 gap-6 items-start py-6 md:pt-16">
+        <div className="grid grid-cols-1 max-w-[1134px] mx-2 md:mx-auto justify-center content-center md:grid-cols-2 gap-6 items-start py-6 md:pt-16">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -149,7 +149,7 @@ export default function FaqSection() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-4 text-left  rounded-2xl text-[#131313] font-medium "
+                className="text-[14px] md:text-[20px] w-full flex justify-between items-center p-4 text-left  rounded-2xl text-[#131313]  "
               >
                 <span>{faq.q}</span>
 

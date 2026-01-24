@@ -30,6 +30,7 @@ import Form from "./components/pages/Form";
 // import bgConnect from "../images/contactbg.jpg";
 import { ModalProvider } from "./components/modal/ModalContext";
 import BookingForm from "./components/modal/BookingForm";
+import GTMPageTracker from "./components/GTMPageTracker";
 
 // import Services from "./components/pages/Services";
 // import About from "./components/pages/About";
@@ -148,6 +149,7 @@ function App() {
 
         {/* Suspense Wrapper for Lazy Loading */}
             <Suspense fallback={<LoadingScreen />}>
+              <GTMPageTracker />
               <Routes>
                 {/* ✅ Default homepage route */}
 
