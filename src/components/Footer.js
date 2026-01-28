@@ -32,7 +32,8 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <footer id="footer"
+    <footer
+      id="footer"
       className="
        footer-bg
     mt-2 mx-2 md:-mx-16 text-white rounded-2xl
@@ -151,7 +152,7 @@ export default function Footer() {
 
             <li className="flex gap-2 md:gap-3 mt-4">
               <img src={phoLogo} className="h-5 w-5" alt="phone" />
-              <p>+91 99990 96680</p>
+              <p>+91 99864 59376</p>
             </li>
 
             <Link
