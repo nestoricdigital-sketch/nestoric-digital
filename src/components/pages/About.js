@@ -70,10 +70,11 @@ const About = () => {
                     src={h_1}
                     alt="decorative circle"
                     loading="lazy"
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                   />
                 </div>
-                <span className="text-purple-600 italic">Nestoric Digital</span>
+                <span className="text-[#7A4DBE]">Nestoric Digital</span>
               </div>
 
               {/* LINE 2 */}
@@ -84,7 +85,8 @@ const About = () => {
                     src={h_2}
                     alt="decorative circle"
                     loading="lazy"
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                   />
                 </div>
                 <span className="text-slate-800">Driven</span>
@@ -163,7 +165,7 @@ const About = () => {
 
           {/* Right: Content */}
           <div className="w-full md:w-1/2 md:pt-10 md:pb-10 md:pl-10 md:pr-0 p-2 z-10 flex flex-col justify-center text-gray-800">
-            <h2 className="text-xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-xl lg:text-5xl font-bold md:mb-4">
               Creating Change That Matters
             </h2>
             <p className="text-[14px] text-justify md:text-[18px] leading-relaxed">
@@ -195,7 +197,7 @@ const About = () => {
 
           {/* Right: Content */}
           <div className="w-full md:w-1/2 md:pt-10 md:pb-10 md:pr-10 md:pl-0 p-2 z-10 flex flex-col justify-center text-gray-800">
-            <h2 className="text-xl md:text-5xl font-bold mb-4">
+            <h2 className="text-xl md:text-5xl font-bold md:mb-4">
               Turning Ideas into Impact
             </h2>
             <p className="text-[14px] text-justify md:text-[18px] leading-relaxed">

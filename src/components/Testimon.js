@@ -157,29 +157,41 @@ export default function Testimon() {
             <div className="absolute inset-0 rounded-[15px] z-0"></div>
 
             {/* Testimonial Text */}
-            {/* Testimonial Text */}
             <div
-              className="relative z-10  flex flex-col w-full
-  items-start  
-   justify-between gap-y-48
-  text-center px-0  "
+              className="
+    relative z-10 w-full
+    flex flex-row
+    items-start
+    justify-between
+    gap-6
+    px-0
+  "
             >
-              {/* Count */}
-              <div className="text-white">
+              {/* Count (Left / Start) */}
+              <div className="text-white shrink-0">
                 <p
-                  className="text-[14px] md:text-[20px] leading-relaxed font-medium drop-shadow-md
-  underline underline-offset-[10px] decoration-gray-300 decoration-opacity-100 decoration-[1px]"
+                  className="
+        text-[14px] md:text-[20px]
+        leading-relaxed font-medium drop-shadow-md
+        underline underline-offset-[10px]
+        decoration-gray-300 decoration-opacity-100 decoration-[1px]
+        whitespace-nowrap
+      "
                 >
                   0{testimonials[currentIndex].count}
                   <span className="text-white/40"> / 03</span>
                 </p>
               </div>
 
-              {/* Text */}
+              {/* Text (Right / End) */}
               <p
-                className="text-[16px] text-white md:text-[24px] 
-    leading-relaxed font-bold drop-shadow-md text-justify
-     md:text-left"
+                className="
+      text-[16px] md:text-[24px]
+      text-white font-bold drop-shadow-md
+      leading-relaxed
+      text-right md:text-left
+      max-w-[70%]
+    "
               >
                 {testimonials[currentIndex].text}
               </p>

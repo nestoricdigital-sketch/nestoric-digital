@@ -160,10 +160,10 @@ function App() {
                     element={
                       <>
                         <HeroSection />
-                        <WorksGrid />
                         {/* <WorksMini /> */}
                         <Providing />
                         <Work /> {/* services section */}
+                        <WorksGrid />
                         {/* <Works />  */}
                         <Testimon />
                         <FaqSection />

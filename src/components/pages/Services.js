@@ -19,8 +19,10 @@ const Services = () => {
       description:
         "We create conversion-optimized, high-performing websites from the bottom up to complement your entire digital marketing strategy to increase traffic, leads, and sales. We believe in Conversion-First Design that guides visitors toward a desired action (lead, purchase, subscription). Top Google rankings and smooth integration to support next digital efforts are guaranteed by our SEO success.",
       buttons: [
+        "Custom Website Design",
         "Strategic Web Design",
         "Expert Web Development",
+        "Corporate & Portfolio Websites",
         "Professional Copywriting (SEO-optimized)",
         "Dedicated Project Manager",
         "Google Analytics & Tag Manager Setup",
@@ -131,10 +133,11 @@ const Services = () => {
                     src={h_1}
                     alt="decorative circle"
                     loading="lazy"
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                   />
                 </div>
-                <span className="text-purple-600 italic">Services</span>
+                <span className="text-[#7A4DBE]">Services</span>
               </div>
 
               {/* LINE 2 */}
@@ -145,7 +148,8 @@ const Services = () => {
                     src={h_2}
                     alt="decorative circle"
                     loading="lazy"
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                   />
                 </div>
                 <span className="text-slate-800">Delivered</span>
@@ -224,12 +228,12 @@ const Services = () => {
                     className="w-full h-full object-cover rounded-2xl shadow-lg "
                   />
                 </div>
-                <h3 className="font-inter text-xl md:text-[24px] font-semibold  text-start text-gray-900">
+                <h3 className="font-inter text-xl md:text-[24px] lg:h-[35px] lg:text-5xl font-semibold  text-start text-gray-900">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-justify md:mt-[48px] text-[14px] md:text-[18px] text-gray-600  w-full">
+                <p className="font-inter text-justify md:mt-[32px] text-[14px] md:text-[18px] text-gray-600  w-full">
                   {service.description}
                 </p>
 
@@ -248,12 +252,12 @@ const Services = () => {
                 </div> */}
 
                 {/* updated */}
-                <div className="flex justify-center   content-center mt-4 md:mt-[86px] md:mb-[86px] px-4 md:px-0">
-                  <div className="flex flex-wrap md:w-[70%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
+                <div className="flex justify-center   content-center mt-4 md:mt-[40px] md:mb-[30px] px-4 md:px-0">
+                  <div className="flex flex-wrap md:w-[80%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
                     {service.buttons.map((btn, i) => (
                       <button
                         key={i}
-                        className="px-4 sm:px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
+                        className="font-mada px-4 sm:px-6 py-2 bg-[#565656] shadow-lg shadow-slate-500/40 text-[#cdcdcd] rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
                       >
                         {btn}
                       </button>

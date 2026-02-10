@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import bgConnect from "../images/contactbg.jpg";
 import { supabase } from "../superbase/SuperClient";
 import { Fade } from "react-awesome-reveal";
+import Select from "react-select";
 
 //  import axios from 'axios';
 export default function ProjectForm() {
+  const [selectedService, setSelectedService] = useState(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,6 +55,7 @@ export default function ProjectForm() {
         service: "",
         description: "",
       });
+      setSelectedService(null); // 🔥 clears react-select
     } catch (err) {
       console.error("Supabase error:", err.message);
       alert("Failed to submit form. Please try again.");
@@ -59,6 +63,67 @@ export default function ProjectForm() {
       setLoading(false);
     }
   };
+
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      backgroundColor: "transparent",
+      border: "none",
+      borderBottom: "1px solid rgba(255,255,255,0.6)",
+      borderRadius: 0,
+      boxShadow: "none",
+      minHeight: "40px",
+      fontSize: "inherit", // ✅ inherit from className
+    }),
+
+    valueContainer: (base) => ({
+      ...base,
+      paddingLeft: 0,
+      paddingRight: 0,
+      fontSize: "inherit",
+    }),
+
+    input: (base) => ({
+      ...base,
+      margin: 0,
+      padding: 0,
+      fontSize: "inherit",
+      color: "#fff",
+    }),
+
+    placeholder: (base) => ({
+      ...base,
+      marginLeft: 0,
+      fontSize: "inherit",
+      color: "rgba(255,255,255,0.6)",
+    }),
+
+    singleValue: (base) => ({
+      ...base,
+      marginLeft: 0,
+      fontSize: "inherit",
+      color: "#fff",
+    }),
+
+    menu: (base) => ({
+      ...base,
+      backgroundColor: "#E2E8F0",
+      fontSize: "14px", // mobile default
+    }),
+
+    option: (base, state) => ({
+      ...base,
+      fontSize: "14px",
+      backgroundColor: state.isSelected
+        ? "#CBD5E1"
+        : state.isFocused
+          ? "#F1F5F9"
+          : "transparent",
+      color: "#000",
+      cursor: "pointer",
+    }),
+  };
+
   // ✅ Disable button if any field is empty
   const isDisabled =
     !formData.name ||
@@ -67,6 +132,21 @@ export default function ProjectForm() {
     !formData.service ||
     !formData.description ||
     phoneError;
+
+  const serviceOptions = [
+    { value: "digital marketing", label: "Digital Marketing" },
+    { value: "seo optimisation", label: "SEO Optimisation" },
+    { value: "content writing", label: "Content Writing" },
+    {
+      value: "website design & development",
+      label: "Website Design & Development",
+    },
+    {
+      value: "online reputation management",
+      label: "Online Reputation Management",
+    },
+    { value: "performance marketing", label: "Performance Marketing" },
+  ];
 
   return (
     <>
@@ -199,56 +279,37 @@ export default function ProjectForm() {
 
                 {/* Service */}
                 <div>
-                  <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px]">
+                  <label className="block text-[14px] md:text-[16px] font-medium mb-1 md:mb-[14px] text-white">
                     Select Your Service
                   </label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="text-[14px] py-2 md:text-[16px] w-full bg-transparent border-b border-white/60 focus:border-indigo-500 text-white  focus:outline-none"
-                    required
-                  >
-                    <option value="" className="bg-gray-900 text-white">
-                      Select your service
-                    </option>
-                    <option
-                      value="digital marketing"
-                      className="bg-gray-100 text-black"
-                    >
-                      Digital Marketing
-                    </option>
-                    <option
-                      value="seo optimisation"
-                      className="bg-gray-100 text-black"
-                    >
-                      SEO Optimisation
-                    </option>
-                    <option
-                      value="content writing"
-                      className="bg-gray-100 text-black"
-                    >
-                      Content Writing
-                    </option>
-                    <option
-                      value="website design & development"
-                      className="bg-gray-100 text-black"
-                    >
-                      Website Design & Development
-                    </option>
-                    <option
-                      value="online reputation management"
-                      className="bg-gray-100 text-black"
-                    >
-                      Online Reputation Management
-                    </option>
-                    <option
-                      value="performance marketing"
-                      className="bg-gray-100 text-black"
-                    >
-                      Performance Marketing
-                    </option>
-                  </select>
+
+                  <Select
+                    options={serviceOptions}
+                    placeholder="Select your service"
+                    styles={customStyles}
+                    components={{ IndicatorSeparator: null }}
+                    className="text-[14px] md:text-[16px]"
+                    classNamePrefix="react-select"
+                    value={selectedService} // ✅ controlled value
+                    onChange={(selected) => {
+                      setSelectedService(selected); // for react-select
+                      setFormData({ ...formData, service: selected.value }); // for form submit
+                    }}
+                  />
+                  {/* <Select
+                    options={serviceOptions}
+                    placeholder="Select your service"
+                    styles={customStyles}
+                    className="text-[14px] md:text-[16px]"
+                    components={{
+                      IndicatorSeparator: null, // 🔥 removes the span
+                    }}
+                    onChange={(selected) =>
+                      setFormData({ ...formData, service: selected.value })
+                    }
+                    // className="border-b border-white/60 focus:border-indigo-500"
+                    classNamePrefix="react-select"
+                  /> */}
                 </div>
 
                 {/* Description */}

@@ -39,7 +39,9 @@ const WorkPage = () => {
                     src={h_1}
                     alt="decorative circle"
                     loading="lazy"
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+
+                    // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                   />
                 </div>
                 <span className="text-purple-600 italic">In Action</span>
@@ -53,7 +55,8 @@ const WorkPage = () => {
                     src={h_2}
                     alt="decorative circle"
                     loading="lazy"
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
                   />
                 </div>
                 <span className="text-slate-800">Work</span>

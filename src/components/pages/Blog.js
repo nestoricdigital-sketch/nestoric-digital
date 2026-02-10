@@ -45,10 +45,11 @@ const Blog = () => {
                   <img
                     src={h_1}
                     alt="circle-1"
-                    className="w-10 h-10 sm:w-7 sm:h-5 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover  animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-7 sm:h-5 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover  animate-float-slow"
                   />
                 </div>
-                <span className="text-purple-600 italic">Insights</span>
+                <span className="text-[#7A4DBE]">Insights</span>
               </div>
               <div className=" font-inter md:h-[62px] md:mb-[20px]  flex flex-wrap flex-row  md:flex-nowrap justify-center text-slate-800 text-4xl md:text-5xl font-semibold leading-tight mb-6">
                 <div className="text-[#666666] ">Behind the</div>
@@ -57,7 +58,8 @@ const Blog = () => {
                   <img
                     src={h_2}
                     alt="circle-3"
-                    className="w-10 h-10 sm:w-7  sm:h-5 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
+                    className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
+                    // className="w-10 h-10 sm:w-7  sm:h-5 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                   />
                 </div>
                 <div className="text-slate-800">Builts</div>
@@ -122,16 +124,16 @@ const Blog = () => {
             <div className="relative w-full">
               <img
                 src={blog.image}
-                className="w-full h-auto object-cover rounded-[15px]"
+                className="w-full h-auto object-cover rounded-[15px] mb-4 md:mb-[32px]"
                 alt="this is blog post"
               />
 
-              <div className="relative z-10 text-center my-6">
-                <h1 className="text-slate-800 text-[20px] md:text-5xl text-start font-semibold">
+              <div className="relative z-10 text-center my-0">
+                <h1 className="font-inter  text-slate-800 text-[20px] md:text-5xl  text-start font-semibold">
                   {blog.title}
                 </h1>
 
-                <p className="text-justify text-slate-700 text-[14px] md:text-[18px] mt-4">
+                <p className="font-inter text-justify text-slate-700 text-[14px] md:text-[18px] mt-0 md:mt-[32px]">
                   {blog.description}
                 </p>
 
@@ -146,12 +148,12 @@ const Blog = () => {
                     </button>
                   ))}
                 </div> */}
-                <div className="flex justify-center   content-center mt-4 md:mt-[86px] md:mb-[86px] px-4 md:px-0">
-                  <div className="flex flex-wrap md:w-[60%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
+                <div className="flex justify-center   content-center mt-4 md:mt-[40px] md:mb-[86px] px-4 md:px-0">
+                  <div className="flex flex-wrap md:w-[80%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
                     {blog.tags.map((btn, i) => (
                       <button
                         key={i}
-                        className="px-4 sm:px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
+                        className="px-4 sm:px-6 py-2 bg-[#565656] shadow-lg shadow-slate-500/40 text-[#cdcdcd] rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
                       >
                         {btn}
                       </button>

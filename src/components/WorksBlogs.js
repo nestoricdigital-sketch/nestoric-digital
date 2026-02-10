@@ -2,12 +2,16 @@ import React from "react";
 // import vasura from "./images/worksRecent/vasura.jpg";
 // import carzen from "./images/worksRecent/cazen_web.jpg";
 // import vhTech from "./images/worksRecent/vhTech.jpg";
-import vasura from "./images/works/vasura.jpg";
+import vasura from "./images/works/vasura.webp";
 import carzen from "./images/works/carzen.jpg";
-import vhTech from "./images/works/vhs.jpg";
+import vhTech from "./images/works/vh-site.webp";
 import surya from "./images/works/surya.jpg";
 import nandi from "./images/works/nandi.jpg";
-import magnum from "./images/works/magnum.jpg";
+import magnum from "./images/works/magnum-site.webp";
+import gp from "./images/works/gp.webp";
+import digi from "./images/works/digichain-site.webp";
+import simplus from "./images/works/simplus.webp";
+import citySc from "./images/works/cityscrape.webp";
 import { Fade } from "react-awesome-reveal";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -106,6 +110,67 @@ const WorksBlogs = () => {
         "Social Media Content",
       ],
     },
+    {
+      id: "digichain",
+      title: "Digichain",
+      image: digi,
+      description:
+        "We designed and developed a modern, conversion-focused website for Digichain, an education platform dedicated to blockchain, cryptocurrency, and AI learning.The website was crafted to clearly communicate Digichain’s mission—empowering learners to transform their careers through innovative, future-ready courses. With a clean layout, structured content flow, and intuitive navigation, the platform makes it easy for users to explore courses, understand value propositions, and take action with confidence.",
+      buttons: [
+        "Website Development",
+        "Responsive Design",
+        "UI/UX Design",
+        "Cross-Browser Compatible",
+        "User-Intent Design",
+        "Clean Code",
+      ],
+    },
+    {
+      id: "simplus",
+      title: "Simplus",
+      image: simplus,
+      description:
+        "We executed a structured campaign setup on Meta for Simplus, focused on building a strong foundation for performance-driven lead generation.The setup included audience structuring, campaign architecture, ad account optimization, and conversion tracking, ensuring accurate data flow and efficient delivery from day one. Our approach was designed to support scalability, clarity in reporting, and improved campaign performance, enabling Simplus to launch and manage campaigns with confidence",
+      buttons: [
+        "Lead Generation",
+        "Scalable Campaigns",
+        "Meta Campaign Setup",
+        "Audience Structuring",
+        "Cost-Efficient Leads",
+        "Long-Term Performance",
+        "Lead Funnel Architecture",
+      ],
+    },
+    {
+      id: "gp",
+      title: "Garuda Properties",
+      image: gp,
+      description:
+        "We executed a performance-driven lead generation campaign for Garuda Properties, focused on delivering high-quality, verified inquiries for their residential real estate projects.The strategy was built to attract genuine, high-intent homebuyers, filtering inquiries based on budget, project relevance, and purchase intent. The campaign successfully generated a steady flow of conversion-ready leads, helping Garuda Properties improve engagement, follow-ups, and overall sales efficiency.By aligning the lead funnel with project positioning and buyer expectations, we created a scalable lead generation system designed for consistent quality and long-term growth.",
+      buttons: [
+        "Blogging & Articles",
+        "Website Copy",
+        "Long-Form Content",
+        "Video Scripts & Production",
+        "Email & Newsletter Copy",
+        "Social Media Content",
+      ],
+    },
+    {
+      id: "Cityscape ",
+      title: "CityScape Realtor",
+      image: citySc,
+      description:
+        "We executed a high-performance lead generation campaign for Cityscrape Realtor, focused on delivering high-quality, verified inquiries for premium real estate projects.Our strategy was designed to attract genuine, high-intent buyers, ensuring that every lead met quality benchmarks such as budget relevance, project interest, and readiness to engage. The campaign was launched with a target of 100+ qualified leads, supporting Cityscrape’s portfolio of 10+ active properties.By aligning the lead funnel with each project’s positioning, we helped Cityscrape streamline inquiries, improve follow-ups, and create a scalable system for consistent, conversion-ready leads.",
+      buttons: [
+        "Brand Visibility",
+        "High-Intent Targeting",
+        "ROI Optimisation",
+        "Content Engagement",
+        "Performance Reporting",
+        "Social Media Content",
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -163,7 +228,7 @@ const WorksBlogs = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-auto md:h-[580px] object-cover rounded-2xl "
+                    className="w-full h-auto  object-cover rounded-2xl "
                   />
                 </div>
                 <h3 className="font-inter text-[20px] md:text-[24px] lg:text-5xl font-semibold text-start text-gray-900">
@@ -172,20 +237,20 @@ const WorksBlogs = () => {
 
                 {/* Description */}
                 <p
-                  className="  text-justify
-  md:mt-[48px] text-[14px] md:text-[18px] text-gray-600  w-full"
+                  className="font-inter text-justify
+  md:mt-[32px] text-[14px] md:text-[18px] text-gray-600  w-full"
                 >
                   {service.description}
                 </p>
 
                 {/* Buttons */}
                 {/* Buttons */}
-                <div className="flex justify-center   content-center mt-4 md:mt-[86px] md:mb-[86px] px-4 md:px-0">
-                  <div className="flex flex-wrap md:w-[60%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
+                <div className="flex justify-center   content-center mt-4 md:mt-[40px] md:mb-[30px] px-4 md:px-0">
+                  <div className="flex flex-wrap md:w-[80%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
                     {service.buttons.map((btn, i) => (
                       <button
                         key={i}
-                        className="px-4 sm:px-6 py-2 bg-[#353535] shadow-lg shadow-slate-500/40 text-white rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
+                        className="font-mada px-4 sm:px-6 py-2 bg-[#565656] shadow-lg shadow-slate-500/40 text-[#cdcdcd] rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap"
                       >
                         {btn}
                       </button>

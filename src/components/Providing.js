@@ -75,7 +75,7 @@ export default function Providing() {
     <>
       <div
         id="text-scale"
-        className=" provide md:mt-8 md:-mx-20 relative flex flex-col items-center content-center  md:min-h-[25rem] my-28  bg-white"
+        className=" provide md:mt-0 md:-mx-20 relative flex flex-col items-center content-center  md:min-h-[16rem] my-28  bg-white"
         // style={{ 'overflow-x': 'hidden'}}
       >
         {/* First Scrolling Text black */}

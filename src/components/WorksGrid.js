@@ -56,7 +56,7 @@ export default function WorksGrid() {
   return (
     <div className="mx-0">
       <Fade direction="up" triggerOnce ascade damping={0.2}>
-        <div className=" mt-16  md:mt-32"></div>
+        <div className=" mt-28  md:mt-60"></div>
         <section
           className=" relative  flex flex-col md:flex-row items-center justify-center w-full"
           id="recentworks"

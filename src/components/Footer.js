@@ -49,7 +49,7 @@ export default function Footer() {
       }}
     >
       {/* TOP SECTION */}
-      <div className=" font-josefin max-w-7xl w-full mx-2 lg:mx-2 px-2 lg:px-10 pt-10">
+      <div className=" font-inter max-w-7xl w-full mx-2 lg:mx-2 px-2 lg:px-10 pt-10">
         <div
           className="
    
@@ -67,7 +67,7 @@ export default function Footer() {
               Ready to Automate Smarter?
             </h2>
 
-            <div className="font-josefin mt-4  flex flex-wrap items-center gap-2 text-2xl sm:text-3xl">
+            <div className="font-inter mt-4  flex flex-wrap items-center gap-2 text-2xl sm:text-3xl">
               <span className="font-light">let’s</span>
 
               <span className="font-bold">Build</span>
@@ -107,7 +107,7 @@ export default function Footer() {
                                        cursor-pointer"
             >
               {/* Text slides left on hover */}
-              <span className="mt-1 transform transition-transform duration-300 group-hover:-translate-x-2">
+              <span className="font-mada mt-0 transform transition-transform duration-300 group-hover:-translate-x-2">
                 Book A Free Call
               </span>
 
@@ -265,7 +265,7 @@ export default function Footer() {
           <h1 className="hero-title text-center lg:h-[130px]  font-josefin font-bold text-[#7A4DBE] mt-9 lg:mt-24">
             Nestoric Digital
           </h1>
-          <p className="text-end lg:mr-16 text-[14px] md:text-xl  mt-1 md:mt-8 text-[#868686]">
+          <p className="font-josefin text-end lg:mr-16 text-[14px] md:text-xl  mt-1 md:mt-8 text-[#868686]">
             Timeless Growth
           </p>
         </div>
