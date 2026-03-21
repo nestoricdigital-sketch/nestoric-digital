@@ -12,7 +12,7 @@ import gp from "./images/works/gp.webp";
 import digi from "./images/works/digichain-site.webp";
 import simplus from "./images/works/simplus.webp";
 import citySc from "./images/works/cityscrape.webp";
-import { Fade } from "react-awesome-reveal";
+// import { Fade } from "react-awesome-reveal";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 // import surya from "./images/worksRecent/surya.jpg";
@@ -27,13 +27,10 @@ const WorksBlogs = () => {
       image: carzen,
       description:
         "For Carzen Logistics, we delivered a conversion focused website design along with performance driven digital campaigns. The website was structured to clearly showcase logistics services and improve user navigation. We executed targeted Meta and Google campaigns to generate high-intent business enquiries. Ad creatives and messaging were optimized for the logistics audience. Continuous performance tracking helped improve lead quality. The project resulted in better visibility and consistent inbound leads.",
-      buttons: [
-        "Strategic Web Design",
-        "Expert Web Development",
-        "Professional Copywriting (SEO-optimized)",
-        "Dedicated Project Manager",
-        "Google Analytics & Tag Manager Setup",
-      ],
+
+      timeline: "2025",
+      client: "Carzen Logistics",
+      industry: "Logistics",
     },
     {
       id: "vasura",
@@ -49,6 +46,9 @@ const WorksBlogs = () => {
         "On-Page & Content SEO",
         "Google Analytics & Tag Manager Setup",
       ],
+      timeline: "2025",
+      client: "Vasura Virtual Experience",
+      industry: "Technology",
     },
     {
       id: "vhTech",
@@ -64,6 +64,9 @@ const WorksBlogs = () => {
         "	Confidential and Ethical Approach ",
         "Review Generation ",
       ],
+      timeline: "2026",
+      client: "VH’s Techsphere",
+      industry: "Technology",
     },
     {
       id: "magnum",
@@ -79,6 +82,9 @@ const WorksBlogs = () => {
         "	Content & Engagement",
         "Reporting and Transparency",
       ],
+      timeline: "2025",
+      client: "Magnum Opus",
+      industry: "Real Estate",
     },
     {
       id: "surya",
@@ -94,6 +100,9 @@ const WorksBlogs = () => {
         "Creative & Technical Setup",
         "Rapid Scaling",
       ],
+      timeline: "2025",
+      client: "Surya City",
+      industry: "Real Estate",
     },
     {
       id: "nandi",
@@ -109,6 +118,9 @@ const WorksBlogs = () => {
         "Email & Newsletter Copy",
         "Social Media Content",
       ],
+      timeline: "2025",
+      client: "Nandi Urban City",
+      industry: "Real Estate",
     },
     {
       id: "digichain",
@@ -124,6 +136,9 @@ const WorksBlogs = () => {
         "User-Intent Design",
         "Clean Code",
       ],
+      timeline: "2026",
+      client: "Digichain",
+      industry: "Education",
     },
     {
       id: "simplus",
@@ -140,6 +155,9 @@ const WorksBlogs = () => {
         "Long-Term Performance",
         "Lead Funnel Architecture",
       ],
+      timeline: "2025",
+      client: "Simplus",
+      industry: "Technology",
     },
     {
       id: "gp",
@@ -155,6 +173,9 @@ const WorksBlogs = () => {
         "Email & Newsletter Copy",
         "Social Media Content",
       ],
+      timeline: "2025",
+      client: "Garuda Properties",
+      industry: "Real Estate",
     },
     {
       id: "Cityscape ",
@@ -170,6 +191,9 @@ const WorksBlogs = () => {
         "Performance Reporting",
         "Social Media Content",
       ],
+      timeline: "2026",
+      client: "CityScape Realtor",
+      industry: "Real Estate",
     },
   ];
 
@@ -195,57 +219,139 @@ const WorksBlogs = () => {
   }, [location]);
 
   return (
-    <div>
+    <div id="works" className="relative">
       <div className=" mt-16  md:mt-32"></div>
-      <section
-        className=" relative  flex flex-col md:flex-row items-center justify-center w-full"
-        id="recentworks"
-      >
-        <h2
-          className=" absolute bottom-[80%] sm:bottom-[80%] lg:bottom-[80%] left-1/2 -translate-x-1/2
-             text-4xl sm:text-5xl md:text-7xl lg:text-9xl
-             font-extrabold text-transparent bg-clip-text
-             bg-gradient-to-b from-black via-gray-800 to-slate-100
-             z-0 select-none text-center pointer-events-none
-             opacity-20 sm:opacity-10 text-nowrap"
-        >
-          Recent Works
-        </h2>
-      </section>
-      <section className="w-full px-2 md:px-4">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,#4c1d95_0%,#000_60%)] opacity-20 md:opacity-30"></div>
+
+      <section className="max-w-7xl lg:px-10 mx-auto   px-4 md:px-8">
         <div className="grid grid-cols-1 gap-16" id="services">
           {works.map((service, index) => (
             <div
               key={index}
               id={service.id}
-              className="flex flex-col  md:items-start text-center md:text-left mb-5"
+              className="flex flex-col text-center md:text-left mb-5"
             >
-              <Fade>
-                {/* Title on the right (align right on desktop) */}
+              {/* <Fade> */}
+              {/* Title on the right (align right on desktop) */}
 
-                {/* Image */}
-                <div className="w-full mb-4 md:mb-[32px]">
+              {/* Image */}
+              <div className="w-full mb-4 md:mb-[32px] relative">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-sm px-4 py-3">
+                  <h3
+                    className="text-stone-50 text-base md:text-2xl font-light "
+                    style={{
+                      textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                    }}
+                  >
+                    {service.title}
+                  </h3>
+                </div>
+
+                {/* <h3 className="absolute bg-black/40 backdrop-blur-sm px-4 py-3 bottom-1 left-4 md:bottom-2 md:left-6 font-inter text-[20px] md:text-[24px] lg:text-5xl font-semibold text-white z-10">
+                  {service.title}
+                </h3> */}
+              </div>
+              {/* <div className="w-full mb-4 md:mb-[32px]">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-auto  object-cover rounded-2xl "
                   />
                 </div>
-                <h3 className="font-inter text-[20px] md:text-[24px] lg:text-5xl font-semibold text-start text-gray-900">
+                <h3 className="font-inter text-[20px] md:text-[24px] lg:text-5xl font-semibold text-start">
                   {service.title}
-                </h3>
+                </h3> */}
 
-                {/* Description */}
-                <p
-                  className="font-inter text-justify
-  md:mt-[32px] text-[14px] md:text-[18px] text-gray-600  w-full"
-                >
-                  {service.description}
-                </p>
+              {/* Description */}
+              <p
+                className="font-inter text-justify
+  md:mt-[32px] text-[14px] md:text-[18px  w-full"
+              >
+                {service.description}
+              </p>
 
-                {/* Buttons */}
-                {/* Buttons */}
-                <div className="flex justify-center   content-center mt-4 md:mt-[40px] md:mb-[30px] px-4 md:px-0">
+              {/* Buttons */}
+              <div className="w-full mt-6  flex flex-col md:flex-row">
+                {/* Timeline */}
+                <div className="w-full md:w-1/3 py-3 md:py-6 px-0 md:px-6 text-left">
+                  <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 md:mb-3">
+                    [ Timeline ]
+                  </p>
+                  <h4 className="text-lg md:text-2xl font-semibold">
+                    {service.timeline}
+                  </h4>
+                </div>
+
+                {/* Client */}
+                <div className="w-full md:w-1/3 py-3 md:py-6 px-0 md:px-6 text-left md:text-center">
+                  <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 md:mb-3">
+                    [ Client ]
+                  </p>
+                  <h4 className="text-lg md:text-2xl font-semibold">
+                    {service.client}
+                  </h4>
+
+                  {service.website && (
+                    <a
+                      href={service.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-2 text-violet-400 text-sm uppercase tracking-wide"
+                    >
+                      Visit Site ↗
+                    </a>
+                  )}
+                </div>
+
+                {/* Industry */}
+                <div className="w-full md:w-1/3 py-3 md:py-6 px-0 md:px-6 text-left md:text-right">
+                  <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 md:mb-3">
+                    [ Industry ]
+                  </p>
+                  <h4 className="text-lg md:text-2xl font-semibold">
+                    {service.industry}
+                  </h4>
+                </div>
+              </div>
+
+              {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+  {items.map((item, index) => (
+    <div
+      key={index}
+      className="w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 md:p-6 shadow-lg"
+    >
+      <h3 className="text-lg md:text-xl font-semibold mb-4">{item.title}</h3>
+
+      <div className="space-y-3 text-sm md:text-base">
+        <div className="flex justify-between border-b border-white/10 pb-2">
+          <span className="text-gray-400">Timeline</span>
+          <span>{item.timeline}</span>
+        </div>
+
+        <div className="flex justify-between border-b border-white/10 pb-2">
+          <span className="text-gray-400">Client</span>
+          <span>{item.client}</span>
+        </div>
+
+        <div className="flex justify-between">
+          <span className="text-gray-400">Industry</span>
+          <span>{item.industry}</span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div> */}
+
+              {/* Buttons */}
+              {/* <div className="flex justify-center   content-center mt-4 md:mt-[40px] md:mb-[30px] px-4 md:px-0">
                   <div className="flex flex-wrap md:w-[80%]  justify-center content-center text-center gap-3 md:gap-8 min-w-0 md:min-w-48 mx-0 md:mx-36">
                     {service.buttons.map((btn, i) => (
                       <button
@@ -256,10 +362,10 @@ const WorksBlogs = () => {
                       </button>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
-                {/* <hr /> */}
-              </Fade>
+              {/* <hr /> */}
+              {/* </Fade> */}
             </div>
           ))}
         </div>
@@ -269,3 +375,18 @@ const WorksBlogs = () => {
 };
 
 export default WorksBlogs;
+/* <section
+        className=" relative  flex flex-col md:flex-row items-center justify-center w-full"
+        id="recentworks"
+      >
+        <h2
+          className=" absolute bottom-[80%] sm:bottom-[80%] lg:bottom-[80%] left-1/2 -translate-x-1/2
+             text-4xl sm:text-5xl md:text-7xl lg:text-9xl
+             font-extrabold text-transparent bg-clip-text
+             bg-gradient-to-b from-black via-gray-800 to-slate-100
+             z-0 select-none text-center pointer-events-none
+             opacity-40 sm:opacity-10 text-nowrap text-white"
+        >
+          Recent Works
+        </h2>
+      </section> */

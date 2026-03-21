@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import React, { useState, Suspense, lazy, useRef, useEffect } from "react";
+import React, { useState, Suspense, lazy, useEffect } from "react";
 import LoadingScreen from "./components/LoadingSection";
 // import HeroSection from "./components/HeroSection";
 // import Navbar from "./components/Navbar";
@@ -12,31 +12,45 @@ import LoadingScreen from "./components/LoadingSection";
 // import NotFound from "./components/pages/NotFound";
 // import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 // import Works from "./components/Works";
-import Work from "./components/pages/Work";
-import HeroSection from "./components/HeroSection";
-import Testimon from "./components/Testimon";
-import FaqSection from "./components/FaqSection";
-import Providing from "./components/Providing";
+// import Work from "./components/pages/Work";
+// import HeroSection from "./components/HeroSection";
+// import Testimon from "./components/Testimon";
+// import FaqSection from "./components/FaqSection";
+// import Providing from "./components/Providing";
 // import LetsConnect from "./components/LetsConnect";
-import ContactForm from "./components/pages/ContactForm";
+// import ContactForm from "./components/pages/ContactForm";
+// import WorksGrid from "./components/WorksGrid";
 import ScrollToTop from "./components/ScrollToTop";
 // import WorksMini from "./components/WorksMini";
 import AdminDashboard from "./components/superbase/AdminDashboard";
 import AdminLogin from "./components/superbase/AdminLogin";
 import PublicLayout from "./components/PublicLayout";
 import AdminLayout from "./components/AdminLayout";
-import WorksGrid from "./components/WorksGrid";
 import Form from "./components/pages/Form";
 // import bgConnect from "../images/contactbg.jpg";
 import { ModalProvider } from "./components/modal/ModalContext";
 import BookingForm from "./components/modal/BookingForm";
 import GTMPageTracker from "./components/GTMPageTracker";
+import HeroSection1 from "./components/darktheme/HeroSection1";
+import Numbers1 from "./components/darktheme/Numbers1";
+import Services1 from "./components/darktheme/Services1";
+import Values1 from "./components/darktheme/Values1";
+// import Testimonial1 from "./components/darktheme/Testimonial1";
+// import Faq1 from "./components/darktheme/Faqs1";
+// import Blogs1 from "./components/darktheme/Blogs1";
+// import Contact1 from "./components/darktheme/Contact1";
+import Statement1 from "./components/darktheme/Statement1";
+// import Portfolio from "./components/darktheme/Portfolio";
 
 // import Services from "./components/pages/Services";
 // import About from "./components/pages/About";
 // import Blog from "./components/pages/Blog";
 // import WorkPage from "./components/pages/WorkPage";
-
+const Portfolio = lazy(() => import("./components/darktheme/Portfolio"));
+const Testimonial1 = lazy(() => import("./components/darktheme/Testimonial1"));
+const Faq1 = lazy(() => import("./components/darktheme/Faqs1"));
+// const Blogs1 = lazy(() => import("./components/darktheme/Blogs1"));
+const Contact1 = lazy(() => import("./components/darktheme/Contact1"));
 // ✅ Lazy load non-critical (secondary) pages
 const Services = lazy(() => import("./components/pages/Services"));
 const WorkPage = lazy(() => import("./components/pages/WorkPage"));
@@ -115,12 +129,13 @@ function App() {
       <ModalProvider>
         <BookingForm />
 
-        <SmoothScrollProvider>
-          <div className="App md:px-20 ">
-            <div className="flex justify-center items-center bg-white">
-              {/* Badge container */}
+        {/* <SmoothScrollProvider> */}
+        <div
+          className="App bg-black text-white"
+          // old md:px-20
+        >
+          {/* <div className="flex justify-center items-center bg-white">
               <div className="relative w-[90%] max-w-sm">
-                {/* SVG background */}
                 <svg
                   className="w-full h-auto"
                   viewBox="0 0 397 38"
@@ -133,68 +148,76 @@ function App() {
                   />
                 </svg>
 
-                {/* Text with green dot */}
                 <span className="absolute  inset-0 flex items-center justify-center text-white font-light text-base  md:text-[18px] gap-3 ">
-                  {/* Green dot */}
                   <span className="animate-blink  w-3 h-3  rounded-full bg-green-500 inline-block"></span>
                   24/7 Available
                 </span>
               </div>
-            </div>
+            </div> */}
 
-            {/* <Navbar /> */}
-            {/* <HeroSection />
+          {/* <Navbar /> */}
+          {/* <HeroSection />
  
 
 
         {/* Suspense Wrapper for Lazy Loading */}
-            <Suspense fallback={<LoadingScreen />}>
-              <GTMPageTracker />
-              <Routes>
-                {/* ✅ Default homepage route */}
+          <Suspense fallback={<LoadingScreen />}>
+            <GTMPageTracker />
+            <Routes>
+              {/* ===================== PUBLIC ROUTES ===================== */}
+              <Route element={<PublicLayout />}>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <HeroSection1 />
+                      <Statement1 />
+                      <Services1 />
+                      <Numbers1 />
+                      <Values1 />
+                      <Suspense fallback={null}>
+                        <Portfolio />
+                        <Testimonial1 />
+                        {/* <Blogs1 /> */}
+                        <Faq1 />
+                        <Contact1 />
+                      </Suspense>
 
-                {/* ===================== PUBLIC ROUTES ===================== */}
-                <Route element={<PublicLayout />}>
-                  <Route
-                    path="/"
-                    element={
-                      <>
-                        <HeroSection />
-                        {/* <WorksMini /> */}
-                        <Providing />
-                        <Work /> {/* services section */}
-                        <WorksGrid />
-                        {/* <Works />  */}
-                        <Testimon />
-                        <FaqSection />
-                        <ContactForm />
-                      </>
-                    }
-                  />
-
-                  {/* Lazy loaded routes */}
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/work" element={<WorkPage />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="*" element={<NotFound />} />
-                </Route>
-                {/* ===================== ADMIN ROUTES ===================== */}
-                <Route element={<AdminLayout />}>
-                  <Route
-                    path="/admin-login"
-                    element={
-                      <PrivateRoute>
-                        <AdminDashboard />
-                      </PrivateRoute>
-                    }
-                  />
-                </Route>
-              </Routes>
-            </Suspense>
-          </div>
-        </SmoothScrollProvider>
+                      {/* <HeroSection /> old */}
+                      {/* <WorksMini /> */}
+                      {/* <Providing /> old*/}
+                      {/* <Work /> old services section */}
+                      {/* <WorksGrid /> old */}
+                      {/* <Works />  */}
+                      {/* <Testimon />
+                      <FaqSection />
+                      <ContactForm /> old*/}
+                    </>
+                  }
+                />
+                {/* Lazy loaded routes */}
+                <Route path="/services" element={<Services />} />
+                <Route path="/work" element={<WorkPage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+              {/* ===================== ADMIN ROUTES ===================== */}
+              <Route element={<AdminLayout />}>
+                <Route
+                  path="/admin-login"
+                  element={
+                    <PrivateRoute>
+                      <AdminDashboard />
+                    </PrivateRoute>
+                  }
+                />
+              </Route>
+            </Routes>
+          </Suspense>
+        </div>
+        {/* </SmoothScrollProvider> */}
       </ModalProvider>
     </>
   );
@@ -204,76 +227,76 @@ export default App;
 
 //
 
-export function SmoothScrollProvider({ children }) {
-  const contentRef = useRef(null);
-  const spacerRef = useRef(null);
+// export function SmoothScrollProvider({ children }) {
+//   const contentRef = useRef(null);
+//   const spacerRef = useRef(null);
 
-  const current = useRef(0);
-  const target = useRef(0);
-  const ease = 0.08;
+//   const current = useRef(0);
+//   const target = useRef(0);
+//   const ease = 0.08;
 
-  useEffect(() => {
-    const content = contentRef.current;
-    const spacer = spacerRef.current;
-    if (!content || !spacer) return;
+//   useEffect(() => {
+//     const content = contentRef.current;
+//     const spacer = spacerRef.current;
+//     if (!content || !spacer) return;
 
-    const updateHeight = () => {
-      const height = content.offsetHeight;
-      spacer.style.height = `${height}px`;
-    };
+//     const updateHeight = () => {
+//       const height = content.offsetHeight;
+//       spacer.style.height = `${height}px`;
+//     };
 
-    updateHeight();
+//     updateHeight();
 
-    const resizeObserver = new ResizeObserver(updateHeight);
-    resizeObserver.observe(content);
+//     const resizeObserver = new ResizeObserver(updateHeight);
+//     resizeObserver.observe(content);
 
-    const onScroll = () => {
-      const maxScroll = spacer.offsetHeight - window.innerHeight;
+//     const onScroll = () => {
+//       const maxScroll = spacer.offsetHeight - window.innerHeight;
 
-      target.current = Math.max(0, Math.min(window.scrollY, maxScroll));
-    };
+//       target.current = Math.max(0, Math.min(window.scrollY, maxScroll));
+//     };
 
-    const animate = () => {
-      current.current += (target.current - current.current) * ease;
-      content.style.transform = `translate3d(0, ${-current.current}px, 0)`;
-      requestAnimationFrame(animate);
-    };
+//     const animate = () => {
+//       current.current += (target.current - current.current) * ease;
+//       content.style.transform = `translate3d(0, ${-current.current}px, 0)`;
+//       requestAnimationFrame(animate);
+//     };
 
-    window.addEventListener("scroll", onScroll);
-    requestAnimationFrame(animate);
+//     window.addEventListener("scroll", onScroll);
+//     requestAnimationFrame(animate);
 
-    // Back to top support
-    // window.__scrollToTop = () => {
-    //   window.scrollTo({ top: 0, behavior: "smooth" });
-    // };
+//     // Back to top support
+//     // window.__scrollToTop = () => {
+//     //   window.scrollTo({ top: 0, behavior: "smooth" });
+//     // };
 
-    // new code
-    window.__smoothScrollTo = (y) => {
-      const maxScroll = spacerRef.current.offsetHeight - window.innerHeight;
+//     // new code
+//     window.__smoothScrollTo = (y) => {
+//       const maxScroll = spacerRef.current.offsetHeight - window.innerHeight;
 
-      window.scrollTo({
-        top: Math.max(0, Math.min(y, maxScroll)),
-        behavior: "auto", // IMPORTANT
-      });
-    };
+//       window.scrollTo({
+//         top: Math.max(0, Math.min(y, maxScroll)),
+//         behavior: "auto", // IMPORTANT
+//       });
+//     };
 
-    return () => {
-      resizeObserver.disconnect();
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
+//     return () => {
+//       resizeObserver.disconnect();
+//       window.removeEventListener("scroll", onScroll);
+//     };
+//   }, []);
 
-  return (
-    <>
-      {/* Scroll height holder */}
-      <div ref={spacerRef} />
+//   return (
+//     <>
+//       {/* Scroll height holder */}
+//       <div ref={spacerRef} />
 
-      {/* Smooth content */}
-      <div className="fixed inset-0 overflow-hidden">
-        <div ref={contentRef} className="will-change-transform">
-          {children}
-        </div>
-      </div>
-    </>
-  );
-}
+//       {/* Smooth content */}
+//       <div className="fixed inset-0 overflow-hidden">
+//         <div ref={contentRef} className="will-change-transform">
+//           {children}
+//         </div>
+//       </div>
+//     </>
+//   );
+// }

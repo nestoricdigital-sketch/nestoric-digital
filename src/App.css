@@ -6,7 +6,20 @@
     /* optional, for spacing inside */
 
 }
+@keyframes servicesMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
 /* .provide{
   overflow-x: hidden;
   /* margin: -150px 150px; */

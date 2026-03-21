@@ -8,21 +8,31 @@ import { Fade } from "react-awesome-reveal";
 import WorksBlogs from "../WorksBlogs";
 
 const WorkPage = () => {
-  const handleScrollToProjects = () => {
-    const section = document.getElementById("recentworks");
+  const handleScrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
     if (!section) return;
 
-    const y = section.getBoundingClientRect().top + window.scrollY;
-
-    window.__smoothScrollTo?.(y);
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
+  // const handleScrollToProjects = () => {
+  //   const section = document.getElementById("recentworks");
+  //   if (!section) return;
+
+  //   const y = section.getBoundingClientRect().top + window.scrollY;
+
+  //   window.__smoothScrollTo?.(y);
+  // };
   return (
     <>
-      <section className="w-full text-gray-800">
+      <section className="w-full">
         {/* === HERO SECTION === */}
         <Fade delay={1e2} cascade damping={1e-1}>
           <div
-            className="font-inter  min-h-[600px] md:min-h-[712px] relative flex flex-col items-center justify-center text-center py-32  px-6 md:px-12 bg-cover bg-center bg-no-repeat"
+            className="font-inter  min-h-[600px] md:min-h-[712px] relative flex flex-col items-center justify-center text-center py-32  px-6 md:px-12 bg-cover bg-center bg-no-repeat pt-32 md:pt-60"
             // style={{
             //   backgroundImage: `url(${heroBg})`,
             // }}
@@ -30,9 +40,17 @@ const WorkPage = () => {
             {/* Overlay for readability */}
             <div className="absolute inset-0 pointer-events-non"></div>
 
-            <div className="font-inter text-center relative z-10 max-w-5xl mx-auto px-4">
+            <div
+              className="font-inter text-zinc-50 text-center relative z-10 max-w-5xl mx-auto px-4"
+              style={{
+                textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+              }}
+            >
               {/* LINE 1 */}
-              <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-4xl md:text-5xl font-semibold leading-tight text-slate-800 mb-4">
+              <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-6xl font-light leading-tight mb-4">
                 <span>Our Work</span>
                 <div className="flex justify-center mx-2 md:mx-4">
                   <img
@@ -48,8 +66,8 @@ const WorkPage = () => {
               </div>
 
               {/* LINE 2 */}
-              <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-4xl md:text-5xl font-semibold leading-tight text-slate-800 mb-4">
-                <span className="text-[#666666]">Featured</span>
+              <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-6xl font-light leading-tight mb-4">
+                <span className="">Featured</span>
                 <div className="flex justify-center mx-2 md:mx-4">
                   <img
                     src={h_2}
@@ -59,7 +77,7 @@ const WorkPage = () => {
                     className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
                   />
                 </div>
-                <span className="text-slate-800">Work</span>
+                <span className="">Work</span>
               </div>
 
               {/* DESCRIPTION */}
@@ -70,7 +88,7 @@ const WorkPage = () => {
                 exceptional digital experiences.
               </p>
             </div> */}
-              <p className="mt-6 md:mt-20 text-[#666666] text-base md:text-lg max-w-2xl  mx-auto">
+              <p className="mt-6 md:mt-20  text-base md:text-lg max-w-2xl  mx-auto">
                 Insights, inspiration, and strategies from the creative
                 frontier—exploring design development, and the tools that power
                 exceptional digital experiences
@@ -86,25 +104,42 @@ const WorkPage = () => {
               <img src={sideAr} className="w-7 h-7 p-1" />
             </button>
           </div> */}
-            <div className="mt-6 md:mt-20  flex justify-center text-center h-[48px]">
+            <div className="mt-6 md:mt-20  flex justify-center text-center ">
               <button
+                // onClick={handleScrollToProjects}
+                onClick={() => handleScrollToSection("works")}
+                className="group flex items-center bg-[#7a4dbe]  text-white px-4 py-[5px] rounded-full 
+                           transition-all duration-300 
+                           cursor-pointer"
+              >
+                <span className="text-[18px] text-center transform transition-transform duration-300 group-hover:-translate-x-2">
+                  View Works
+                </span>
+
+                <img
+                  src={sideAr}
+                  className="w-7 h-7 p-1 mt-[0px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                  alt="side arrow"
+                />
+              </button>
+
+              {/* <button
                 onClick={handleScrollToProjects}
                 className="group flex items-center bg-[#353535] text-white px-6 py-3 rounded-full 
                                    transition-all duration-300 shadow-lg shadow-slate-500/40
                                    cursor-pointer"
               >
-                {/* Text slides left on hover */}
+                
                 <span className="transform transition-transform duration-300 group-hover:-translate-x-2">
                   View Works
                 </span>
 
-                {/* Arrow slides right on hover */}
                 <img
                   src={sideAr}
                   className="w-7 h-7 p-1 mt-[2px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
                   alt="side arrow"
                 />
-              </button>
+              </button> */}
             </div>
           </div>
         </Fade>
