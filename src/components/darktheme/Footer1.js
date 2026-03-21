@@ -82,13 +82,14 @@ const Footer1 = () => {
                 +91 63619 85560
               </div>
 
-              <Link
-                to="https://maps.app.goo.gl/5UQn1SqHx24rzvRr5"
+              <a
+                href="https://maps.app.goo.gl/5UQn1SqHx24rzvRr5"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm underline underline-offset-4 mt-2 inline-block opacity-80"
               >
                 Map View
-              </Link>
+              </a>
             </div>
 
             {/* Delhi */}
@@ -106,13 +107,14 @@ const Footer1 = () => {
                 +91 99864 59376
               </div>
 
-              <Link
-                to="https://maps.app.goo.gl/zBsGcVpZwV5hDJ2w7"
+              <a
+                href="https://maps.app.goo.gl/zBsGcVpZwV5hDJ2w7"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm underline underline-offset-4 mt-2 inline-block opacity-80"
               >
                 Map View
-              </Link>
+              </a>
             </div>
             <div className="font-light">
               <h4 className=" mb-4">Mumbai</h4>
