@@ -82,8 +82,8 @@ const HeroSection1 = () => {
             className="mx-4 text-[#7A4DBE] font-semibold font-instrument"
             style={{
               textShadow: `
-        0 0 10px rgba(255,255,255,0.2),
-        0 0 20px rgba(122,77,190,0.35)
+        0 0 2px rgba(255,255,255,0.2),
+        0 0 2px rgba(122,77,190,0.35)
       `,
             }}
           >

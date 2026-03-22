@@ -5,7 +5,7 @@ import circle from "./../darktheme/images/nd_circle.webp";
 
 const Statement1 = () => {
   const text =
-    "We partner with ambitious digital startups to build sharper brands and websites      with clarity, speed, and zero hassle.";
+    "We partner with forward - thinking businesses to craft stronger brands and websites that drive visibility,trust and growth";
   const sectionRef = useRef(null);
   const [revealedCount, setRevealedCount] = useState(0);
 
