@@ -34,7 +34,7 @@ const testimonials = [
 const TestimonialCard = React.memo(({ item }) => (
   <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-5 md:p-6 mb-4 md:mb-6 w-full">
     {/* Stars */}
-    <div className="flex gap-1 mb-3 md:mb-4 text-white">
+    <div className="flex gap-1 mb-3 md:mb-4 ">
       {[...Array(5)].map((_, i) => (
         <img
           key={i}
@@ -46,7 +46,7 @@ const TestimonialCard = React.memo(({ item }) => (
     </div>
 
     {/* Text */}
-    <p className="text-xs sm:text-sm md:text-sm w-full text-gray-300 leading-relaxed mb-4 md:mb-6">
+    <p className="text-xs sm:text-sm md:text-sm w-full  leading-relaxed mb-4 md:mb-6">
       "{item.text}"
     </p>
 
@@ -60,9 +60,7 @@ const TestimonialCard = React.memo(({ item }) => (
 
       <div>
         <p className="text-sm sm:text-base font-semibold">{item.name}</p>
-        <p className="text-xs sm:text-sm md:text-base text-gray-400">
-          {item.role}
-        </p>
+        <p className="text-xs sm:text-sm md:text-base">{item.role}</p>
       </div>
     </div>
   </div>
@@ -75,14 +73,14 @@ const Testimonial1 = () => {
   );
 
   return (
-    <section className="relative text-white py-16 md:py-24 overflow-hidden">
+    <section className="relative glow-text py-16 md:py-24 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,#4c1d95_0%,#000_60%)] opacity-50"></div>
 
       <div className="relative max-w-7xl mx-auto z-10 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
         {/* Left Content */}
         <div className="w-full lg:w-4/12 lg:sticky lg:top-32">
-          <p className="text-sm text-stone-50 mb-4">Testimonials</p>
+          <p className="text-sm  mb-4">Testimonials</p>
 
           <h2
             className="text-2xl sm:text-3xl md:text-5xl font-light leading-tight"

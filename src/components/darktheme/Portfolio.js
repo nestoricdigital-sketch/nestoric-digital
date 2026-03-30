@@ -206,7 +206,7 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="relative max-w-7xl mx-auto bg-black text-white py-16 lg:py-24 px-4 md:px-10 lg:px-10 overflow-hidden"
+      className="glow-text relative max-w-7xl mx-auto bg-black  py-16 lg:py-24 px-4 md:px-10 lg:px-10 overflow-hidden"
     >
       {/* Background Gradient */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#7a4dbe]/20 blur-[140px] rounded-full pointer-events-none" />
@@ -214,9 +214,7 @@ const Portfolio = () => {
       {/* Header */}
       <div className="flex items-end justify-between mb-12">
         <div>
-          <p className="text-sm text-stone-50 tracking-widest uppercase">
-            Our Companies
-          </p>
+          <p className="text-sm  tracking-widest uppercase">Our Companies</p>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-light mt-2"
             style={{
@@ -236,7 +234,7 @@ const Portfolio = () => {
         <Link to="/work">
           <button
             // onClick={handleScrollToRecentWorks}
-            className="group flex items-center bg-[#353535] text-white px-5 py-[5px] rounded-full 
+            className="group flex items-center bg-[#353535]  px-5 py-[5px] rounded-full 
                                              transition-all duration-300 
                                              cursor-pointer"
           >
@@ -344,7 +342,7 @@ const Portfolio = () => {
               className="w-full h-[260px] sm:h-[400px] md:h-[500px] lg:h-[700px] object-contain"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-sm px-4 py-3">
-              <h3 className="text-white text-base md:text-xl font-semibold">
+              <h3 className=" text-base md:text-xl font-semibold">
                 {currentProject.cate}
               </h3>
             </div>
@@ -361,7 +359,7 @@ const Portfolio = () => {
                   className="w-full h-[260px] sm:h-[350px] md:h-[500px] lg:h-[700px] object-fill"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-sm px-4 py-3">
-                  <h3 className="text-white text-base md:text-xl font-semibold">
+                  <h3 className=" text-base md:text-xl font-semibold">
                     {currentProject.cate}
                   </h3>
                 </div>

@@ -52,30 +52,30 @@ const WorkPage = () => {
               {/* LINE 1 */}
               <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-6xl font-light leading-tight mb-4">
                 <span>Our Work</span>
-                <div className="flex justify-center mx-2 md:mx-4">
-                  <img
+                <div className="flex justify-center mx-2 md:mx-2">
+                  {/* <img
                     src={h_1}
                     alt="decorative circle"
                     loading="lazy"
                     className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
 
                     // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
-                  />
+                  /> */}
                 </div>
-                <span className="text-purple-600 italic">In Action</span>
+                <span className="text-[#7A4DBE] italic ">In Action</span>
               </div>
 
               {/* LINE 2 */}
               <div className="flex md:h-[62px] md:mb-[20px]  flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-6xl font-light leading-tight mb-4">
                 <span className="">Featured</span>
-                <div className="flex justify-center mx-2 md:mx-4">
-                  <img
+                <div className="flex justify-center mx-2 md:mx-2">
+                  {/* <img
                     src={h_2}
                     alt="decorative circle"
                     loading="lazy"
                     // className="w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full border-4 border-white shadow-lg object-cover animate-float-slow"
                     className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
-                  />
+                  /> */}
                 </div>
                 <span className="">Work</span>
               </div>

@@ -22,7 +22,7 @@ const Footer1 = () => {
   return (
     <footer
       id="footer"
-      className="relative  lg:h-[649px] text-white lg:pt-[5rem] pb-12 overflow-hidden"
+      className="glow-text relative  lg:h-[649px] lg:pt-[5rem] pb-12 overflow-hidden"
     >
       {/* Purple Arc Glow */}
       {/* <div className="absolute bottom-[-300px] left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-r from-purple-700 via-purple-500 to-indigo-600 rounded-full blur-[180px] opacity-40"></div> */}
@@ -66,7 +66,7 @@ const Footer1 = () => {
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-1 justify-between">
           {/* Locations */}
-          <div className="text-stone-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-10 lg:gap-10 lg:w-6/12">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-10 lg:gap-10 lg:w-6/12">
             {/* Bangalore */}
             <div className="font-geist font-light">
               <h4 className=" mb-4">Bangalore</h4>
@@ -136,7 +136,7 @@ const Footer1 = () => {
               Nestoric Digital
             </h2>
 
-            <p className="text-[10px] text-gray-400 mb-3">Timeless Growth</p>
+            <p className="text-[10px]  mb-3">Timeless Growth</p>
 
             <div className="flex items-center gap-4 mb-3 mt-3">
               {/* <Mail size={16} /> */}
@@ -144,7 +144,7 @@ const Footer1 = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-4 text-gray-300 mt-3">
+            <div className="flex gap-4 mt-3">
               <div className="flex w-full   justify-center gap-4 md:gap-6 xl:gap-12">
                 <Link
                   to="https://facebook.com/61581184183440/"
@@ -233,36 +233,95 @@ const Footer1 = () => {
 
           {/* RIGHT */}
           <div
-            className="w-full md:w-auto 
+            className="glow-text w-full md:w-auto 
                   flex flex-col md:items-end gap-4"
           >
             {/* Company Row */}
-            <div className="flex flex-wrap gap-5 items-center">
-              <p className="font-semibold text-white">Company</p>
-              <Link to="/work" className="hover:text-gray-400 transition">
+            <div
+              className="flex flex-wrap gap-5 items-center"
+              style={{
+                textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+              }}
+            >
+              <p className="font-semibold">Company</p>
+              <Link
+                to="/work"
+                className=" hover:text-gray-300 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
+              >
                 Work
               </Link>
-              <Link to="/about" className="hover:text-gray-400 transition">
+              <Link
+                to="/about"
+                className="hover:text-gray-300 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
+              >
                 About
               </Link>
-              <Link to="/services" className="hover:text-gray-400 transition">
+              <Link
+                to="/services"
+                className="hover:text-gray-300 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
+              >
                 Services
               </Link>
-              <Link to="/blog" className="hover:text-gray-400 transition">
+              <Link
+                to="/blog"
+                className="hover:text-gray-300 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
+              >
                 Blog
               </Link>
             </div>
 
             {/* Legal Row */}
             <div className="flex flex-wrap gap-5">
-              <p className="font-semibold text-white">Legals</p>
+              <p className="font-semibold">Legals</p>
               <Link
                 to="/privacy-policy"
                 className="hover:text-gray-400 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
               >
                 Privacy Policy
               </Link>
-              <Link to="#" className="hover:text-gray-400 transition">
+              <Link
+                to="#"
+                className="hover:text-gray-400 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
+              >
                 Terms of Service
               </Link>
             </div>

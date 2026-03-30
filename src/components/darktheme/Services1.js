@@ -8,6 +8,15 @@ const services = [
     desc: "We create conversion-optimized, high-performing websites from the bottom up to complement your entire digital marketing strategy to increase traffic, leads, and sales. We believe in Conversion-First Design that guides visitors toward a desired action (lead, purchase, subscription). Top Google rankings and smooth integration to support next digital efforts are guaranteed by our SEO success.",
   },
   {
+    title: "Social Media Marketing",
+    desc: "In today's digital world, social media is your brand's primary voice and an invaluable conversion channel. At Nestoric Digital, we combine data-driven strategy with creative content to build a thriving social community that amplifies your brand, drives targeted traffic, and generates measurable revenue. Strategic value and measurable results matters.",
+  },
+  {
+    title: "App Development",
+    desc: "We design and develop scalable mobile applications for Android, iOS, and cross-platform platforms that help businesses improve customer engagement and streamline operations. From UI/UX design to backend development, API integration, and deployment, we build secure, high-performance apps tailored for growth. Delivers smooth user experiences with fast performance.",
+  },
+
+  {
     title: "Search Engine Optimisation (SEO)",
     desc: "Traffic is the lifeblood of any online business, but not all traffic is equal. At Nestoric Digital, we specialise in ethical, data-driven Search Engine Optimisation (SEO) that moves your business to the top of Google. We don't chase algorithms; we build digital authority—ensuring that the customers ready to buy find you, not your competition",
   },
@@ -17,12 +26,9 @@ const services = [
   },
   {
     title: "Online Reputation Management",
-    desc: " In the digital age, a single negative review, news article, or social media post can instantly erode years of brand building. Our Online Reputation Management (ORM) service is your dedicated shield and strategist. We actively monitor, suppress, and counter negative content while amplifying the authentic, positive stories that win customer trust and secure your business future",
+    desc: "In the digital age, a single negative review, article, or social post can impact years of brand building. Our Online Reputation Management (ORM) service helps monitor, suppress, and counter negative content while strengthening positive brand visibility, customer trust,Supports long-term brand value and long-term credibility.",
   },
-  {
-    title: "Social media management",
-    desc: "In today's digital world, social media is your brand's primary voice and an invaluable conversion channel. At Nestoric Digital, we combine data-driven strategy with creative content to build a thriving social community that amplifies your brand, drives targeted traffic, and generates measurable revenue. Strategic value and measurable results matters.",
-  },
+
   {
     title: "Content Development",
     desc: "We don't just write words; we craft compelling narratives, build educational resources, and produce engaging content that positions your brand as a trusted authority and drives measurable results. Our content development services cover the full spectrum of media formats needed to engage with you at every stage of your journey",
@@ -44,10 +50,7 @@ const Services1 = () => {
   };
 
   return (
-    <section
-      id="services"
-      className="relative text-white py-24 overflow-hidden"
-    >
+    <section id="services" className="relative glow-text py-24 overflow-hidden">
       {/* Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,#7a4dbe_0%,#000_60%)] opacity-40"></div>
 
@@ -98,9 +101,7 @@ const Services1 = () => {
                       {service.title}
                     </h3>
 
-                    <p className="text-sm text-stone-50 leading-relaxed">
-                      {service.desc}
-                    </p>
+                    <p className="text-sm  leading-relaxed">{service.desc}</p>
                   </div>
                 </div>
               </div>

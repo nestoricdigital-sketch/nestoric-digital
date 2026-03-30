@@ -63,7 +63,7 @@ const Statement1 = () => {
   }, []);
 
   return (
-    <section className="relative bg-black text-white py-24 px-6 md:px-16 overflow-hidden">
+    <section className="relative bg-black text-white py-24 px-4 md:px-16 overflow-hidden">
       {/* Center Background Image */}
       <div
         className="absolute top-1/2 left-1/2 
@@ -76,10 +76,10 @@ const Statement1 = () => {
       />
       <section
         ref={sectionRef}
-        className=" md:min-h-[70vh] my-16  lg:min-h-[10vh]  font-inter  text-center  px-2 md:px-0 "
+        className=" md:min-h-[70vh] my-16  lg:min-h-[10vh]  font-inter  text-center  md:px-0 "
       >
         <h1
-          className="text-2xl md:text-5xl font-semibold  leading-relaxed  md:leading-[3.9rem] max-w-5xl md:px-6 mx-auto"
+          className="text-[27px] md:text-6xl font-semibold  leading-relaxed  md:leading-[3.9rem] max-w-5xl px-0  md:px-6 mx-auto"
           style={{ whiteSpace: "normal", wordBreak: "break-word" }}
         >
           {text.split("").map((char, i) => {

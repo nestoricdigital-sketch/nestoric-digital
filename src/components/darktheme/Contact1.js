@@ -148,7 +148,7 @@ const Contact1 = () => {
   return (
     <section
       id="contact"
-      className="relative bg-black text-white py-24 px-4 md:px-16 overflow-hidden"
+      className="glow-text relative bg-black  py-24 px-4 md:px-16 overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,#4c1d95_0%,#000_60%)] opacity-60"></div>
@@ -172,7 +172,7 @@ const Contact1 = () => {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="space-y-10 text-stone-50">
+        <div className="space-y-10 ">
           {/* Info Label */}
           <p className="text-xs tracking-widest  uppercase">Info</p>
 
@@ -189,7 +189,7 @@ const Contact1 = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
-                  className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none"
+                  className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90 focus:outline-none"
                   required
                 />
                 {/* <input
@@ -218,11 +218,11 @@ const Contact1 = () => {
                       setPhoneError("");
                     }
                   }}
-                  className={`w-full bg-transparent border-b placeholder-white/70 outline-none py-2 text-sm 
+                  className={`w-full bg-transparent border-b placeholder-white outline-none py-2 text-sm 
       ${
         phoneError
           ? "border-red-500"
-          : "border-gray-400 focus:border-indigo-500"
+          : "border-white/90 focus:border-indigo-500"
       }`}
                   disabled={loading}
                   placeholder="Enter your mobile number"
@@ -259,7 +259,7 @@ const Contact1 = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white/60 focus:border-indigo-500 text-white placeholder-white/70  focus:outline-none"
+                  className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90  focus:outline-none"
                   required
                 />
               </div>
@@ -274,7 +274,7 @@ const Contact1 = () => {
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Describe your project..."
-                className="w-full bg-transparent border-b text-[14px] md:text-[16px] border-white/60 focus:border-indigo-500 text-white placeholder-white/70 focus:outline-none resize-none"
+                className="w-full bg-transparent py-2 border-b text-[14px] md:text-[16px] border-white focus:border-indigo-500  placeholder-white/90 focus:outline-none resize-none"
                 required
               />
             </div>

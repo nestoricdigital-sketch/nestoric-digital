@@ -35,7 +35,7 @@ const Counter = ({ from = 0, to, suffix = "" }) => {
 
 const Numbers1 = () => {
   return (
-    <section className=" max-w-9xl mx-auto px-4 lg:px-8 py-12  relative text-white overflow-hidden">
+    <section className="glow-text max-w-9xl mx-auto px-4 lg:px-8 py-12  relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[600px] h-[600px] bg-[#7a4dbe]/30 blur-[160px] rounded-full"></div>
 
@@ -57,7 +57,7 @@ const Numbers1 = () => {
         <div className="flex flex-col md:flex-row md:justify-between gap-6 mb-16">
           {/* Left Side */}
           <div className="flex flex-col justify-end">
-            <p className="text-base tracking-widest text-stone-50 font-light uppercase mb-4">
+            <p className="text-base tracking-widest font-light uppercase mb-4">
               Firm Highlights
             </p>
             <h2 className="text-3xl md:text-5xl font-light leading-tight">
@@ -67,7 +67,7 @@ const Numbers1 = () => {
 
           {/* Right Side */}
           <div className="md:self-end lg:w-[350px]">
-            <p className="text-stone-50 font-light max-w-sm text-sm md:text-base">
+            <p className=" font-light max-w-sm text-sm md:text-base">
               We’re a network-powered VC growing and supporting the startup
               ecosystem
             </p>
@@ -75,7 +75,7 @@ const Numbers1 = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center md:text-left">
+        <div className="glow-text grid grid-cols-1 sm:grid-cols-3 gap-12 text-center md:text-left">
           {/* Projects */}
           <div className=" text-center">
             <h3
@@ -89,7 +89,7 @@ const Numbers1 = () => {
             >
               <Counter from={0} to={26} suffix="+" />
             </h3>
-            <p className="mt-4 text-[13px] text-stone-50 font-light tracking-widest  uppercase">
+            <p className="mt-4 text-[13px] font-light tracking-widest  uppercase">
               Completed Projects
             </p>
           </div>
@@ -107,7 +107,7 @@ const Numbers1 = () => {
             >
               <Counter from={0} to={96} suffix="%" />
             </h3>
-            <p className="mt-4 text-[13px] text-[#c2c2c2] tracking-widest uppercase">
+            <p className="mt-4 text-[13px] tracking-widest uppercase">
               Happy Clients
             </p>
           </div>
@@ -125,7 +125,7 @@ const Numbers1 = () => {
             >
               <Counter from={0} to={97} suffix="%" />
             </h3>
-            <p className="mt-4 text-[13px] text-[#c2c2c2] tracking-widest  uppercase">
+            <p className="mt-4 text-[13px] tracking-widest  uppercase">
               Success Rate
             </p>
           </div>

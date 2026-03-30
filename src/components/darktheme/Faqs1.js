@@ -61,7 +61,7 @@ const FaqItem = memo(({ faq, index, activeIndex, toggle }) => {
             transition={{ duration: 0.25 }}
             className="px-6 overflow-hidden"
           >
-            <p className="pb-5 text-sm text-stone-50 font-light">{faq.a}</p>
+            <p className="pb-5 text-sm  font-light">{faq.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -88,7 +88,7 @@ const Faq1 = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 lg:px-10 py-6 lg:py-16 relative bg-black text-white overflow-hidden">
+    <section className="glow-text max-w-7xl mx-auto px-4 lg:px-10 py-6 lg:py-16 relative bg-black  overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto">
         <h2
           className="text-3xl md:text-5xl text-center font-light mb-16"
@@ -129,7 +129,7 @@ const Faq1 = () => {
 
           <button
             onClick={() => handleScrollToSection("contact")}
-            className="mx-auto group flex items-center bg-[#7a4dbe] text-white px-5 py-[5px] rounded-full transition-all duration-300 cursor-pointer"
+            className="mx-auto group flex items-center bg-[#7a4dbe] px-5 py-[5px] rounded-full transition-all duration-300 cursor-pointer"
           >
             <span className="text-[18px] transform transition-transform duration-300 group-hover:-translate-x-2">
               Contact

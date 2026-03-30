@@ -44,7 +44,7 @@ const Values1 = () => {
     relative
     max-w-7xl
     mx-auto
-    text-white
+    glow-text
     py-28
     px-4
     md:px-10
@@ -75,7 +75,7 @@ const Values1 = () => {
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Heading */}
           <div className="text-center mb-24">
-            <p className="text-xs tracking-widest text-stone-50 uppercase mb-4">
+            <p className="text-xs tracking-widest  uppercase mb-4">
               Our Values
             </p>
             <h2
@@ -126,13 +126,13 @@ const Values1 = () => {
                     <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white"></span>
 
                     {/* Content */}
-                    <p className="text-xs text-gray-400 mb-4">0{value.id}</p>
+                    <p className="text-xs  mb-4">0{value.id}</p>
 
                     <h3 className="text-lg md:text-[18px] mb-4 font-medium">
                       {value.title}
                     </h3>
 
-                    <p className="text-base text-stone-50 font-light leading-relaxed">
+                    <p className="text-base  font-light leading-relaxed">
                       {value.desc}
                     </p>
                   </div>

@@ -20,6 +20,14 @@
   initial-value: 0deg;
   syntax: "<angle>";
 }
+.glow-text {
+    color: rgb(250 250 250); /* text-zinc-50 */
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.25),
+    0 0 18px rgba(255, 255, 255, 0.15);
+    
+}
 /* .provide{
   overflow-x: hidden;
   /* margin: -150px 150px; */

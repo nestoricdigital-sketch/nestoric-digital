@@ -92,7 +92,7 @@ const HeroSection1 = () => {
         </h1>
 
         {/* Sub Text */}
-        <p className="mt-6 text-white font-semibold text-sm md:text-base  max-w-[690px]">
+        <p className="mt-6 glow-text font-semibold text-sm md:text-base  max-w-[690px]">
           Nestoric Digital helps businesses scale through high-performance
           websites, data-driven marketing, and creative digital experiences
           designed to convert visitors into customers.
@@ -102,11 +102,14 @@ const HeroSection1 = () => {
         <div className="font-mada medium mt-10 flex flex-col sm:flex-row gap-4">
           <button
             onClick={() => handleScrollToSection("portfolio")}
-            className="group flex items-center bg-[#353535] text-white px-5 py-[5px] rounded-full 
+            className="group flex items-center bg-[#353535] glow-text px-5 py-[5px] rounded-full 
                            transition-all duration-300 
                            cursor-pointer"
           >
-            <span className="text-[18px] transform transition-transform duration-300 group-hover:-translate-x-2">
+            <span
+              className="text-[18px] transform transition-transform duration-300 group-hover:-translate-x-2
+            "
+            >
               View Projects
             </span>
 
@@ -118,7 +121,7 @@ const HeroSection1 = () => {
           </button>
           <button
             onClick={() => handleScrollToSection("services")}
-            className="group flex items-center bg-[#7a4dbe]  text-white px-4 py-[5px] rounded-full 
+            className="group flex items-center bg-[#7A4DBE]  text-white px-4 py-[5px] rounded-full 
                            transition-all duration-300 
                            cursor-pointer"
           >

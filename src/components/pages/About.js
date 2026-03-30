@@ -136,12 +136,12 @@ const About = () => {
                     <span>Meet</span>
 
                     <div className="flex justify-center mx-2 md:mx-4">
-                      <img
+                      {/* <img
                         src={h_1}
                         alt="decorative circle"
                         loading="lazy"
                         className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
-                      />
+                      /> */}
                     </div>
 
                     <span className="text-[#7A4DBE] italic">
@@ -154,12 +154,12 @@ const About = () => {
                     <span>Real Impact</span>
 
                     <div className="flex justify-center mx-2 md:mx-4">
-                      <img
+                      {/* <img
                         src={h_2}
                         alt="decorative circle"
                         loading="lazy"
                         className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
-                      />
+                      /> */}
                     </div>
 
                     <span>Driven</span>

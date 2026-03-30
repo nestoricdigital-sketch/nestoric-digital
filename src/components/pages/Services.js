@@ -240,13 +240,13 @@ const Services = () => {
                 <div className="flex md:h-[62px] md:mb-[20px] flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-6xl font-light leading-tight mb-4">
                   <span>Our Creative</span>
 
-                  <div className="flex justify-center mx-2 md:mx-4">
-                    <img
+                  <div className="flex justify-center mx-2 md:mx-2">
+                    {/* <img
                       src={h_1}
                       alt="decorative circle"
                       loading="lazy"
                       className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
-                    />
+                    /> */}
                   </div>
 
                   <span className="text-[#7A4DBE] italic">Services</span>
@@ -256,13 +256,13 @@ const Services = () => {
                 <div className="flex md:h-[62px] md:mb-[20px] flex-wrap md:flex-nowrap justify-center items-center text-3xl md:text-6xl font-light leading-tight mb-4">
                   <span>Excellence</span>
 
-                  <div className="flex justify-center mx-2 md:mx-4">
-                    <img
+                  <div className="flex justify-center mx-2 md:mx-2">
+                    {/* <img
                       src={h_2}
                       alt="decorative circle"
                       loading="lazy"
                       className="hidden md:block w-16 h-10 md:w-14 md:h-14 lg:w-24 lg:h-16 rounded-full object-cover animate-float-slow"
-                    />
+                    /> */}
                   </div>
 
                   <span>Delivered</span>

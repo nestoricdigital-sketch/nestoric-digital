@@ -46,18 +46,26 @@ const NavBar1 = () => {
           <img
             src={webLogo}
             alt="nestoric digital logo"
-            className="w-32 md:w-40 lg:w-52 object-contain"
+            className="w-32 md:w-40 lg:w-52 object-contain  md:scale-110"
           />
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-stone-50 font-light">
+        <div
+          className="hidden md:flex items-center gap-8 text-stone-50 font-light"
+          style={{
+            textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+          }}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={`transition text-[18px] hover:text-white ${
-                location.pathname === link.path ? "text-white font-medium" : ""
+                location.pathname === link.path ? " font-medium" : ""
               }`}
             >
               {link.name}
@@ -67,7 +75,7 @@ const NavBar1 = () => {
           {/* Contact Button */}
           <button
             onClick={() => moveToForm("footer")}
-            className="group flex items-center bg-[#7a4dbe] text-white px-5 py-[6px] rounded-full transition-all duration-300"
+            className="group flex items-center bg-[#7a4dbe]  px-5 py-[6px] rounded-full transition-all duration-300"
           >
             <span className="text-[18px] transition-transform duration-300 group-hover:-translate-x-2">
               Contact
@@ -130,7 +138,7 @@ const NavBar1 = () => {
               setIsOpen(false);
               moveToForm("footer");
             }}
-            className="group flex items-center bg-[#7a4dbe] text-white px-6 py-2 rounded-full transition-all duration-300"
+            className="group flex items-center bg-[#7A4DBE] text-white px-6 py-2 rounded-full transition-all duration-300"
           >
             <span className="transition-transform duration-300 group-hover:-translate-x-2">
               Contact
