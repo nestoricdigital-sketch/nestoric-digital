@@ -1,8 +1,8 @@
 import React from "react";
 // import imge from "../images/designBlog.jpeg";
 import sideAr from "../images/sideArrow.png";
-import h_1 from "../images/heroSectionLogo/h 1.png";
-import h_2 from "../images/heroSectionLogo/h2.png";
+// import h_1 from "../images/heroSectionLogo/h 1.png";
+// import h_2 from "../images/heroSectionLogo/h2.png";
 import webDe from "../images/services/S_websiteDevlop.png";
 import seo from "../images/services/S_seo.png";
 import soMedia from "../images/services/S_socialMedia.png";
