@@ -54,7 +54,7 @@ export default function AdminLogin({ onLogin }) {
               type="email"
               required
               placeholder="Enter email"
-              className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="p-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -69,7 +69,7 @@ export default function AdminLogin({ onLogin }) {
               type="password"
               required
               placeholder="Enter password"
-              className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 pr-12"
+              className="p-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 pr-12"
             />
 
             {/* Eye Toggle Button */}
@@ -122,7 +122,7 @@ export default function AdminLogin({ onLogin }) {
           </div>
 
           {/* Login Button */}
-          <button className="bg-[#7A4DBE]  text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <button className="bg-[#7A4DBE]  text-white py-3 rounded-lg font-semibold  transition">
             Login
           </button>
         </form>

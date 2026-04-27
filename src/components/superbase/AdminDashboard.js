@@ -29,7 +29,7 @@ export default function AdminDashboard() {
   return (
     <div className="flex min-h-screen w-full flex-col md:flex-row">
       {/* LEFT SIDEBAR */}
-      <div className="w-full md:w-[20%] bg-slate-300 flex flex-col justify-between p-4 shadow-lg">
+      <div className="w-full md:w-[20%] bg-black flex flex-col justify-between p-4 shadow-lg">
         <div className="md:py-2">
           {/* <h1 className="text-xl md:text-3xl text-blue-400 font-bold">
             VH's TechSphere
@@ -40,7 +40,7 @@ export default function AdminDashboard() {
             className="w-28 h-auto sm:w-28 md:w-34 lg:w-56 object-contain"
           />
 
-          <button className="mt-6 w-full text-left font-semibold px-3 py-2 rounded bg-gray-100">
+          <button className=" mt-2 md:mt-6 w-full text-left md:text-center font-semibold md:px-3 md:py-2 rounded bg-black">
             Overview
           </button>
         </div>
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
           onClick={() => {
             handleLogout();
           }}
-          className="text-red-600 text-right md:text-center font-semibold px-3 py-2 rounded hover:bg-red-100"
+          className="text-red-600 text-right md:text-center font-semibold md:px-3 md:py-2 rounded "
         >
           Logout
         </button>
@@ -58,11 +58,11 @@ export default function AdminDashboard() {
       {/* RIGHT CONTENT */}
       <div className="w-full md:w-[80%]">
         {/* TOP BAR */}
-        <div className="flex justify-between items-center bg-slate-300 px-4 py-4 md:px-6 md:py-6">
+        <div className="flex justify-between items-center bg-black px-4 py-1 md:px-6 md:py-6">
           <h2 className="text-xl md:text-2xl font-bold">Admin Dashboard</h2>
 
           <div className="text-right">
-            <h1 className="text-xs text-[14px] md:text-[16px] text-gray-500">
+            <h1 className="text-xs text-[14px] md:text-[16px] text-white">
               Admin
             </h1>
             <h4 className="font-semibold text-[12px] md:text-[14px]">
@@ -72,9 +72,10 @@ export default function AdminDashboard() {
         </div>
 
         {/* LIST SECTION */}
-        <div className="w-full px-4 md:px-6 mt-4 mb-6 space-y-3">
+        {/* <div className="w-full px-4 md:px-6 mt-4 mb-6 space-y-3"> */}
+        <div className="w-full px-4 md:px-6 mt-1 mb-6 space-y-3 min-h-[300px] max-h-[700px] overflow-y-auto pr-2">
           {/* LABEL ROW – hidden on mobile */}
-          <div className="flex md:flex justify-between md:mx-4 mb-2 text-gray-400">
+          <div className="flex md:flex justify-between md:mx-4 mb-2 text-white">
             <p>message</p>
             <p>date</p>
           </div>
@@ -87,7 +88,7 @@ export default function AdminDashboard() {
             >
               {/* MESSAGE + TIME */}
               <div className="flex justify-between items-start gap-4">
-                <p className="text-gray-900 font-medium items-start break-words">
+                <p className="text-gray-900 font-medium break-all items-start break-words">
                   {f.description.length > 70
                     ? f.description.slice(0, 70) + "..."
                     : f.description}
@@ -119,7 +120,7 @@ export default function AdminDashboard() {
               </button>
 
               {/* Modal Content */}
-              <div className="space-y-3 text-left">
+              <div className="space-y-3 text-left text-black">
                 <div>
                   <span className="font-semibold">Name:</span>
                   <span className="ml-2">{selected.name}</span>
