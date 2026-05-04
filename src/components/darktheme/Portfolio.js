@@ -21,6 +21,7 @@ import w_vasura from "../images/works/vasura.webp";
 import w_simplus from "../images/works/simplus.webp";
 import w_cityscape from "../images/worksRecent/w_cityscape.webp";
 import w_thinkright from "../images/worksRecent/think_right.webp";
+import w_reckon from "../images/works/reckon_work.webp";
 
 import suryacity from "./logos/suryacity_logo.webp";
 import cargen from "./logos/cargen_logo.webp";
@@ -35,6 +36,7 @@ import think from "./logos/think.webp";
 import little from "./logos/little.webp";
 import eena from "./logos/eena.webp";
 import ramki from "./logos/ramki.webp";
+import reck from "./logos/reckon.webp";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -105,6 +107,11 @@ const portfolioLogos = [
     service: "Lead Generation & Social Media Marketing",
     logo: rak,
   },
+  {
+    name: "Reckonext",
+    service: "Lead Generation & Social Media Marketing",
+    logo: reck,
+  },
 ];
 const portfolioProjects = [
   {
@@ -155,12 +162,19 @@ const portfolioProjects = [
     type: "small",
 
     image: [w_cityscape, w_suryacity],
+    cate: "Leads & Social Media Marketing",
   },
   {
     id: 9,
     type: "large",
     image: w_thinkright,
     cate: "Website Design & Development",
+  },
+  {
+    id: 10,
+    type: "small",
+    image: [w_reckon, w_suryacity],
+    cate: "Leads & Social Media Marketing",
   },
 ];
 const Portfolio = () => {

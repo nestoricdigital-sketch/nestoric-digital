@@ -14,9 +14,9 @@ const testimonials = [
     role: "CEO, CargenLogistics",
   },
   {
-    text: "They nailed the user experience and aesthetics in one go.",
-    name: "Riya",
-    role: "CEO, Digital Tech",
+    text: "Working with the team was a great experience. They clearly understood my requirements and delivered excellent design and web solutions. I’m very happy with the outcome.",
+    name: "Varun Gupta",
+    role: "CEO, Digichain Pioneers",
   },
   {
     text: "Professional, creative, and incredibly easy to work with. They brought our brand to life.",
