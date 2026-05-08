@@ -175,7 +175,7 @@ function App() {
                       <Services1 />
                       <Numbers1 />
                       <Values1 />
-                      <Suspense fallback={null}>
+                      <Suspense fallback={<div>Loading...</div>}>
                         <Portfolio />
                         <Testimonial1 />
                         {/* <Blogs1 /> */}

@@ -63,7 +63,7 @@ const Statement1 = () => {
   }, []);
 
   return (
-    <section className="relative bg-black text-white py-24 px-4 md:px-16 overflow-hidden">
+    <section className="relative  text-white py-24 px-4 md:px-16 overflow-hidden">
       {/* Center Background Image */}
       <div
         className="absolute top-1/2 left-1/2 

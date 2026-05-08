@@ -28,6 +28,19 @@
     0 0 18px rgba(255, 255, 255, 0.15);
     
 }
+.marquee {
+  animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
 /* .provide{
   overflow-x: hidden;
   /* margin: -150px 150px; */
