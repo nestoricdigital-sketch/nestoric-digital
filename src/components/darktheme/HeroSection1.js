@@ -4,6 +4,7 @@ import React from "react";
 // import sideAr from "./images/sideArrow.png";
 import sideAr from "../images/sideArrow.png";
 import Orb from "./Orb";
+import { Link } from "react-router-dom";
 
 const HeroSection1 = () => {
   // const handleScrollToRecentWorks = () => {
@@ -119,22 +120,24 @@ const HeroSection1 = () => {
               alt="side arrow"
             />
           </button>
-          <button
-            onClick={() => handleScrollToSection("services")}
-            className="group flex items-center bg-[#7A4DBE]  text-white px-4 py-[5px] rounded-full 
+          <Link to="/contact">
+            <button
+              // onClick={() => handleScrollToSection("services")}
+              className="group flex items-center bg-[#7A4DBE]  text-white px-4 py-[5px] rounded-full 
                            transition-all duration-300 
                            cursor-pointer"
-          >
-            <span className="text-[18px] text-center transform transition-transform duration-300 group-hover:-translate-x-2">
-              Know More
-            </span>
+            >
+              <span className="text-[18px] text-center transform transition-transform duration-300 group-hover:-translate-x-2">
+                Connect Us
+              </span>
 
-            <img
-              src={sideAr}
-              className="w-7 h-7 p-1 mt-[0px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
-              alt="side arrow"
-            />
-          </button>
+              <img
+                src={sideAr}
+                className="w-7 h-7 p-1 mt-[0px] ml-2 transform transition-transform duration-300 group-hover:translate-x-2"
+                alt="side arrow"
+              />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

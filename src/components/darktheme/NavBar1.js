@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import webLogo from "../images/mainNDlogo.png";
 import sideAr from "../images/sideArrow.png";
 
 const NavBar1 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Work", path: "/work" },
@@ -15,28 +14,28 @@ const NavBar1 = () => {
     { name: "About", path: "/about" },
   ];
   // moe to form
-  const moveToForm = (id) => {
-    if (id === "footer") {
-      if (true) {
-        // Same route → scroll directly
-        // document
-        //   .getElementById("downform")
-        //   ?.scrollIntoView({ behavior: "smooth" });
+  // const moveToForm = (id) => {
+  //   if (id === "footer") {
+  //     if (true) {
+  //       // Same route → scroll directly
+  //       // document
+  //       //   .getElementById("downform")
+  //       //   ?.scrollIntoView({ behavior: "smooth" });
 
-        //
-        const section = document.getElementById("footer");
-        if (!section) return;
+  //       //
+  //       const section = document.getElementById("footer");
+  //       if (!section) return;
 
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      } else {
-        // Different route → navigate with state
-        navigate("/about", { state: { scrollTo: "footer" } });
-      }
-    }
-  };
+  //       section.scrollIntoView({
+  //         behavior: "smooth",
+  //         block: "start",
+  //       });
+  //     } else {
+  //       // Different route → navigate with state
+  //       navigate("/about", { state: { scrollTo: "footer" } });
+  //     }
+  //   }
+  // };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black z-50  px-0 md:px-0 py-0 shadow-lg">
@@ -73,19 +72,21 @@ const NavBar1 = () => {
           ))}
 
           {/* Contact Button */}
-          <button
-            onClick={() => moveToForm("footer")}
-            className="group flex items-center bg-[#7a4dbe]  px-5 py-[6px] rounded-full transition-all duration-300"
-          >
-            <span className="text-[18px] transition-transform duration-300 group-hover:-translate-x-2">
-              Contact
-            </span>
-            <img
-              src={sideAr}
-              className="w-5 h-5 ml-2 mt-1 transition-transform duration-300 group-hover:translate-x-2"
-              alt="arrow"
-            />
-          </button>
+          <Link to="/contact">
+            <button
+              // onClick={() => moveToForm("footer")}
+              className="group flex items-center bg-[#7a4dbe]  px-5 py-[6px] rounded-full transition-all duration-300"
+            >
+              <span className="text-[18px] transition-transform duration-300 group-hover:-translate-x-2">
+                Contact
+              </span>
+              <img
+                src={sideAr}
+                className="w-5 h-5 ml-2 mt-1 transition-transform duration-300 group-hover:translate-x-2"
+                alt="arrow"
+              />
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -130,25 +131,26 @@ const NavBar1 = () => {
               {link.name}
             </Link>
           ))}
+          <Link to="/contact">
+            <button
+              // onClick={() => moveToForm("footer")}
 
-          <button
-            // onClick={() => moveToForm("footer")}
-
-            onClick={() => {
-              setIsOpen(false);
-              moveToForm("footer");
-            }}
-            className="group flex items-center bg-[#7A4DBE] text-white px-6 py-2 rounded-full transition-all duration-300"
-          >
-            <span className="transition-transform duration-300 group-hover:-translate-x-2">
-              Contact
-            </span>
-            <img
-              src={sideAr}
-              className="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-2"
-              alt="arrow"
-            />
-          </button>
+              onClick={() => {
+                setIsOpen(false);
+                // moveToForm("footer");
+              }}
+              className="group flex items-center bg-[#7A4DBE] text-white px-6 py-2 rounded-full transition-all duration-300"
+            >
+              <span className="transition-transform duration-300 group-hover:-translate-x-2">
+                Contact
+              </span>
+              <img
+                src={sideAr}
+                className="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-2"
+                alt="arrow"
+              />
+            </button>
+          </Link>
         </div>
       </div>
     </nav>

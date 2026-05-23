@@ -200,6 +200,14 @@ function App() {
                 <Route path="/work" element={<WorkPage />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/about" element={<About />} />
+                <Route
+                  path="/contact"
+                  element={
+                    <div className="pt-0 md:pt-20">
+                      <Contact1 />{" "}
+                    </div>
+                  }
+                />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
