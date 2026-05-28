@@ -40,6 +40,7 @@ import Values1 from "./components/darktheme/Values1";
 // import Blogs1 from "./components/darktheme/Blogs1";
 // import Contact1 from "./components/darktheme/Contact1";
 import Statement1 from "./components/darktheme/Statement1";
+import ServiceDetails from "./components/darktheme/pages/ServiceDetails";
 // import Portfolio from "./components/darktheme/Portfolio";
 
 // import Services from "./components/pages/Services";
@@ -197,6 +198,7 @@ function App() {
                 />
                 {/* Lazy loaded routes */}
                 <Route path="/services" element={<Services />} />
+                <Route path="/services/:slug" element={<ServiceDetails />} />
                 <Route path="/work" element={<WorkPage />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/about" element={<About />} />
