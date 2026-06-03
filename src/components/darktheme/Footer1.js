@@ -116,18 +116,18 @@ const Footer1 = () => {
                 Map View
               </a>
             </div>
-            <div className="font-light">
+            {/* <div className="font-light">
               <h4 className=" mb-4">Mumbai</h4>
               <p className="text-sm leading-relaxed mb-4">
                 Andheri East , mumbai, Maharashtra - 400093
               </p>
 
               <div className="flex items-center gap-3 text-sm mb-2">
-                {/* <Phone size={16} /> */}
+               
                 <img src={phoLogo} className="h-5 w-5" alt="phone" />
                 +91 9986459376
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Brand + Social */}

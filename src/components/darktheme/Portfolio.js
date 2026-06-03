@@ -51,6 +51,16 @@ const portfolioLogos = [
     service: "Social Media Marketing",
     logo: simplus,
   },
+  {
+    name: "Artrex",
+    service: "Branding, Logo Design, Website Development",
+    logo: null,
+  },
+  {
+    name: "Vika",
+    service: "Logo Design",
+    logo: null,
+  },
 
   {
     name: "Surya City",
@@ -482,7 +492,7 @@ function LogoMarquee({ logos }) {
         "
           >
             <div className="flex items-start h-[40px] sm:h-[48px] md:h-[56px]">
-              <img
+              {/* <img
                 src={item.logo}
                 alt={item.name}
                 loading={index < 3 ? "eager" : "lazy"}
@@ -495,7 +505,37 @@ function LogoMarquee({ logos }) {
               md:max-w-[120px]
               object-contain scale-105
             "
-              />
+              /> */}
+              {item.logo ? (
+                <img
+                  src={item.logo}
+                  alt={item.name}
+                  loading={index < 3 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="
+      h-full
+      w-auto
+      max-w-[90px]
+      sm:max-w-[110px]
+      md:max-w-[120px]
+      object-contain
+      scale-105
+    "
+                />
+              ) : (
+                <span
+                  className="
+      text-2xl
+    
+      md:text-3xl
+      font-bold
+      text-white
+      whitespace-nowrap
+    "
+                >
+                  {item.name}
+                </span>
+              )}
             </div>
 
             <p
