@@ -221,7 +221,7 @@ const Footer1 = () => {
         </div>
 
         <div
-          className="mt-6 w-full px-0  md:px-0 py-2  md:py-6 
+          className="mt-12 lg:mt-32 w-full px-0  md:px-0 py-2  md:pt-6 
                 flex flex-col md:flex-row 
                 justify-between items-start md:items-end 
                 gap-6 text-sm font-thin"
