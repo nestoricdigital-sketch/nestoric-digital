@@ -41,6 +41,7 @@ import Values1 from "./components/darktheme/Values1";
 // import Contact1 from "./components/darktheme/Contact1";
 import Statement1 from "./components/darktheme/Statement1";
 import ServiceDetails from "./components/darktheme/pages/ServiceDetails";
+import DigitalMarketing from "./components/pages/DigitalMarketing";
 // import Portfolio from "./components/darktheme/Portfolio";
 
 // import Services from "./components/pages/Services";
@@ -211,6 +212,10 @@ function App() {
                   }
                 />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route
+                  path="/digital-marketing-services"
+                  element={<DigitalMarketing />}
+                />
                 <Route path="*" element={<NotFound />} />
               </Route>
               {/* ===================== ADMIN ROUTES ===================== */}

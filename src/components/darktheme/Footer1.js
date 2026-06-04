@@ -295,6 +295,18 @@ const Footer1 = () => {
               >
                 Blog
               </Link>
+              <Link
+                to="/digital-marketing-services"
+                className="hover:text-gray-300 transition"
+                style={{
+                  textShadow: `
+      0 0 8px rgba(255,255,255,0.25),
+      0 0 18px rgba(255,255,255,0.15)
+    `,
+                }}
+              >
+                Digital Marketing
+              </Link>
             </div>
 
             {/* Legal Row */}

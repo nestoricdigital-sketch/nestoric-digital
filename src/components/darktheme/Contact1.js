@@ -139,6 +139,10 @@ const Contact1 = () => {
       label: "Website Design & Development",
     },
     {
+      value: "APP development",
+      label: "APP Development",
+    },
+    {
       value: "online reputation management",
       label: "Online Reputation Management",
     },
