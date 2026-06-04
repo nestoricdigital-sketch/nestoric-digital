@@ -1,26 +1,23 @@
 import React, { useState } from "react";
-import {
-  ArrowRight,
-  CheckCircle,
-  //   BarChart3,
-  //   Target,
-  //   TrendingUp,
-  //   ShieldCheck,
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 // import Services1 from "../darktheme/Services1";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import { supabase } from "../superbase/SuperClient";
 import ServicesLanding from "../darktheme/ServicesLanding";
+import Logos from "./landingPage/Logos";
+import Advantages from "./landingPage/Advantages";
 
 const DigitalMarketing = () => {
   const [selectedService, setSelectedService] = useState(null);
+  const [selectedBudget, setSelectedBudget] = useState(null);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     mobile: "",
     service: "",
+    budget: "",
     description: "",
   });
   const [phoneError, setPhoneError] = useState("");
@@ -34,7 +31,7 @@ const DigitalMarketing = () => {
     e.preventDefault();
     setLoading(true);
 
-    const { name, email, mobile, service, description } = formData;
+    const { name, email, mobile, service, budget, description } = formData;
     // 🔥 Phone validation
     const phoneRegex = /^[6-9]\d{9}$/;
 
@@ -51,7 +48,7 @@ const DigitalMarketing = () => {
     try {
       const { error } = await supabase
         .from("NestoricForm")
-        .insert([{ name, email, mobile, service, description }]);
+        .insert([{ name, email, mobile, service, budget, description }]);
 
       if (error) throw error;
 
@@ -61,9 +58,11 @@ const DigitalMarketing = () => {
         email: "",
         mobile: "",
         service: "",
+        budget: "",
         description: "",
       });
-      setSelectedService(null); // 🔥 clears react-select
+      setSelectedService(null);
+      setSelectedBudget(null);
     } catch (err) {
       console.error("Supabase error:", err.message);
       alert("Failed to submit form. Please try again.");
@@ -158,6 +157,13 @@ const DigitalMarketing = () => {
       label: "Online Reputation Management",
     },
     { value: "performance marketing", label: "Performance Marketing" },
+  ];
+  const budgetOptions = [
+    { value: "under-10k", label: "Under ₹10,000" },
+    { value: "10k-25k", label: "₹10,000 - ₹25,000" },
+    { value: "25k-50k", label: "₹25,000 - ₹50,000" },
+    { value: "50k-100k", label: "₹50,000 - ₹1,00,000" },
+    { value: "100k-plus", label: "₹1,00,000+" },
   ];
 
   return (
@@ -283,11 +289,6 @@ const DigitalMarketing = () => {
                       className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90 focus:outline-none"
                       required
                     />
-                    {/* <input
-                  type="text"
-                  placeholder="First Last"
-                  className="w-full bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-white"
-                /> */}
                   </div>
 
                   <div>
@@ -344,19 +345,38 @@ const DigitalMarketing = () => {
                       }}
                     />
                   </div>
-
                   <div>
-                    <label className="text-xs">EMAIL</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Enter your email"
-                      className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90  focus:outline-none"
-                      required
+                    <label className="text-xs"> BUDGET</label>
+
+                    <Select
+                      options={budgetOptions}
+                      placeholder="Select budget range"
+                      styles={customStyles}
+                      components={{ IndicatorSeparator: null }}
+                      className="text-[14px] md:text-[16px]"
+                      classNamePrefix="react-select"
+                      value={selectedBudget}
+                      onChange={(selected) => {
+                        setSelectedBudget(selected);
+                        setFormData({
+                          ...formData,
+                          budget: selected.value,
+                        });
+                      }}
                     />
                   </div>
+                </div>
+                <div>
+                  <label className="text-xs">EMAIL</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                    className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90  focus:outline-none"
+                    required
+                  />
                 </div>
 
                 {/* Message */}
@@ -394,74 +414,12 @@ const DigitalMarketing = () => {
         </div>
       </section>
 
+      <Logos />
+
       <ServicesLanding />
+      <Advantages />
     </>
   );
 };
 
 export default DigitalMarketing;
-
-//  <div className="relative">
-//               <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl">
-//                 <div className="mb-8">
-//                   <h3 className="text-2xl font-semibold">
-//                     Growth Performance Dashboard
-//                   </h3>
-//                   <p className="mt-2 text-gray-400">
-//                     Real results powered by data-driven marketing.
-//                   </p>
-//                 </div>
-
-//                 <div className="space-y-5">
-//                   <div className="flex items-center justify-between rounded-2xl bg-white/5 p-5">
-//                     <div className="flex items-center gap-3">
-//                       <TrendingUp className="text-purple-400" />
-//                       <span>Average Lead Growth</span>
-//                     </div>
-//                     <span className="text-2xl font-bold text-purple-400">
-//                       +300%
-//                     </span>
-//                   </div>
-
-//                   <div className="flex items-center justify-between rounded-2xl bg-white/5 p-5">
-//                     <div className="flex items-center gap-3">
-//                       <Target className="text-purple-400" />
-//                       <span>Performance Focused</span>
-//                     </div>
-//                     <span className="font-semibold">ROI Driven</span>
-//                   </div>
-
-//                   <div className="flex items-center justify-between rounded-2xl bg-white/5 p-5">
-//                     <div className="flex items-center gap-3">
-//                       <BarChart3 className="text-purple-400" />
-//                       <span>Reporting & Insights</span>
-//                     </div>
-//                     <span className="font-semibold">100% Transparent</span>
-//                   </div>
-
-//                   <div className="flex items-center justify-between rounded-2xl bg-white/5 p-5">
-//                     <div className="flex items-center gap-3">
-//                       <ShieldCheck className="text-purple-400" />
-//                       <span>Campaign Monitoring</span>
-//                     </div>
-//                     <span className="font-semibold">24/7 Active</span>
-//                   </div>
-//                 </div>
-
-//                 <div className="mt-8 grid grid-cols-2 gap-4">
-//                   <div className="rounded-xl bg-gradient-to-br from-blue-600/20 to-blue-500/5 p-5">
-//                     <h4 className="text-3xl font-bold">50+</h4>
-//                     <p className="text-sm text-gray-400 mt-1">
-//                       Projects Delivered
-//                     </p>
-//                   </div>
-
-//                   <div className="rounded-xl bg-gradient-to-br from-green-600/20 to-green-500/5 p-5">
-//                     <h4 className="text-3xl font-bold">98%</h4>
-//                     <p className="text-sm text-gray-400 mt-1">
-//                       Client Satisfaction
-//                     </p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>

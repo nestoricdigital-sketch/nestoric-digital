@@ -1,3 +1,12 @@
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { motion } from "framer-motion";
+
 function LogoMarquee({ logos }) {
   const trackRef = useRef(null);
   const [width, setWidth] = useState(0);
@@ -144,3 +153,4 @@ function LogoMarquee({ logos }) {
     </motion.div>
   );
 }
+export default LogoMarquee;
