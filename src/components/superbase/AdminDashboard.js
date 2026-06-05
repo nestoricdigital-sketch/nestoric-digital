@@ -87,7 +87,7 @@ export default function AdminDashboard() {
               className="bg-white p-2 md:p-4 rounded-lg border cursor-pointer hover:shadow-md hover:scale-[1.01] transition-all"
             >
               {/* MESSAGE + TIME */}
-              <div className="flex justify-between items-start gap-4">
+              <div className="md:flex md:justify-between md:items-start gap-4">
                 <p className="text-gray-900 font-medium break-all items-start break-words">
                   {f.description.length > 70
                     ? f.description.slice(0, 70) + "..."
@@ -146,6 +146,10 @@ export default function AdminDashboard() {
                 <div>
                   <span className="font-semibold">Message:</span>
                   <span className="ml-2">{selected.description}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Budget:</span>
+                  <span className="ml-2">{selected.budget || "-"}</span>
                 </div>
 
                 <div className="pt-2 text-sm text-gray-500">
