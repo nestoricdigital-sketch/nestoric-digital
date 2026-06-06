@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
 // import Services1 from "../darktheme/Services1";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { supabase } from "../superbase/SuperClient";
 import ServicesLanding from "../darktheme/ServicesLanding";
@@ -11,13 +11,14 @@ import Advantages from "./landingPage/Advantages";
 const DigitalMarketing = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [selectedBudget, setSelectedBudget] = useState(null);
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     mobile: "",
     service: "",
     budget: "",
+    company: "",
     description: "",
   });
   const [phoneError, setPhoneError] = useState("");
@@ -31,7 +32,8 @@ const DigitalMarketing = () => {
     e.preventDefault();
     setLoading(true);
 
-    const { name, email, mobile, service, budget, description } = formData;
+    const { name, email, mobile, service, budget, company, description } =
+      formData;
     // 🔥 Phone validation
     const phoneRegex = /^[6-9]\d{9}$/;
 
@@ -48,17 +50,23 @@ const DigitalMarketing = () => {
     try {
       const { error } = await supabase
         .from("NestoricForm")
-        .insert([{ name, email, mobile, service, budget, description }]);
+        .insert([
+          { name, email, mobile, service, budget, company, description },
+        ]);
 
       if (error) throw error;
 
       alert("Form submitted successfully!");
+      // Redirect to home page
+      navigate("/");
+
       setFormData({
         name: "",
         email: "",
         mobile: "",
         service: "",
         budget: "",
+        company: "",
         description: "",
       });
       setSelectedService(null);
@@ -138,6 +146,7 @@ const DigitalMarketing = () => {
     !formData.mobile ||
     !formData.service ||
     !formData.description ||
+    !formData.budget ||
     phoneError;
 
   const serviceOptions = [
@@ -365,18 +374,30 @@ const DigitalMarketing = () => {
                       }}
                     />
                   </div>
-                </div>
-                <div>
-                  <label className="text-xs">EMAIL</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email"
-                    className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90  focus:outline-none"
-                    required
-                  />
+                  <div>
+                    <label className="text-xs">EMAIL</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email"
+                      className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90  focus:outline-none"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs">COMPANY NAME</label>
+                    <input
+                      type="text"
+                      name="company"
+                      maxLength={50}
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Enter your company name"
+                      className="w-full bg-transparent py-2 text-[14px] md:text-[16px] border-b border-white focus:border-indigo-500  placeholder-white/90 focus:outline-none"
+                    />
+                  </div>
                 </div>
 
                 {/* Message */}
@@ -403,7 +424,7 @@ const DigitalMarketing = () => {
                   className={`py-2 px-6 rounded-[25px] bg-white/10 transition ${
                     isDisabled || loading
                       ? "bg-slate-100 cursor-not-allowed "
-                      : "bg-slate-200 hover:bg-slate-100 "
+                      : "bg-slate-200 hover:bg-purple-800 "
                   }`}
                 >
                   {loading ? "Submitting..." : "Submit"}

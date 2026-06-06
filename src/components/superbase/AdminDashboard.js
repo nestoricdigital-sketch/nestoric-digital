@@ -147,10 +147,18 @@ export default function AdminDashboard() {
                   <span className="font-semibold">Message:</span>
                   <span className="ml-2">{selected.description}</span>
                 </div>
-                <div>
-                  <span className="font-semibold">Budget:</span>
-                  <span className="ml-2">{selected.budget || "-"}</span>
-                </div>
+                {selected.budget && (
+                  <div>
+                    <span className="font-semibold">Budget:</span>
+                    <span className="ml-2">{selected.budget || "-"}</span>
+                  </div>
+                )}
+                {selected.company && (
+                  <div>
+                    <span className="font-semibold">Company:</span>
+                    <span className="ml-2">{selected.company}</span>
+                  </div>
+                )}
 
                 <div className="pt-2 text-sm text-gray-500">
                   <span className="font-semibold">Submitted:</span>

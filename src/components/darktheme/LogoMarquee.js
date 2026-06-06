@@ -78,10 +78,11 @@ function LogoMarquee({ logos }) {
           rounded-2xl
           border border-white/10
           hover:border-white/30
-          transition
+          transition       animate-border
+      [background:linear-gradient(45deg,#050505,#0a0a0a_50%,#050505)_padding-box,conic-gradient(from_var(--border-angle),rgba(168,85,247,0.15)_80%,#a855f7_86%,#c084fc_90%,#a855f7_94%,rgba(168,85,247,0.15))_border-box]
         "
           >
-            <div className="flex items-start h-[40px] sm:h-[48px] md:h-[56px]">
+            <div className="flex items-start h-[40px] sm:h-[48px] md:h-[56px] ">
               {/* <img
                 src={item.logo}
                 alt={item.name}
@@ -107,7 +108,7 @@ function LogoMarquee({ logos }) {
       w-auto
       max-w-[90px]
       sm:max-w-[110px]
-      md:max-w-[120px]
+      md:max-w-[190px]
       object-contain
       scale-105
     "
