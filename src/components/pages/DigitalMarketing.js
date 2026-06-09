@@ -57,8 +57,8 @@ const DigitalMarketing = () => {
       if (error) throw error;
 
       alert("Form submitted successfully!");
-      // Redirect to home page
-      navigate("/");
+      // Redirect to thank you page
+      navigate("/thank-you");
 
       setFormData({
         name: "",

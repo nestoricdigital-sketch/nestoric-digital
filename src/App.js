@@ -42,6 +42,8 @@ import Values1 from "./components/darktheme/Values1";
 import Statement1 from "./components/darktheme/Statement1";
 import ServiceDetails from "./components/darktheme/pages/ServiceDetails";
 import DigitalMarketing from "./components/pages/DigitalMarketing";
+import WhatsAppButton from "./components/modal/WhatsAppButton";
+import Thanks from "./components/pages/Thanks";
 // import Portfolio from "./components/darktheme/Portfolio";
 
 // import Services from "./components/pages/Services";
@@ -216,6 +218,7 @@ function App() {
                   path="/digital-marketing-services"
                   element={<DigitalMarketing />}
                 />
+                <Route path="/thank-you" element={<Thanks />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
               {/* ===================== ADMIN ROUTES ===================== */}
@@ -230,6 +233,7 @@ function App() {
                 />
               </Route>
             </Routes>
+            <WhatsAppButton />
           </Suspense>
         </div>
         {/* </SmoothScrollProvider> */}
