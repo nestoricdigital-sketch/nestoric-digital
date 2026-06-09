@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+// import { MessageCircle } from "lucide-react";
 import whatsappIcon from "./../images/icons/wApp.webp";
 const WhatsAppButton = () => {
   const phoneNumber = "916361985560"; // Replace with your number
