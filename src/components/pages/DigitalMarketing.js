@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
-// import Services1 from "../darktheme/Services1";
+import {
+  Smartphone,
+  MonitorSmartphone,
+  Settings,
+  ShieldCheck,
+} from "lucide-react"; // import Services1 from "../darktheme/Services1";
 import { Link, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { supabase } from "../superbase/SuperClient";
@@ -56,7 +61,7 @@ const DigitalMarketing = () => {
 
       if (error) throw error;
 
-      alert("Form submitted successfully!");
+      // alert("Form submitted successfully!");
       // Redirect to thank you page
       navigate("/thank-you");
 
@@ -188,17 +193,64 @@ const DigitalMarketing = () => {
             <div>
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 backdrop-blur-sm">
-                🚀 Trusted Growth Partner for Businesses Across India
+                Trusted Growth Partner for Businesses Across India
               </div>
 
               {/* Heading */}
-              <h1 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+              {/* <h1 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                 Stop Wasting
                 <span className="block bg-gradient-to-r from-purple-900 to-purple-400 bg-clip-text text-transparent">
                   Marketing Budget.
                 </span>
                 Start Generating Qualified Leads.
+              </h1> */}
+              <h1 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+                Professional Mobile App
+                <span className="block bg-gradient-to-r from-purple-900 to-purple-400 bg-clip-text text-transparent">
+                  Development Services.
+                </span>
               </h1>
+              <p className="mt-6 max-w-xl text-lg text-gray-400 leading-relaxed">
+                Bring your vision to life with our expert mobile app development
+                services.
+              </p>
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3">
+                  <Smartphone className="w-8 h-8 text-purple-500 flex-shrink-0" />
+                  <span>Custom App Design & Development</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MonitorSmartphone className="w-8 h-8 text-purple-500 flex-shrink-0" />
+                  <span>Cross-Platform Expertise</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Settings className="w-8 h-8 text-purple-500 flex-shrink-0" />
+                  <span>Ongoing Support & Maintenance</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="w-8 h-8 text-purple-500 flex-shrink-0" />
+                  <span>Scalable & Secure Applications</span>
+                </div>
+              </div>
+              <div className="mt-4 grid sm:grid-cols-2 gap-4 px-2">
+                {[
+                  "ED-Tech App",
+                  "Ecommerce App",
+                  "Restaurant App",
+                  "Finetech App",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 text-gray-300"
+                  >
+                    <CheckCircle size={18} className="text-purple-400" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
 
               {/* Subheading */}
               {/* <p className="mt-6 max-w-xl text-lg text-gray-400 leading-relaxed">
@@ -220,7 +272,7 @@ const DigitalMarketing = () => {
                     key={service}
                     className="
         px-5
-        py-2.5
+        py-1.5
         rounded-full
         border
         border-white/15
@@ -244,7 +296,7 @@ const DigitalMarketing = () => {
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link to="/contact">
-                  <button className="group inline-flex items-center gap-2 rounded-xl bg-purple-700 px-6 py-4 font-semibold transition hover:bg-purple-900">
+                  <button className="group inline-flex items-center gap-2 rounded-xl bg-purple-700 px-6 py-2 font-semibold transition hover:bg-purple-900">
                     Get Free Consultation
                     <ArrowRight
                       size={18}
