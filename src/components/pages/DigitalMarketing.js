@@ -190,7 +190,7 @@ const DigitalMarketing = () => {
         <div className=" relative max-w-7xl mx-auto z-10 px-4 sm:px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
-            <div>
+            <div className="order-2 lg:order-1">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 backdrop-blur-sm">
                 Trusted Growth Partner for Businesses Across India
@@ -330,7 +330,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Right Side Stats Card */}
-            <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl">
+            <div className="order-1 lg:order-2 relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl">
               <div className="mb-8">
                 Get a Free Consultation
                 <br /> Fill in below — our team responds within 24 hours.
