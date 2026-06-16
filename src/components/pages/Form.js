@@ -98,7 +98,8 @@ const Form = ({ onClose, showClose = false }) => {
           <div className="relative w-full h-full overflow-hidden rounded-lg">
             <iframe
               width="100%"
-              height="540px"
+              className="h-[400px] lg:h-[450px]"
+              height="100%"
               src="https://www.youtube.com/embed/R_Cu4-Td6Yw?autoplay=1&mute=1&loop=1&playlist=R_Cu4-Td6Yw"
               title="YouTube Short"
               allow="autoplay; encrypted-media"
@@ -153,14 +154,14 @@ const Form = ({ onClose, showClose = false }) => {
             <li className="flex items-center gap-2">⚡ Faster conversions</li>
           </ul> */}
         {/* right side */}
-        <div className="flex flex-col gap-4 h-full md:h-[540px]">
+        <div className="flex flex-col gap-4 h-full md:h-[400px] lg:h-[450px]">
           <form
             onSubmit={handleSubmit}
-            className="m-2 flex flex-col gap-3 md:gap-[28px] text-gray-800"
+            className="m-2 flex flex-col gap-3 md:gap-4 lg:gap-5 text-gray-800 h-full"
           >
             {/* Name */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-0.1 text-gray-900">
                 Your Name
               </label>
               <input
@@ -170,7 +171,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full py-1 bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-0.5 md:py-1 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -181,7 +182,7 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Email */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-0.1 text-gray-900">
                 Your Email
               </label>
               <input
@@ -190,7 +191,7 @@ const Form = ({ onClose, showClose = false }) => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full py-1 bg-transparent text-[14px] md:text-[16px]
+                className="w-full py-0.5 md:py-1 bg-transparent text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -201,7 +202,7 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Mobile */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-0.1 text-gray-900">
                 Mobile Number
               </label>
               <input
@@ -221,7 +222,7 @@ const Form = ({ onClose, showClose = false }) => {
                 }}
                 placeholder="Enter your mobile number"
                 className={`w-full bg-transparent text-[14px] md:text-[16px]
-        border-b py-1 outline-none
+        border-b py-0.5 md:py-1 outline-none
         ${
           phoneError
             ? "border-red-500"
@@ -238,17 +239,21 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Service */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1 text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-0.1 text-gray-900">
                 Select Your Service
               </label>
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className={`w-full py-1 bg-transparent text-[14px] md:text-[16px]
-        border-b  border-gray-300 
-        focus:border-indigo-500 
-        text-gray-800 focus:outline-none box-border ${formData.service === "" ? "text-slate-500 opacity-45 font-[500] " : "text-gray-800"}`}
+                className={`w-full py-0.5 md:py-1 bg-transparent text-[14px] md:text-[16px]
+        border-b border-gray-300
+        focus:border-indigo-500
+        text-gray-800 focus:outline-none box-border ${
+          formData.service === ""
+            ? "text-slate-500 opacity-45 font-[500]"
+            : "text-gray-800"
+        }`}
                 required
               >
                 <option value="" className="text-gray-200 disabled hidden">
@@ -271,16 +276,16 @@ const Form = ({ onClose, showClose = false }) => {
 
             {/* Description */}
             <div>
-              <label className="block text-[14px] md:text-[16px] font-medium mb-1  text-gray-700">
+              <label className="block text-[14px] md:text-[16px] font-medium mb-0.1 text-gray-900">
                 Project Description
               </label>
               <textarea
                 name="description"
-                rows="3"
+                rows={2}
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Describe your project..."
-                className="w-full bg-transparent py-1 text-[14px] md:text-[16px]
+                className="w-full bg-transparent py-0.5 md:py-1 text-[14px] md:text-[16px]
         border-b border-gray-300
         focus:border-indigo-500
         text-gray-800 placeholder-gray-400
@@ -293,11 +298,11 @@ const Form = ({ onClose, showClose = false }) => {
             <button
               type="submit"
               disabled={isDisabled || loading}
-              className={`py-3  lg:mt-0 rounded-[25px] font-semibold transition
+              className={`py-2 rounded-[25px] font-semibold transition
       ${
         isDisabled || loading
-          ? "bg-gray-200 cursor-not-allowed text-gray-500"
-          : "bg-[#353535]  text-white"
+          ? "bg-gray-200 cursor-not-allowed text-gray-900"
+          : "bg-[#353535] text-white"
       }`}
             >
               {loading ? "Submitting..." : "Submit"}

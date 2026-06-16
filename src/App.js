@@ -80,7 +80,7 @@ function App() {
     if (!seen) {
       const timer = setTimeout(() => {
         setShowPopup(true);
-      }, 10000); // 10 seconds
+      }, 500); // 10 seconds changed to 5 milliseconds for testing
 
       // cleanup to avoid memory leaks
       return () => clearTimeout(timer);
@@ -107,7 +107,7 @@ function App() {
         >
           <div
             className="
-          relative w-full max-w-5xl mx-4
+          relative w-full max-w-4xl mx-4
           rounded-xl bg-white p-6 shadow-2xl
         "
             // style={{
