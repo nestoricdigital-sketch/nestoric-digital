@@ -28,6 +28,8 @@ import vasura from "./logos/vasura_logo.webp";
 import vhs from "./logos/vhs_logo.webp";
 import mag from "./logos/mag_op_logo.webp";
 import rak from "./logos/rak.webp";
+import vika from "./logos/vika_Logo.webp";
+import artrex from "./logos/artrex_Logo.webp";
 import cityscape from "./logos/cityscape.webp";
 import think from "./logos/think.webp";
 import little from "./logos/little.webp";
@@ -52,12 +54,12 @@ const portfolioLogos = [
   {
     name: "Artrex",
     service: "Branding, Logo Design, Website Development",
-    logo: null,
+    logo: artrex,
   },
   {
     name: "Vika",
     service: "Logo Design",
-    logo: null,
+    logo: vika,
   },
 
   {
