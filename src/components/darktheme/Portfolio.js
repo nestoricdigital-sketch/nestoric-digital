@@ -19,6 +19,9 @@ import w_simplus from "../images/works/simplus.webp";
 import w_cityscape from "../images/worksRecent/w_cityscape.webp";
 import w_thinkright from "../images/worksRecent/think_right.webp";
 import w_reckon from "../images/works/reckon_work.webp";
+import shivam1 from "../images/works/shivam1.webp";
+import shivam2 from "../images/works/shivam_work2.webp";
+import w_saha from "../images/works/saha_work.webp";
 
 import suryacity from "./logos/suryacity_logo.webp";
 import cargen from "./logos/cargen_logo.webp";
@@ -36,6 +39,8 @@ import little from "./logos/little.webp";
 import eena from "./logos/eena.webp";
 import ramki from "./logos/ramki.webp";
 import reck from "./logos/reckon.webp";
+import saha from "./logos/sahaLogo.png";
+import domusis from "./logos/domusis_logo.webp";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import LogoMarquee from "./LogoMarquee";
@@ -122,6 +127,16 @@ const portfolioLogos = [
     service: "Lead Generation & Social Media Marketing",
     logo: reck,
   },
+  {
+    name: "SahaUdyog",
+    service: "Social Media Marketing",
+    logo: saha,
+  },
+  {
+    name: "Domusis",
+    service: "Lead Generation",
+    logo: domusis,
+  },
 ];
 const portfolioProjects = [
   {
@@ -183,8 +198,14 @@ const portfolioProjects = [
   {
     id: 10,
     type: "small",
-    image: [w_reckon, w_suryacity],
+    image: [w_reckon, w_saha],
     cate: "Leads & Social Media Marketing",
+  },
+  {
+    id: 11,
+    type: "small",
+    image: [shivam1, shivam2],
+    cate: "Lead Generation",
   },
 ];
 const Portfolio = () => {
