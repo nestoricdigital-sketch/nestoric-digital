@@ -7,7 +7,7 @@ const Thanks = () => {
   useEffect(() => {
     if (window.gtag) {
       window.gtag("event", "conversion", {
-        send_to: "AW-17647418071/VZRyCMTq0c8cENf1-N5B",
+        send_to: "AW-17647418071/JnjmCLHivM8cENf1-N5B",
         value: 1.0,
         currency: "INR",
       });
