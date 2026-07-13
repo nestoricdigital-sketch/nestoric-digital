@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import contact_img from "../darktheme/images/contact_img.webp";
 import Select from "react-select";
 import { supabase } from "../superbase/SuperClient";
+import { useNavigate } from "react-router-dom";
 const Contact1 = () => {
   const [selectedService, setSelectedService] = useState(null);
 
@@ -15,6 +16,7 @@ const Contact1 = () => {
   const [phoneError, setPhoneError] = useState("");
 
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,7 +46,7 @@ const Contact1 = () => {
 
       if (error) throw error;
 
-      alert("Form submitted successfully!");
+      // alert("Form submitted successfully!");
       setFormData({
         name: "",
         email: "",
@@ -53,6 +55,7 @@ const Contact1 = () => {
         description: "",
       });
       setSelectedService(null); // 🔥 clears react-select
+      navigate("/thank-you");
     } catch (err) {
       console.error("Supabase error:", err.message);
       alert("Failed to submit form. Please try again.");
@@ -293,7 +296,7 @@ const Contact1 = () => {
               className={`py-2 px-6 rounded-[25px] bg-white/10 transition ${
                 isDisabled || loading
                   ? "bg-slate-100 cursor-not-allowed "
-                  : "bg-slate-200 hover:bg-slate-100 "
+                  : "bg-slate-200 hover:bg-slate-100 hover:text-black "
               }`}
             >
               {loading ? "Submitting..." : "Submit"}

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import webLogo from "../images/mainNDlogo.png";
 
 const Thanks = () => {
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17647418071/VZRyCMTq0c8cENf1-N5B",
+        value: 1.0,
+        currency: "INR",
+      });
+    }
+  }, []);
   return (
     <section className="min-h-screen bg-black text-white flex items-center justify-center px-6">
       <div className="max-w-xl mx-auto text-center">
