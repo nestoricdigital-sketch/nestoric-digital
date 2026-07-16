@@ -5,9 +5,9 @@ import webLogo from "../images/mainNDlogo.png";
 
 const Thanks = () => {
   useEffect(() => {
-    if (window.gtag) {
+    if (typeof window.gtag === "function") {
       window.gtag("event", "conversion", {
-        send_to: "AW-17647418071/JnjmCLHivM8cENf1-N5B",
+        send_to: "AW-17647418071/QoxmCMntjdEcENf1-N5B",
         value: 1.0,
         currency: "INR",
       });
