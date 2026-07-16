@@ -46,6 +46,25 @@ const Contact1 = () => {
 
       if (error) throw error;
 
+      // Fire Google Ads Conversion
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "conversion", {
+          send_to: "AW-17647418071/QoxmCMntjdEcENf1-N5B",
+          value: 1.0,
+          currency: "INR",
+          event_callback: () => {
+            navigate("/thank-you");
+          },
+        });
+
+        // Fallback: if callback doesn't fire, still navigate
+        setTimeout(() => {
+          navigate("/thank-you");
+        }, 1000);
+      } else {
+        navigate("/thank-you");
+      }
+
       // alert("Form submitted successfully!");
       setFormData({
         name: "",
@@ -54,8 +73,8 @@ const Contact1 = () => {
         service: "",
         description: "",
       });
+
       setSelectedService(null); // 🔥 clears react-select
-      navigate("/thank-you");
     } catch (err) {
       console.error("Supabase error:", err.message);
       alert("Failed to submit form. Please try again.");
