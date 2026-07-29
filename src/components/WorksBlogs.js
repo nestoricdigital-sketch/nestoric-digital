@@ -12,6 +12,11 @@ import gp from "./images/works/gp.webp";
 import digi from "./images/works/digichain-site.webp";
 import simplus from "./images/works/simplus.webp";
 import citySc from "./images/works/cityscrape.webp";
+import domusis_shivam from "./images/works/domusis_shivam.webp";
+import shivam_brigate from "./images/works/shivam_brigate.webp";
+import saha from "./images/works/sahaudyog.webp";
+import reckon from "./images/works/reckon_site.webp";
+
 // import { Fade } from "react-awesome-reveal";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -193,6 +198,72 @@ const WorksBlogs = () => {
       ],
       timeline: "2026",
       client: "CityScape Realtor",
+      industry: "Real Estate",
+    },
+    {
+      id: "sahaudyog",
+      title: "Saha Udyog",
+      image: saha,
+      description:
+        "We partnered with Saha Udyog to strengthen its digital presence across Instagram, Facebook, and YouTube through a strategic social media management approach. Our team developed engaging content, creative campaigns, product-focused visuals, and platform-specific strategies to increase brand awareness and audience engagement. Alongside consistent content publishing, we collaborated with relevant food influencers to expand reach, build consumer trust, and create authentic connections that enhanced the brand's online visibility and community growth.",
+      buttons: [
+        "Social Media Management",
+        "Content Strategy",
+        "Influencer Marketing",
+        "Audience Engagement",
+        "Brand Awareness",
+      ],
+      timeline: "2026",
+      client: "Saha Udyog",
+      industry: "Food Products",
+    },
+    {
+      id: "Ds1",
+      title: "Domusis Spaces",
+      image: domusis_shivam,
+      description:
+        "We partnered with Domusis Spaces to execute a performance-driven digital marketing and lead generation campaign for their premium residential projects. Our strategy focused on reaching high-intent homebuyers through precise audience targeting, compelling ad creatives, and continuous campaign optimization. By generating verified, conversion-ready leads and delivering transparent performance reporting, we helped increase project visibility, improve lead quality, and build a scalable system for consistent customer acquisition.",
+      buttons: [
+        "Brand Visibility",
+        "High-Intent Targeting",
+        "ROI Optimisation",
+        "Performance Reporting",
+      ],
+      timeline: "2026",
+      client: "Domusis Spaces",
+      industry: "Real Estate",
+    },
+    {
+      id: "reckon",
+      title: "Reckon Ext.",
+      image: reckon,
+      description:
+        "We partnered with Reckon Ext. to strengthen its digital presence and generate qualified business enquiries through a comprehensive digital marketing strategy. Our team manages their social media channels by creating engaging, brand-focused content across multiple platforms while executing high-performance Google Ads campaigns to reach customers actively searching for uPVC profiles, windows, and doors. Through continuous campaign optimization, audience targeting, and performance analysis, we help increase brand visibility, drive quality leads, and support sustainable business growth.",
+      buttons: [
+        "Social Media Management",
+        "Google Ads",
+        "Lead Generation",
+        "Brand Visibility",
+        "Performance Marketing",
+      ],
+      timeline: "2026",
+      client: "Reckon Ext.",
+      industry: "uPVC Windows & Doors",
+    },
+    {
+      id: "Ds2",
+      title: "Domusis Spaces",
+      image: shivam_brigate,
+      description:
+        "We partnered with Domusis Spaces to execute a performance-driven lead generation campaign for their Brigade residential project. Our strategy combined Meta Ads, audience segmentation, compelling ad creatives, and continuous campaign optimization to attract genuine, high-intent homebuyers. By delivering verified, conversion-ready enquiries and detailed performance insights, we helped increase project visibility, improve lead quality, and establish a scalable customer acquisition system that supported consistent sales opportunities.",
+      buttons: [
+        "Brand Visibility",
+        "High-Intent Targeting",
+        "ROI Optimisation",
+        "Performance Reporting",
+      ],
+      timeline: "2026",
+      client: "Domusis Spaces",
       industry: "Real Estate",
     },
   ];
