@@ -22,6 +22,8 @@ import w_reckon from "../images/works/reckon_work.webp";
 import shivam1 from "../images/works/shivam1.webp";
 import shivam2 from "../images/works/shivam_work2.webp";
 import w_saha from "../images/works/saha_work.webp";
+import sign1 from "../images/works/sign_villa.webp";
+import sign2 from "../images/works/sign_villa2.webp";
 
 import suryacity from "./logos/suryacity_logo.webp";
 import cargen from "./logos/cargen_logo.webp";
@@ -41,6 +43,7 @@ import ramki from "./logos/ramki.webp";
 import reck from "./logos/reckon.webp";
 import saha from "./logos/sahaLogo.png";
 import domusis from "./logos/domusis_logo.webp";
+
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import LogoMarquee from "./LogoMarquee";
@@ -205,6 +208,12 @@ const portfolioProjects = [
     id: 11,
     type: "small",
     image: [shivam1, shivam2],
+    cate: "Lead Generation",
+  },
+  {
+    id: 12,
+    type: "small",
+    image: [sign1, sign2],
     cate: "Lead Generation",
   },
 ];

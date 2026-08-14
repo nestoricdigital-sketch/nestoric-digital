@@ -14,6 +14,8 @@ import simplus from "./images/works/simplus.webp";
 import citySc from "./images/works/cityscrape.webp";
 import domusis_shivam from "./images/works/domusis_shivam.webp";
 import shivam_brigate from "./images/works/shivam_brigate.webp";
+import harsh_prop from "./images/works/harsh_properties.webp";
+
 import saha from "./images/works/sahaudyog.webp";
 import reckon from "./images/works/reckon_site.webp";
 
@@ -264,6 +266,23 @@ const WorksBlogs = () => {
       ],
       timeline: "2026",
       client: "Domusis Spaces",
+      industry: "Real Estate",
+    },
+
+    {
+      id: "harsh",
+      title: "Signature Villas",
+      image: harsh_prop,
+      description:
+        "We partnered with Harsh Properties to execute a performance-driven Meta Ads campaign for their Signature Villas project. Our strategy focused on targeted audience segmentation, compelling ad creatives, and continuous campaign optimization to attract genuine, high-intent property buyers. By generating quality enquiries and monitoring campaign performance closely, we helped improve project visibility, strengthen lead quality, and create a consistent lead generation system that supported ongoing sales opportunities.",
+      buttons: [
+        "Lead Generation",
+        "High-Intent Targeting",
+        "Meta Ads Optimisation",
+        "Performance Reporting",
+      ],
+      timeline: "2026",
+      client: "Harsh Properties",
       industry: "Real Estate",
     },
   ];
