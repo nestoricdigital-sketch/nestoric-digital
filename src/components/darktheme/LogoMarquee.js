@@ -116,9 +116,8 @@ function LogoMarquee({ logos }) {
               ) : (
                 <span
                   className="
-      text-2xl
+      text-xl
     
-      md:text-3xl
       font-bold
       text-white
       whitespace-nowrap

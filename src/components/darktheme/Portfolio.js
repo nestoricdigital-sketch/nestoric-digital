@@ -43,6 +43,7 @@ import ramki from "./logos/ramki.webp";
 import reck from "./logos/reckon.webp";
 import saha from "./logos/sahaLogo.png";
 import domusis from "./logos/domusis_logo.webp";
+import surya_shakthi from "./logos/surya_shakthi_logo.webp";
 
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -140,6 +141,23 @@ const portfolioLogos = [
     service: "Lead Generation",
     logo: domusis,
   },
+    {
+    name: "Surya Shakthi Energy",
+    service:"Website development",
+    logo: surya_shakthi,
+  },
+   {
+    name: "NCP",
+    service:"GMB Setup",
+    logo: null,
+  },
+  {
+    name: "Psychic & Master Vihaan",
+    service:"Review Management",
+    logo: null,
+  },
+
+
 ];
 const portfolioProjects = [
   {
